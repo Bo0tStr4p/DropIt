@@ -19,9 +19,11 @@
   <body class="text-center">
 
     <!-- The video -->
-    <video autoplay loop id="myVideo">
-      <source src="Travel Rome in a Minute - Aerial Drone Video - Expedia.mp4" type="video/mp4">
+    <div style="opacity:0.7;">
+    <video autoplay muted loop id="myVideo">
+      <source src="video.mp4" type="video/mp4">
     </video>
+	</div>
     
 
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column relief">
@@ -36,21 +38,21 @@
         </div>
       </header>
 
-      <form action="https://www.diag.uniroma1.it/~rosati/lw/" class="form-signin" method="POST" name="myForm" onSubmit="return validaForm()">
-        <!-- <img class="mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"/> -->
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required autofocus/>
-        <input type="password" name="inputPassword" class="form-control" placeholder="Password" required/>
-        <div id="divRemember" class="checkbox mb-3">
-            <input type="checkbox" name="remember"/>
-            <label for="remember">Remember me</label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
+      <form action="" class="form-signin" method="POST" name="myForm" onSubmit="return validaForm()">
+            <img class="mb-4" src="../assets/brand/Logo.png" alt="" width="200" height="200"/>
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required autofocus/>
+            <input type="password" name="inputPassword" class="form-control" placeholder="Password" required/>
+            <div id="divRemember" class="checkbox mb-3">
+                <input  type="checkbox" name="remember"/>
+                <label for="remember">Remember me</label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>Powered by <a href="http://mrrobot.wikia.com/wiki/Fsociety">FSociety</a>.</p>
+          <p>Powered by </a>.</p>
         </div>
       </footer>
     </div>
