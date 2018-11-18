@@ -1,6 +1,6 @@
 body {
   padding-bottom: 20px;
-  background-color: #FFFFFF;
+  background-color: #d1f0f9;
 }
 
 footer {
@@ -19,6 +19,12 @@ footer {
   margin-bottom: 20px;
   position: fixed;
   width: 100%;
+}
+
+.jumbotron-fluid {
+  padding:20px 20px 20px 20px;
+  border-radius: 10px 10px 10px 10px;
+	background-color: #FFFFFF;
 }
 
 
