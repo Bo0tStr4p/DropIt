@@ -176,7 +176,7 @@ img
 /* end navigation */
 
 /* start home */       
-#home
+/*#home
     {
     background: url('../images/home-bg.jpg') no-repeat;
     background-size: cover;
@@ -195,7 +195,7 @@ img
     {
         display: inline-block;
         margin-top: 30px;
-    }
+    }*/
 /* end home */
 
 /* start divider */
@@ -455,3 +455,22 @@ footer
         }
 }
 /* end media 360 */
+
+/* Aggiunte nostre */
+
+#myVideo {
+    /* Per inserire il video background fullscreen*/
+    /*position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 0;*/
+    background: url(http://t.wallpaperweb.org/wallpaper/buildings/1920x1080/Cityscapes_22.jpg) no-repeat;
+
+    /*Per inserire il video in una parte della pagina*/
+    position: inherit;
+    min-width: 100%;
+    max-height: 35%;
+    z-index: 0;
+  }
