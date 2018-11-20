@@ -4,9 +4,10 @@ Tutorial template nostro: https://mdbootstrap.com/docs/jquery/components/demo/
 
 Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.com/snippets/jquery/mdb-tutorials/49347?action=full_screen_mode
 ==============================DA FARE==============================
-Proporzionare equamente video
-Prendere video dal web e non in locale (?)
+Controllare CDN YouTube
 Presentazione pagina features, pricing, contact
 Sign in e Sign up (proposte) oppure riferimento ad un'altra pagina
 Tasto cerca
- 
+
+==============================IN CORSO==============================
+Romeo : index.html
