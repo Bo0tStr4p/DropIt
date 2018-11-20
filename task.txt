@@ -1,0 +1,11 @@
+==============================PROPOSTE==============================
+Tasto Login simile a quello presente in https://mdbootstrap.com/docs/jquery/?utm_ref_id=26938 (dovrebbe essere modal)
+Possibile template material design https://demos.creative-tim.com/material-kit/index.html#pablo
+
+==============================DA FARE==============================
+Proporzionare equamente video
+Prendere video dal web e non in locale (?)
+Presentazione pagina features, pricing, contact
+Sign in e Sign up (proposte) oppure riferimento ad un'altra pagina
+Tasto cerca
+ 
