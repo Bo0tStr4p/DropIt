@@ -1,7 +1,8 @@
-==============================PROPOSTE==============================
-Tasto Login simile a quello presente in https://mdbootstrap.com/docs/jquery/?utm_ref_id=26938 (dovrebbe essere modal)
-Possibile template material design https://demos.creative-tim.com/material-kit/index.html#pablo
+============================UTILITY================================
+Tasto Login simile a quello presente in https://mdbootstrap.com/docs/jquery/?utm_ref_id=26938
+Tutorial template nostro: https://mdbootstrap.com/docs/jquery/components/demo/
 
+Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.com/snippets/jquery/mdb-tutorials/49347?action=full_screen_mode
 ==============================DA FARE==============================
 Proporzionare equamente video
 Prendere video dal web e non in locale (?)
