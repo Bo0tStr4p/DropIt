@@ -1,0 +1,56 @@
+/* Required for full background image */
+
+html,
+body,
+header,
+#intro-section {
+  height: 100%;
+}
+
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  #intro-section {
+    height: 100vh;
+  }
+}
+
+.top-nav-collapse {
+  background-color: #2175D1 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #2175D1 !important;
+  }
+}
+
+.rgba-gradient {
+  background: -moz-linear-gradient(45deg, rgba(47, 73, 97, 0.6), rgba(13, 17, 198, 0.69) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(47, 73, 97, 0.6), rgba(13, 17, 198, 0.69) 100%);
+  background: linear-gradient(to 45deg, rgba(47, 73, 97, 0.6), rgba(13, 17, 198, 0.69) 100%);
+}
+
+.purple-gradient {
+    background: -webkit-linear-gradient(50deg,#ff6ec4,#7873f5)!important;
+    background: -o-linear-gradient(50deg,#ff6ec4,#7873f5)!important;
+    background: linear-gradient(40deg,#ff6ec4,#7873f5)!important;
+}
+
+.indigo.lighten-1 {
+    background-color: #5c6bc0!important;
+}
+.testimonial-card .card-up {
+    overflow: hidden;
+    height: 120px;
+    -webkit-border-top-left-radius: .25rem;
+    border-top-left-radius: .25rem;
+    -webkit-border-top-right-radius: .25rem;
+    border-top-right-radius: .25rem;
+    z-index: 0;
+}
