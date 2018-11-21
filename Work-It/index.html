@@ -15,6 +15,10 @@
     <!-- Your custom styles (optional) -->
     <link href="dist/css/style.css" rel="stylesheet">
     <link href="dist/css/common.css" rel="stylesheet">
+    <!-- Script scrolling
+    lavora con in nomi href="#sez" e <a name="sez">-->
+    <script type="text/javascript" src="smoothscroll.js">
+    </script>
 </head>
 
 <body>
@@ -23,14 +27,15 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
             <div class="container">
-                <a class="navbar-brand" href="#">DropIT</a>
+                <a class="navbar-brand" href="#intro-section">DropIT</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav mr-auto smooth-scroll">
                         <li class="nav-item">
-                            <a class="nav-link" href="#intro">Home</a>
+                            <a name="intro-section" 
+                            class="nav-link" href="#intro-section">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#about" data-offset="90">Caratteristiche</a>
@@ -42,7 +47,7 @@
                             <a class="nav-link" href="#gallery" data-offset="90">Lavora con noi</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact" data-offset="30">Contattaci</a>
+                            <a name="contacts" class="nav-link" href="#contact" data-offset="30">Contattaci</a>
                         </li>
             
                     </ul>
@@ -75,11 +80,12 @@
                             </a>
                         </li>
                     </ul>
-                    <form class="form-inline">
+                    <!-- Search -->
+                    <!--<form class="form-inline">
                           <div class="md-form my-0">
                               <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                           </div>
-                      </form>
+                      </form>-->
                 </div>
             </div>
         </nav>
@@ -102,7 +108,7 @@
                             <hr class="hr-light my-4 w-75">
                             <h4 class="subtext-header mt-2 mb-4">“Volare è utile, atterrare è necessario.” <BR> Drusiani </h4>
                             <a href="#about" class="btn btn-rounded btn-outline-white">
-                                <i class="fa fa-home"></i> Scopri di pi&ugrave;!
+                                <i class="fa fa-home"></i> Scopri di più!
                             </a>
                         </div>
                         <!--Grid column-->
@@ -122,13 +128,14 @@
     <main>
     	<!--Section: Perchè sceglierci-->
         <section id="about" class="py-5">
-
+        <!-- Riferimento per la funzione js di scrolling-->
+        <a name="about"></a>
             <!-- Container -->
             <div class="container">
                 <!-- Section heading -->
-                <h2 class="h1-responsive font-weight-bold text-center mb-5">Perch&egrave; dovreste sceglierci?</h2>
+                <h2 class="h1-responsive font-weight-bold text-center mb-5">Perchè dovreste sceglierci?</h2>
                 <!-- Section description -->
-                <p class="lead grey-text text-center w-responsive mx-auto mb-5">Considerati come una delle innovazioni più dinamiche e incredibili del secolo,i droni rappresentano oggi uno strumento all'avanguardia in grado di semplificare innumerevoli operazioni. Tra queste una delle pi&ugrave; importanti: le consegne!</p>
+                <p class="lead grey-text text-center w-responsive mx-auto mb-5">Considerati come una delle innovazioni più dinamiche e incredibili del secolo,i droni rappresentano oggi uno strumento all'avanguardia in grado di semplificare innumerevoli operazioni. Tra queste una delle più importanti: le consegne!</p>
 
                 <!-- Grid row -->
                 <div class="row">
@@ -153,7 +160,7 @@
 
                             <!-- Grid column -->
                             <div class="col-xl-10 col-md-11 col-10">
-                                <h5 class="font-weight-bold mb-3">Velocit&agrave;</h5>
+                                <h5 class="font-weight-bold mb-3">Velocità</h5>
                                 <p class="grey-text">I nostri droni riescono ad eseguire consegne in pochissimo tempo.</p>
                             </div>
                             <!-- Grid column -->
@@ -173,7 +180,7 @@
                             <!-- Grid column -->
                             <div class="col-xl-10 col-md-11 col-10">
                                 <h5 class="font-weight-bold mb-3">Affidabilità</h5>
-                                <p class="grey-text">Siamo molto attenti alla sicurezza, la nostra priorit&agrave; &egrave; soddisfare il cliente.</p>
+                                <p class="grey-text">Siamo molto attenti alla sicurezza, la nostra priorità è soddisfare il cliente.</p>
                             </div>
                             <!-- Grid column -->
 
@@ -192,7 +199,7 @@
                             <!-- Grid column -->
                             <div class="col-xl-10 col-md-11 col-10">
                                 <h5 class="font-weight-bold mb-3">Costi e benefici</h5>
-                                <p class="grey-text mb-0">Non inquiniamo, l'unica nostro bisogno è l'energia elettrica, fonte rinnovabile. Far volare un drone costa molto meno di un classico furgone per le consegne.</p>
+                                <p class="grey-text mb-0">Non inquiniamo, utilizziamo energia elettrica, fonte rinnovabile e prodotta in modo pulito. Far volare un drone costa molto meno di un classico furgone per le consegne.</p>
                             </div>
                             <!-- Grid column -->
 
@@ -213,6 +220,8 @@
 
         <!-- Sezione Prezzi -->
         <section id="prezzi" class="text-center py-5" style="background-color: #eee;">
+        <!-- Riferimento per la funzione js di scrolling-->
+        <a name="prezzi"></a>
         	<div class="container">
         		<h2 class="h1-responsive font-weight-bold text-center mb-5">I nostri prezzi</h2>
         		<div class="row mb-5">
@@ -387,7 +396,7 @@
                           <hr>
                           <!--Quotation-->
                           <p>
-                              <i class="fa fa-quote-left"></i> Da quando i droni mi consegnano le medicine, non devo più attraversare l'intera citt&agrave; per procurarmele.</p>
+                              <i class="fa fa-quote-left"></i> Da quando i droni mi consegnano le medicine, non devo più attraversare l'intera città per procurarmele.</p>
                       </div>
 
                   </div>
@@ -435,7 +444,8 @@
 
    <!--Section: contact-->
         <section id="contact" class="py-5" style="background-color: #eee;">
-
+        <!-- Riferimento per la funzione js di scrolling-->
+        <a name="contact"></a>    
             <div class="container">
 
                 <!-- Section heading -->
@@ -458,7 +468,7 @@
                         <div class="col-md-6">
                             <div class="md-form mb-0">
                             <input type="text" id="contact-name" class="form-control">
-                            <label for="contact-name" class="">Tuo nome</label>
+                            <label for="contact-name" class="">Nome</label>
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -467,7 +477,7 @@
                         <div class="col-md-6">
                             <div class="md-form mb-0">
                             <input type="text" id="contact-email" class="form-control">
-                            <label for="contact-email" class="">Tua Email</label>
+                            <label for="contact-email" class="">Email</label>
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -497,7 +507,7 @@
                         <div class="col-md-12">
                             <div class="md-form">
                             <textarea type="text" id="contact-message" class="form-control md-textarea" rows="3"></textarea>
-                            <label for="contact-message">Tuo messaggio</label>
+                            <label for="contact-message">Messaggio</label>
                             </div>
                         </div>
                         <!-- Grid column -->
