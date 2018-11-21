@@ -5,10 +5,13 @@ Altro: https://mdbootstrap.com/docs/jquery/modals/additional/
 
 Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.com/snippets/jquery/mdb-tutorials/49347?action=full_screen_mode
 ==============================DA FARE==============================
-Controllare CDN YouTube
-Presentazione pagina features, pricing, contact
-Sign in e Sign up (proposte) oppure riferimento ad un'altra pagina
-Tasto cerca
+- Controllare CDN YouTube,colori e footer
+- Presentazione pagina features, pricing, contact
+- Sign in e Sign up (proposte) oppure riferimento ad un'altra pagina
+- Tasto cerca
+
+- Come si fa a centrare un div ? Sia width che heigth
 
 ==============================IN CORSO==============================
-Romeo : index.html
+Ivan : index.html
+Romeo: prices.html
