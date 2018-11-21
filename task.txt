@@ -1,6 +1,7 @@
 ============================UTILITY================================
 Tasto Login simile a quello presente in https://mdbootstrap.com/docs/jquery/?utm_ref_id=26938
 Tutorial template nostro: https://mdbootstrap.com/docs/jquery/components/demo/
+Altro: https://mdbootstrap.com/docs/jquery/modals/additional/
 
 Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.com/snippets/jquery/mdb-tutorials/49347?action=full_screen_mode
 ==============================DA FARE==============================
