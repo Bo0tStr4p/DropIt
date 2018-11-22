@@ -9,6 +9,7 @@ Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.
 - Presentazione pagina features, pricing, contact
 - Sign in e Sign up (proposte) oppure riferimento ad un'altra pagina
 - Tasto cerca
+- Modal Cookie da sistemare 
 
 - Come si fa a centrare un div ? Sia width che heigth
 
