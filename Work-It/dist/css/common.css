@@ -85,3 +85,9 @@ header,
     flex: 1 1 auto;
     padding: 1.25rem;
 }
+
+/* Nostre aggiunte */
+
+html {
+  scroll-behavior: smooth;
+}
