@@ -31,9 +31,9 @@ header,
 }
 
 .rgba-gradient {
-  background: -moz-linear-gradient(45deg, rgba(47, 73, 97, 0.6), rgba(13, 17, 198, 0.69) 100%);
-  background: -webkit-linear-gradient(45deg, rgba(47, 73, 97, 0.6), rgba(13, 17, 198, 0.69) 100%);
-  background: linear-gradient(to 45deg, rgba(47, 73, 97, 0.6), rgba(13, 17, 198, 0.69) 100%);
+  background: -moz-linear-gradient(45deg, rgba(62, 80, 96, 0.4), rgba(42, 44, 99, 0.69) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(62, 80, 96, 0.4), rgba(42, 44, 99, 0.69) 100%);
+  background: linear-gradient(to 45deg, rgba(62, 80, 96, 0.4), rgba(42, 44, 99, 0.69) 100%);
 }
 
 .purple-gradient {
