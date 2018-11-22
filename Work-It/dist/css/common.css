@@ -43,8 +43,18 @@ header,
 }
 
 .indigo.lighten-1 {
-    background-color: #5c6bc0!important;
+    background: -webkit-linear-gradient(50deg,#5c6bc0,#8894da)!important;
+    background: -o-linear-gradient(50deg,#5c6bc0,#8894da)!important;
+    background: linear-gradient(40deg,#5c6bc0,#8894da)!important;
 }
+
+.indigo.blue {
+    background: -webkit-linear-gradient(50deg,#7394f5,#a1b7f7)!important;
+    background: -o-linear-gradient(50deg,#7394f5,#a1b7f7)!important;
+    background: linear-gradient(40deg,#7394f5,#a1b7f7)!important;
+}
+
+
 .testimonial-card .card-up {
     overflow: hidden;
     height: 120px;
