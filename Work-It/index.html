@@ -15,9 +15,13 @@
     <!-- Your custom styles (optional) -->
     <link href="dist/css/style.css" rel="stylesheet">
     <link href="dist/css/common.css" rel="stylesheet">
-    <!-- Script scrolling
-    lavora con in nomi href="#sez" e <a name="sez">-->
-    <script type="text/javascript" src="smoothscroll.js">
+    <!-- Script Cookies-->
+    <!-- Viene lanciato ogni volta che viene caricata la pagina -->
+    <script lang="javascript"> function cookies(){$('#ModalCookie').modal("show");}</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event) {        
+            cookies();
+           });
     </script>
 </head>
 
@@ -54,7 +58,8 @@
                     <!-- Sign In & Sign Up -->
                     <ul class="navbar-nav mr-auto smooth-scroll">
                     <li class="nav-item">
-                            <a class="nav-link" href="#testimonials" data-offset="30">Sign In</a>
+                            <a class="nav-link" href="#testimonials" data-offset="30"
+                             data-toggle="modal" data-target="#modalLoginForm">Sign In</a>
                         </li>	
                     <li class="nav-item">
                             <a class="nav-link" href="#testimonials" data-offset="30">Sign Up</a>
@@ -90,6 +95,59 @@
             </div>
         </nav>
         <!-- Navbar -->
+
+        <!-- Modal Cookie -->
+        <div class="modal fade bottom" id="ModalCookie" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true" data-backdrop="false">
+        <div class="modal-dialog modal-frame modal-bottom modal-notify modal-info" role="document">
+            <!--Content-->
+            <div class="modal-content">
+            <!--Body-->
+            <div class="modal-body">
+                <div class="row d-flex justify-content-center align-items-center">
+
+                <p class="pt-3 pr-2">We use cookies to improve your website experience</p>
+
+                <a type="button" class="btn btn-primary">Learn more <i class="fa fa-book ml-1"></i></a>
+                <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Ok, thanks</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Modal Sign In -->
+        <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">
+                        <i class="fa fa-lock">&nbsp;</i>Sign in</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" >&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mx-3">
+              <div class="md-form mb-5">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input type="email" id="defaultForm-email" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
+              </div>
+      
+              <div class="md-form mb-4">
+                <i class="fa fa-lock prefix grey-text"></i>
+                <input type="password" id="defaultForm-pass" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
+              </div>
+      
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button class="btn btn-default">Login</button>
+            </div>
+          </div>
+        </div>
+        </div>
 
         <!-- Video Intro -->
         <div id="intro-section" class="view">
@@ -128,8 +186,6 @@
     <main>
     	<!--Section: Perchè sceglierci-->
         <section id="about" class="py-5">
-        <!-- Riferimento per la funzione js di scrolling-->
-        <a name="about"></a>
             <!-- Container -->
             <div class="container">
                 <!-- Section heading -->
@@ -220,8 +276,6 @@
 
         <!-- Sezione Prezzi -->
         <section id="prezzi" class="text-center py-5" style="background-color: #eee;">
-        <!-- Riferimento per la funzione js di scrolling-->
-        <a name="prezzi"></a>
         	<div class="container">
         		<h2 class="h1-responsive font-weight-bold text-center mb-5">I nostri prezzi</h2>
         		<div class="row mb-5">
@@ -444,8 +498,6 @@
 
    <!--Section: contact-->
         <section id="contact" class="py-5" style="background-color: #eee;">
-        <!-- Riferimento per la funzione js di scrolling-->
-        <a name="contact"></a>    
             <div class="container">
 
                 <!-- Section heading -->
