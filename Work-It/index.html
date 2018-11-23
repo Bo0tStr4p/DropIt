@@ -267,7 +267,8 @@
                     <i class="fa fa-address-card-o prefix grey-text"></i>
                     <input type="text" id="orangeForm-codiceFiscale" class="form-control validate"
                      required>
-                    <label data-error="wrong" data-success="right" for="orangeForm-codiceFiscale">
+                    <label data-error="wrong" data-success="right"
+                     pattern="[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]" for="orangeForm-codiceFiscale">
                         Codice Fiscale</label>
                 </div>
 
@@ -681,7 +682,20 @@
       </section>
    	<!-- Fine sezione testimonianze -->
 
-
+    <!-- Sezione download App -->
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <button class="btn btn-primary waves-effect">
+                <i class="fa fa-cloud-download"></i></button>
+          </div>
+          <div class="col-sm">
+            Scarica la nostra App per ricevere le consegne anche se sei fuori casa!
+            Un drone verra inviato alla tua posizione 
+          </div>
+        </div>
+      </div>
+    <!-- Fine sezione download App -->  
 
    <!--Section: contact-->
         <section id="contact" class="py-5" style="background-color: #eee;">
@@ -796,7 +810,7 @@
     <!-- Inizio Footer -->
     <footer style="margin-top: -25px;" class="page-footer font-small pt-4">
         <!-- Copyright & Policy -->
-        <div style="background-color: #2175D1; class="container"></div>
+        <div style="background-color: #2175D1;" class="container"></div>
         <div style="background-color: #2175D1;" class="footer-copyright text-center py-3">© 2018 Copyright:
         <a href="https://mdbootstrap.com/bootstrap-tutorial/"> bo0t & 666</a>
         </div>
