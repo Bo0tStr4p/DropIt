@@ -9,11 +9,11 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="../dist/css/mdb.min.css" rel="stylesheet">
+    <link href="../../dist/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="../dist/css/style.css" rel="stylesheet">
+    <link href="../../dist/css/style.css" rel="stylesheet">
     </script>
 </head>
 
@@ -146,71 +146,172 @@
 
           </div>
 
+          <!-- Inizio Pagamento -->
+
+          <div class="container">
+
+          <div class="card">
+  <div class="card-body">
+
+    <!--Grid row-->
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-lg-8 mb-4">
+
+        <!-- Pills panels -->
+        <div class="tab-content pt-4">
+
+          <!--Panel 3-->
+          <div class="tab-pane fade in show active" id="tabCheckoutPayment123" role="tabpanel">
+
+            <div style="margin-left: 16%;" class="row">
+              <div class="col-md-4 mb-3">
+                <div class="text-center">
+                <img class="img-fluid" alt="Responsive image" src="../../dist/img/checkout/carte.png">
+                <BR>
+                <input name="group2" type="radio" class="form-check-input with-gap" id="radioWithGap4" checked
+                  required>
+                <label class="form-check-label" for="radioWithGap4">Carta di Credito</label>
+              </div>
+            </div>
+              <div class="col-md-4 mb-3">
+                <img class="img-fluid" alt="Responsive image" style="margin-left: -30%; margin-top: -6%; width: 80%;" src="../../dist/img/checkout/paypal.png">
+                <BR>
+                <input iname="group2" type="radio" class="form-check-input with-gap" id="radioWithGap5"
+                  required>
+                <label class="form-check-label" for="radioWithGap5">PayPal</label>
+              </div>
+              <div class="col-md-4 mb-3">
+                <input name="group2" type="radio" class="form-check-input with-gap" id="radioWithGap6" required>
+                <label class="form-check-label" for="radioWithGap6">BitCoin</label>
+              </div>
+            </div>
+            <div style="margin-top: 5%;"class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cc-name123">Proprietario Carta</label>
+                <input type="text" class="form-control" id="cc-name123" placeholder="" required>
+                <small class="text-muted">Proprietario scritto sulla carta</small>
+                <div class="invalid-feedback">
+                  Name on card is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number123">Numero carta di credito</label>
+                <input type="text" class="form-control" id="cc-number123" placeholder="" required>
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration123">Scadenza</label>
+                <input type="text" class="form-control" id="cc-expiration123" placeholder="" required>
+                <div class="invalid-feedback">
+                  Expiration date required
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="cc-cvv123">CCV/CVV</label>
+                <input type="text" class="form-control" id="cc-cvv123" placeholder="" required>
+                <div class="invalid-feedback">
+                  Security code required
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4">
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Acquista</button>
+
+          </div>
+          <!--/.Panel 3-->
+
+        </div>
+        <!-- Pills panels -->
+
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-4 mb-4">
+
+        <!--Card-->
+        <div class="card">
+
+          <!--Card content-->
+          <div class="card-body">
+            <h4 class="mb-4 mt-1 h5 text-center font-weight-bold">Sommario</h4>
+
+            <hr>
+
+            <dl class="row">
+              <dd class="col-sm-8">
+                Pacchetto Family
+              </dd>
+              <dd class="col-sm-4">
+                € 200,00
+              </dd>
+            </dl>
+
+            <hr>
+
+            <dl class="row">
+              <dd class="col-sm-8">
+                Iva (22%)
+              </dd>
+              <dd class="col-sm-4">
+                € 44,00
+              </dd>
+            </dl>
+
+            <hr>
+
+            <hr>
+
+            <dl class="row">
+              <dt class="col-sm-8">
+                Totale
+              </dt>
+              <dt class="col-sm-4">
+                € 244,00
+              </dt>
+            </dl>
+          </div>
+
+        </div>
+        <!--/.Card-->
+
+
+
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+  </div>
+</div>
+</div>
+
+
+    <!-- Fine Pagamento -->
+
 
     </main>
     <!--Fine Main-->
 
-    <!-- Inizio Footer -->
-    <footer style="background-color: #4584F4;z-index: 0;"  class="page-footer font-small pt-4 fixed-bottom">
-
-        <!-- Footer Elements -->
-        <div class="container">
-    
-        <!-- Social buttons -->
-        <ul class="list-unstyled list-inline text-center">
-            <li class="list-inline-item">
-            <a class="btn-floating btn-fb mx-1">
-                <i class="fa fa-facebook"> </i>
-            </a>
-            </li>
-            <li class="list-inline-item">
-            <a class="btn-floating btn-tw mx-1">
-                <i class="fa fa-twitter"> </i>
-            </a>
-            </li>
-            <li class="list-inline-item">
-            <a class="btn-floating btn-gplus mx-1">
-                <i class="fa fa-google-plus"> </i>
-            </a>
-            </li>
-            <li class="list-inline-item">
-            <a class="btn-floating btn-li mx-1">
-                <i class="fa fa-linkedin"> </i>
-            </a>
-            </li>
-            <li class="list-inline-item">
-            <a class="btn-floating btn-dribbble mx-1">
-                <i class="fa fa-dribbble"> </i>
-            </a>
-            </li>
-        </ul>
-        <!-- Social buttons -->
-    
-        </div>
-        <!-- Footer Elements -->
-    
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-        
-      </footer>
-      <!-- Fine Footer -->
-
-
-
-
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="../dist/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../../dist/js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="../dist/js/popper.min.js"></script>
+    <script type="text/javascript" src="../../dist/js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../dist/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../dist/js/mdb.min.js"></script>
+    <script type="text/javascript" src="../../dist/js/mdb.min.js"></script>
 </body>
 
 </html>
