@@ -17,11 +17,22 @@
     <link href="dist/css/common.css" rel="stylesheet">
     <!-- Script Cookies-->
     <!-- Viene lanciato ogni volta che viene caricata la pagina -->
-    <script lang="javascript"> function cookies(){$('#ModalCookie').modal("show");}</script>
+    <script lang="javascript"> function cookies(){$('#modalCookie').modal("show");}</script>
     <script>
         document.addEventListener('DOMContentLoaded', function(event) {        
             cookies();
            });
+    </script>
+    <!-- Script per passare da un modal form all'altro.
+     Chiude e distrugge il modal in cui è stato cliccato il bottone -->
+    <script lang="javascript">
+        function modalSwitchHandler(id){
+            var modal_id = "#"+id
+            $(modal_id).modal("hide"); /* Nasconde modal e ritorna prima di averla chiusa*/
+            $(modal_id).on('hidden.bs.modal', function(){ /* Quando modal è stata chiusa distruggila*/
+                $(modal_id).modal("dispose");
+            });
+        }
     </script>
 </head>
 
@@ -58,11 +69,12 @@
                     <!-- Sign In & Sign Up -->
                     <ul class="navbar-nav mr-auto smooth-scroll">
                     <li class="nav-item">
-                            <a class="nav-link" href="#testimonials" data-offset="30"
-                             data-toggle="modal" data-target="#modalLoginForm">Sign In</a>
+                            <a class="nav-link" data-offset="30" data-toggle="modal" 
+                             data-target="#modalSignInForm">Sign In</a>
                         </li>	
                     <li class="nav-item">
-                            <a class="nav-link" href="#testimonials" data-offset="30">Sign Up</a>
+                            <a class="nav-link" data-offset="30" data-toggle="modal"
+                             data-target="#modalSignUpForm">Sign Up</a>
                         </li>
             
                     </ul>
@@ -97,7 +109,7 @@
         <!-- Navbar -->
 
         <!-- Modal Cookie -->
-        <div class="modal fade bottom" id="ModalCookie" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        <div class="modal fade bottom" id="modalCookie" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true" data-backdrop="false">
         <div class="modal-dialog modal-frame modal-bottom modal-notify modal-info" role="document">
             <!--Content-->
@@ -117,35 +129,141 @@
         </div>
 
         <!-- Modal Sign In -->
-        <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        <div class="modal fade" id="modalSignInForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <h4 class="modal-title w-100 font-weight-bold">
                         <i class="fa fa-lock">&nbsp;</i>Sign in</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true" >&times;</span>
-              </button>
-            </div>
-            <div class="modal-body mx-3">
-              <div class="md-form mb-5">
-                <i class="fa fa-envelope prefix grey-text"></i>
-                <input type="email" id="defaultForm-email" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
-              </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" >&times;</span>
+                </button>
+                </div>
+                <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="email" id="defaultForm-email" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
+                </div>
       
-              <div class="md-form mb-4">
-                <i class="fa fa-lock prefix grey-text"></i>
-                <input type="password" id="defaultForm-pass" class="form-control validate">
-                <label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
-              </div>
+                <div class="md-form mb-4">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <input type="password" id="defaultForm-pass" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="font-small blue-text d-flex justify-content-begin">
+                                <a class="blue-text ml-1" data-toggle="modal" 
+                                data-target="#ModalSuccessForgotPassword"
+                                onClick="return modalSwitchHandler('modalSignInForm')">Forgot Password?</a>
+                                </p>
+                            </div>
+                            <div class="col-sm">
+                                <p class="font-small grey-text d-flex justify-content-end">Not a member?
+                                <a class="blue-text ml-1" data-toggle="modal" 
+                                data-target="#modalSignUpForm"
+                                onClick="return modalSwitchHandler('modalSignInForm')">Sign Up</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
       
             </div>
             <div class="modal-footer d-flex justify-content-center">
-              <button class="btn btn-default">Login</button>
+              <button class="btn btn-primary">Login</button>
             </div>
           </div>
+        </div>
+        </div>
+
+        <!-- Modal Success Forgot Password -->
+        <div class="modal fade" id="ModalSuccessForgotPassword" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-success" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading lead">Email inviata con successo</p>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                        <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p>Abbiamo inviato alla tua mail un link per resettare la tua password. Enjoy</p>
+                        </div>
+                    </div>
+                </div>
+            <!--/.Content-->
+            </div>
+        </div>
+
+        <!-- Modal Sign Up -->
+        <div class="modal fade" id="modalSignUpForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">
+                        <i class="fa fa-user">&nbsp;</i>Sign up</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                <i class="fa fa-user prefix grey-text"></i>
+                <input type="text" id="orangeForm-name" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-name">Name and Surname</label>
+                </div>
+
+                <div class="md-form mb-5">
+                <i class="fa fa-calendar prefix grey-text"></i>
+                <!--
+                <input type="date" id="orangeForm-date" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-date">
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Birth Date</label>-->
+
+                <!-- Soluzione con text e parsing stringa come data -->
+                <input type="text" id="orangeForm-date" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-date">Birth Date</label>    
+                </div>
+
+                <div class="md-form mb-5">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input type="email" id="orangeForm-email" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-email">Email</label>
+                </div>
+
+                <div class="md-form mb-4">
+                <i class="fa fa-lock prefix grey-text"></i>
+                <input type="password" id="orangeForm-pass" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-pass">Password</label>
+                </div>
+
+                <div class="md-form mb-4">
+                <i class="fa fa-lock prefix grey-text"></i>
+                <input type="password" id="orangeForm-pass" class="form-control validate">
+                <label data-error="wrong" data-success="right" for="orangeForm-pass"> Confirm Password</label>
+                <p class="font-small grey-text d-flex justify-content-end">Have an account?
+                <a class="blue-text ml-1" data-toggle="modal" 
+                 data-target="#modalSignInForm"
+                 onClick="return modalSwitchHandler('modalSignUpForm')"> Login in</a></p>
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-primary">Register</button>
+            </div>
+            </div>
         </div>
         </div>
 
