@@ -14,5 +14,11 @@ Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.
 - Come si fa a centrare un div ? Sia width che heigth
 
 ==============================IN CORSO==============================
-Ivan : index.html
+Ivan : index.html, lavoraConNoi.html
 Romeo: prices.html
+
+================================BUGS================================
+- Switch tra modal fissa le modal e ne impedisce lo scrolling che avviene invece sullo sfondo
+- Modal cookie rende la navbar trasparente e ne impedisce lo smooth scrolling finchè non viene chiusa
+
+
