@@ -1,4 +1,4 @@
-============================UTILITY================================
+﻿============================UTILITY================================
 Tasto Login simile a quello presente in https://mdbootstrap.com/docs/jquery/?utm_ref_id=26938
 Tutorial template nostro: https://mdbootstrap.com/docs/jquery/components/demo/
 Altro: https://mdbootstrap.com/docs/jquery/modals/additional/
@@ -6,10 +6,10 @@ Altro: https://mdbootstrap.com/docs/jquery/modals/additional/
 Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.com/snippets/jquery/mdb-tutorials/49347?action=full_screen_mode
 ==============================DA FARE==============================
 - Controllare CDN YouTube,colori e footer
-- Presentazione pagina features, pricing, contact
-- Sign in e Sign up (proposte) oppure riferimento ad un'altra pagina
-- Tasto cerca
-- Modal Cookie da sistemare 
+- Tasto cerca (?)
+- Modal Cookie da sistemare
+- File di template (navbar e footer) da completare (da prelevare in index) e successivamente importare in tutte le altre pagine
+- Tutti i js di controllo 
 
 - Come si fa a centrare un div ? Sia width che heigth
 
@@ -18,7 +18,6 @@ Ivan : index.html, lavoraConNoi.html
 Romeo: prices.html
 
 ================================BUGS================================
-- Switch tra modal fissa le modal e ne impedisce lo scrolling che avviene invece sullo sfondo
-- Modal cookie rende la navbar trasparente e ne impedisce lo smooth scrolling finchè non viene chiusa
+- Modal cookie rende la navbar trasparente e ne impedisce lo smooth scrolling finchè non viene chiusa (Firefox)
 
 
