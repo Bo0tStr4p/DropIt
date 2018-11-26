@@ -2,7 +2,7 @@ function choose_paypal(){
   var r = document.getElementById('print_choose');
   r.innerHTML = " \
   <hr style='margin-top:4%; margin-bottom: 4%;' class='col-5'>\
-            <button style='max-width: 50%; margin: auto;' class='btn btn-primary btn-lg btn-block' type='submit'>Acquista con PayPal <i style='margin-left: 2%;' class='fa fa-paypal' aria-hidden='true'></i></button>'";
+            <button style='max-width: 50%; margin: auto;' class='btn btn-primary btn-lg btn-block' type='submit'>Acquista con PayPal <i style='margin-left: 2%;' class='fa fa-paypal' aria-hidden='true'></i></button>";
 }
 
 function choose_bitcoin(){
