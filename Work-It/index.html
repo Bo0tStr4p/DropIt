@@ -15,35 +15,9 @@
     <!-- Your custom styles (optional) -->
     <link href="dist/css/style.css" rel="stylesheet">
     <link href="dist/css/common.css" rel="stylesheet">
-    <!-- Script Cookies-->
-    <!-- Viene lanciato ogni volta che viene caricata la pagina -->
-    <script lang="javascript"> function cookies(){$('#modalCookie').modal("show");}</script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function(event) {        
-            cookies();
-           });
-    </script>
-    <!-- Script per passare da un modal form all'altro.
-     Chiude e distrugge il modal in cui è stato cliccato il bottone e lancia la nuova modal -->
-    <script lang="javascript">
-        function modalSwitchHandler(idToClose, idToOpen){ // Singleton
-            var fired=false;
-            var modal_idToClose = "#"+idToClose
-            var modal_idToOpen = "#"+idToOpen
-            $(modal_idToClose).modal("hide");
-            $(modal_idToClose).on('hidden.bs.modal', function(){
-                /* Quando il modal in cui è stato cliccato il bottone viene chiuso, controllo
-                la variabile fired perchè altrimenti ogni volta che un modal verrebbe
-                chiuso lancerebbe l'altro*/
-
-                $(modal_idToClose).modal("dispose");
-                if(fired) return;
-
-                fired=true;
-                $(modal_idToOpen).modal("show");
-            }); 
-        }
-    </script>
+    <!-- Javascript -->
+    <script type="text/javascript" lang="javascript" src="dist/js/index.js"></script>
+   
 </head>
 
 <body>
@@ -151,25 +125,31 @@
                 </button>
                 </div>
                 <div class="modal-body mx-3">
+                <form name="login" method="post" action=""
+                 onSubmit="return validateLogin()">
                 <div class="md-form mb-5">
                     <i class="fa fa-envelope prefix grey-text"></i>
-                    <input type="email" id="defaultForm-email" class="form-control validate"
+                    <input type="email" id="defaultForm-emailLogin" class="form-control validate"
                      required>
-                    <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label>
+                    <label id="labelEmailEntra"
+                     data-error="errore" data-success="corretto"
+                     for="defaultForm-emailLogin">Email</label>
                 </div>
       
                 <div class="md-form mb-4">
                     <i class="fa fa-lock prefix grey-text"></i>
-                    <input type="password" id="defaultForm-pass" class="form-control validate">
-                    <label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label>
+                    <input type="password" id="defaultForm-passLogin" required
+                     class="form-control validate" pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}">
+                    <label data-error="errore" data-success="corretto"
+                     for="defaultForm-passLogin">Password</label>
                     
                     <div class="container">
                         <div class="row">
                             <div class="col-sm">
                                 <p class="font-small blue-text d-flex justify-content-begin">
-                                <a class="blue-text ml-1" data-toggle="modal" data-dismiss="modal"
-                                data-target="#ModalSuccessForgotPassword">
-                                Hai dimenticato la password?</a>
+                                <a class="blue-text ml-1"
+                                 onClick="return activateModalPassword('modalSignInForm', 'ModalSuccessForgotPassword', 'defaultForm-emailLogin')">
+                                 Hai dimenticato la password?</a>
                                 </p>
                             </div>
                             <div class="col-sm">
@@ -183,9 +163,10 @@
       
             </div>
             <div class="modal-footer d-flex justify-content-center">
-              <button class="btn btn-primary">Entra</button>
+              <button type="submit" class="btn btn-primary">Entra</button>
             </div>
           </div>
+          </form>
         </div>
         </div>
 
@@ -231,14 +212,16 @@
 
             <div class="modal-body mx-3">
                 <div class="container">
-
+                    <form name="registration" method="post" action=""
+                     onSubmit="return validateRegistration()">
                     <div class="row">
                         <div class="col-sm">
                             <div class="md-form mb-5">
                             <i class="fa fa-user prefix grey-text"></i>
                             <input type="text" id="orangeForm-name" class="form-control validate"
-                             required>
-                            <label data-error="wrong" data-success="right" for="orangeForm-name">
+                             required pattern="[A-Z][a-z]+ [A-Z][a-z]+"
+                             title="es. Mario Rossi">
+                            <label data-error="errore" data-success="corretto" for="orangeForm-name">
                              Nome e Cognome</label>
                             </div>
                         </div>
@@ -249,7 +232,7 @@
                                 <input type="text" id="orangeForm-codiceFiscale"
                                  class="form-control validate" required 
                                  pattern="[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]">
-                                <label data-error="wrong" data-success="right"
+                                <label data-error="errore" data-success="corretto"
                                  for="orangeForm-codiceFiscale">Codice Fiscale</label>
                            </div>
                         </div>    
@@ -259,10 +242,10 @@
                         <div class="col-sm">
                             <div class="md-form mb-5">
                                 <i class="fa fa-building prefix grey-text"></i>
-                                <input type="text" id="orangeForm-luogoNascita"
-                                 class="form-control validate" required>
-                                <label data-error="wrong" data-success="right" 
-                                for="orangeForm-luogoNascita">Città di nascita</label>
+                                <input type="text" id="orangeForm-cittaNascita"
+                                  required>
+                                <label data-error="errore" data-success="corretto" 
+                                for="orangeForm-cittaNascita">Città di nascita</label>
                             </div>
                         </div>
 
@@ -276,10 +259,11 @@
                 
                                 <!-- Soluzione con text e parsing stringa come data -->
                                 <input type="text" id="orangeForm-date" class="form-control validate"
-                                 pattern="[0-9]{2}[/][0-9]{2}[/][0-9]{4}" required
+                                 pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}"
+                                 required
                                  title="Inserire la data nel formato gg/mm/aaaa">
-                                <label data-error="Data di nascita non corretta" data-success="Corretta" for="orangeForm-date">
-                                    Data di nascita</label>    
+                                <label data-error="errore" data-success="corretto"
+                                 for="orangeForm-date"> Data di nascita</label>    
                             </div>
                         </div>
                     </div>
@@ -289,8 +273,8 @@
                             <div class="md-form mb-5">
                                 <i class="fa fa-building prefix grey-text"></i>
                                 <input type="text" id="orangeForm-comune" class="form-control validate"
-                                 required>
-                                <label data-error="wrong" data-success="right" for="orangeForm-comune">
+                                 required pattern="[A-Z]{2}" title="In maiuscolo (es. RM)">
+                                <label data-error="errore" data-success="corretto" for="orangeForm-comune">
                                     Comune di residenza</label>
                             </div>
                         </div>
@@ -298,9 +282,9 @@
                         <div class="col-sm">
                             <div class="md-form mb-5">
                                 <i class="fa fa-map-marker prefix grey-text"></i>
-                                <input type="text" id="orangeForm-address" class="form-control validate"
+                                <input type="text" id="orangeForm-address"
                                  required>
-                                <label data-error="wrong" data-success="right" for="orangeForm-address">
+                                <label data-error="errore" data-success="corretto" for="orangeForm-address">
                                     Indirizzo di residenza</label>
                             </div>
                         </div>
@@ -311,26 +295,28 @@
                 <div class="md-form mb-5">
                 <i class="fa fa-envelope prefix grey-text"></i>
                 <input type="email" id="orangeForm-email" class="form-control validate" required>
-                <label data-error="wrong" data-success="right" for="orangeForm-email">Email</label>
+                <label data-error="errore" data-success="corretto" for="orangeForm-email">Email</label>
                 </div>
 
                 <div class="row">
                     <div class="col-sm">
                         <div class="md-form mb-4">
                             <i class="fa fa-lock prefix grey-text"></i>
-                            <input type="password" id="orangeForm-pass" class="form-control validate"
+                            <input type="password" id="orangeForm-passReg" class="form-control validate"
                              required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
                              title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
-                            <label data-error="wrong" data-success="right" for="orangeForm-pass">Password</label>
+                            <label data-error="errore" data-success="corretto"
+                             for="orangeForm-passReg">Password</label>
                         </div>
                     </div>
 
                     <div class="col-sm">
                         <div class="md-form mb-4">
                             <i class="fa fa-lock prefix grey-text"></i>
-                            <input type="password" id="orangeForm-pass" class="form-control validate"
+                            <input type="password" id="orangeForm-pass2Reg" class="form-control validate"
                              required>
-                            <label data-error="wrong" data-success="right" for="orangeForm-pass">
+                            <label data-error="errore" data-success="corretto"
+                             for="orangeForm-pass2Reg">
                                 Conferma Password</label>
                             <p class="font-small grey-text d-flex justify-content-end">Hai già un account?
                             <a class="blue-text ml-1"
@@ -341,9 +327,10 @@
                 </div>
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <button class="btn btn-primary">Registrati</button>
+                <button type="submit" class="btn btn-primary">Registrati</button>
             </div>
-            </div>
+            </div>     
+        </form>
         </div>
         </div>
 
