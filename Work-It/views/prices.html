@@ -19,7 +19,7 @@
     </script>
 </head>
 
-<body  style="background-color: #EDEDED;">
+<body style="background-image: url(../dist/img/background/background-york.jpg);">
     <!-- Main navigation -->
     <header>
         <!-- Navbar -->
@@ -93,7 +93,7 @@
 
 
     <!--Inizio Main-->
-    <main>
+    <main id="main">
       <div style="margin-top: 2%;" class="container">
       <div class="row">
 
@@ -148,7 +148,7 @@
 
           </div>
       <!-- Sezione Prezzi -->
-        <section id="prezzi" class="text-center py-5" style="background-color: #eee; margin-top:-80px;">
+        <section id="prezzi" class="text-center py-5" style=" margin-top:-80px;">
         <!-- Riferimento per la funzione js di scrolling-->
         <a name="prezzi"></a>
           <div class="container">
@@ -194,7 +194,7 @@
                       </a>
                     </span>
                   </div>
-                    <button style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
+                    <button id="checkout_pay" name="checkout_pay" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
                 </div>
                 <!-- Card content -->
               </div>
@@ -241,7 +241,7 @@
                       </a>
                     </span>
                   </div>
-                  <button style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
+                  <button name="checkout_pay" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
                 </div>
                 <!-- Card content -->
               </div>
@@ -288,7 +288,7 @@
                       </a>
                     </span>
                   </div>
-                  <button style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
+                  <button name="checkout_pay" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
                 </div>
                 <!-- Card content -->
               </div>
@@ -315,7 +315,7 @@
         <strong>10% di sconto</strong>
       </p>
 
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <button type="button" class="close" data-dismiss="modal" onClick="document.getElementById('divcookie').style.display = 'none';" aria-label="Close">
         <span aria-hidden="true" class="white-text">&times;</span>
       </button>
     </div>
@@ -360,7 +360,7 @@
 
 
     <!-- Inizio Footer -->
-    <footer class="page-footer font-small pt-4">
+    <footer style="width:100%; bottom: 0vh; position:absolute;" class="page-footer font-small">
         <!-- Copyright & Policy -->
         <div style="background-color: #2175D1;" class="container"></div>
         <div style="background-color: #2175D1;" class="footer-copyright text-center py-3">© 2018 Copyright:
@@ -384,6 +384,8 @@
     <script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="../dist/js/mdb.min.js"></script>
+    <!-- Javascript gestione prezzi -->
+    <script type="text/javascript" src="../dist/js/prices.js"></script>
 </body>
 
 </html>

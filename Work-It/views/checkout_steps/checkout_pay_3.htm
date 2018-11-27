@@ -12,7 +12,7 @@
 
                       <!-- First Step -->
                       <li class="completed">
-                          <a>
+                          <a onclick="return caricaSceltaPiano('plans');">
                               <span class="circle">1</span>
                               <span class="label">Piano</span>
                           </a>
@@ -78,19 +78,19 @@
               <div class="col-md-4 mb-3">
                 <img style="margin-bottom: 10%; max-width: 80%;" class="img-responsive" alt="Responsive image" src="../dist/img/checkout/carte.png">
                 <BR>
-                <input onclick="choose_credit_card();" name="group2" type="radio" class="custom-control-input" id="radioWithGap4" checked>
+                <input onclick="return caricaMetodoPagamento('radioWithGap4');" name="group2" type="radio" class="custom-control-input" id="radioWithGap4" checked>
                 <label class="custom-control-label" for="radioWithGap4">Carta di Credito</label>
             </div>
               <div class="col-md-4 mb-3">
                 <img style="margin-bottom: 13%;max-width: 80%;" class="img-responsive" alt="Responsive image" src="../dist/img/checkout/paypal.png">
                 <BR>
-                <input onclick="choose_paypal();" name="group2" type="radio" class="custom-control-input" id="radioWithGap5">
+                <input onclick="return caricaMetodoPagamento('radioWithGap5');" name="group2" type="radio" class="custom-control-input" id="radioWithGap5">
                 <label class="custom-control-label" for="radioWithGap5">PayPal</label>
               </div>
               <div class="col-md-4 mb-3">
                 <img style="margin-bottom: 10%;max-width: 23%;" class="img-responsive" alt="Responsive image" src="../dist/img/checkout/bitcoin.png">
                 <BR>
-                <input onclick="choose_bitcoin();" name="group2" type="radio" class="custom-control-input" id="radioWithGap6">
+                <input onclick="return caricaMetodoPagamento('radioWithGap6');" name="group2" type="radio" class="custom-control-input" id="radioWithGap6">
                 <label class="custom-control-label" for="radioWithGap6">BitCoin</label>
               </div>
             
@@ -164,10 +164,10 @@
 
             <dl class="row">
               <dd class="col-sm-8">
-                Pacchetto Family
+                Pacchetto Business
               </dd>
               <dd class="col-sm-4">
-                € 200,00
+                € Da Definire
               </dd>
             </dl>
 
@@ -178,7 +178,7 @@
                 Iva (22%)
               </dd>
               <dd class="col-sm-4">
-                € 44,00
+                € Da Definire
               </dd>
             </dl>
 
@@ -191,7 +191,7 @@
                 Totale
               </dt>
               <dt class="col-sm-4">
-                € 244,00
+                € Da Definire
               </dt>
             </dl>
           </div>
@@ -235,7 +235,7 @@
 
       <!--Footer-->
       <div class="modal-footer justify-content-center">
-        <a type="button" class="btn btn-primary">Torna alla Home</a>
+        <a href="home.html" type="button" class="btn btn-primary">Torna alla Home</a>
       </div>
     </div>
     <!--/.Content-->
@@ -247,4 +247,3 @@
 <!-- FINE STAMPARE AJAX -->
 
     </main>
-    <!--Fine Main-->
