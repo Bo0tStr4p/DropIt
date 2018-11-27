@@ -11,34 +11,39 @@ Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.
 - File di template (navbar e footer) da completare (da prelevare in index) e successivamente importare in tutte le altre pagine
 - Tutti i js di controllo 
 - Far apparire label invece di alert (help)
-- Come si fa a centrare un div ? Sia width che heigth
 
 ==============================IN CORSO==============================
 Ivan : index.html, lavoraConNoi.html, index.js
-Romeo: prices.html, prices.js, cookiepolicy.hmtl
+Romeo: prices.html, prices.js, cookiepolicy.html
 
 ================================BUGS================================
 - Modal cookie rende la navbar trasparente e ne impedisce lo smooth scrolling finchè non viene chiusa (Firefox)
-
+- MALEDETTE FOOTER
 
 ================================ CONTROLLI DA EFFETTUARE (JS) ================================
 - index.html : 
 - lavoraConNoi.html :
-- prices.html :
-- cookiepolicy.html :
+- prices.html :				Completi
+- cookiepolicy.html :		Completi
+- home.html
 
 ================================ Revisione ================================
-				Ivan 		Romeo
+							Ivan 		Romeo
 - index.html : 
 - lavoraConNoi.html :
 - prices.html :
 - cookiepolicy.html :
+- home.html : 
 
 
 ============PER IVAN
 $("#centralModalSuccess").modal();
 
-se metti questo alla fine della funzione javascript o dove ti pare, in quel punto lì ti apre il modal. togli gli attributi data-target e data-modal dal bottone però
+se metti questo alla fine della funzione javascript o dove ti pare, in quel punto lì ti apre il modal. togli gli attributi data-target e data-modal dal bottone però.
+
+Ho finito i test sui form sui prezzi, se vuoi vederli o provarli => prices.html & prices.js.
+
+Vedi se riesci a trovare una soluzione definitiva alla footer, vedi come fa nei prezzi.
 
 
 
