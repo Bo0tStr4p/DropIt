@@ -35,4 +35,10 @@ Romeo: prices.html, prices.js, cookiepolicy.hmtl
 - cookiepolicy.html :
 
 
+============PER IVAN
+$("#centralModalSuccess").modal();
+
+se metti questo alla fine della funzione javascript o dove ti pare, in quel punto lì ti apre il modal. togli gli attributi data-target e data-modal dal bottone però
+
+
 
