@@ -17,9 +17,10 @@
     <!-- Prezzi CSS -->
     <link href="../dist/css/prices.css" rel="stylesheet">
     </script>
+
 </head>
 
-<body style="background-image: url(../dist/img/background/background-york.jpg);">
+<body style="background-image: url(../dist/img/background/background-york.jpg); background-size: cover;">
     <!-- Main navigation -->
     <header>
         <!-- Navbar -->
@@ -347,7 +348,7 @@
 
     <!--Footer-->
     <div class="modal-footer flex-center">
-      <a style="background-color: #ff5656;" href="" class="btn btn-danger">Voglio lo sconto
+      <a onclick="caricaPagamento('checkout_pay_1');document.getElementById('divcookie').style.display = 'none';" data-dismiss="modal" style="background-color: #ff5656;" class="btn btn-danger">Voglio lo sconto
         <i class="fa fa-diamond ml-1 white-text"></i>
       </a>
       <a style="color: #ff5656;" type="button" class="btn btn-outline-danger waves-effect"  onClick="document.getElementById('divcookie').style.display = 'none';" data-dismiss="modal">No, Grazie</a>
@@ -357,13 +358,11 @@
 </div>
     <!-- Fine sezione dedicata agli sconti -->
 
-
-
-    <!-- Inizio Footer -->
-    <footer style="width:100%; bottom: 0vh; position:absolute;" class="page-footer font-small">
+   <!-- Inizio Footer -->
+    <footer class="page-footer font-small pt-4">
         <!-- Copyright & Policy -->
-        <div style="background-color: #2175D1;" class="container"></div>
-        <div style="background-color: #2175D1;" class="footer-copyright text-center py-3">© 2018 Copyright:
+        <div style="background-color: #4285F4;" class="container"></div>
+        <div style="background-color: #4285F4;" class="footer-copyright text-center py-3">© 2018 Copyright:
         <a href="https://github.com/Bo0tStr4p/LTW---Project"> Bo0tStr4p & 666TheNumberOfTheBeast</a>
         <a style="margin-left: 5%;" href=""> Cookie Policy</a>
         </div>
