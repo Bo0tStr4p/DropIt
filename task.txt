@@ -15,9 +15,24 @@ Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.
 
 ==============================IN CORSO==============================
 Ivan : index.html, lavoraConNoi.html, index.js
-Romeo: prices.html
+Romeo: prices.html, prices.js, cookiepolicy.hmtl
 
 ================================BUGS================================
 - Modal cookie rende la navbar trasparente e ne impedisce lo smooth scrolling finchè non viene chiusa (Firefox)
+
+
+================================ CONTROLLI DA EFFETTUARE (JS) ================================
+- index.html : 
+- lavoraConNoi.html :
+- prices.html :
+- cookiepolicy.html :
+
+================================ Revisione ================================
+				Ivan 		Romeo
+- index.html : 
+- lavoraConNoi.html :
+- prices.html :
+- cookiepolicy.html :
+
 
 

@@ -1,0 +1,248 @@
+<main id="main">
+      <!-- STAMPARE AJAX -->
+            <div name="toPrint">
+      <div style="margin-top: 2%;" class="container">
+      <div class="row">
+
+              <!--Grid column-->
+              <div class="col-md-12">
+
+                  <!-- Stepers Wrapper -->
+                  <ul class="stepper stepper-horizontal">
+
+                      <!-- First Step -->
+                      <li class="completed">
+                          <a>
+                              <span class="circle">1</span>
+                              <span class="label">Piano</span>
+                          </a>
+
+                      </li>
+
+                      <!-- Second Step -->
+                      <li class="completed">
+                          <a >
+                              <span class="circle">2</span>
+                              <span class="label">Login</span>
+                          </a>
+
+                      </li>
+                      <!-- third Step -->
+                      <li class="completed">
+                          <a >
+                              <span class="circle">3</span>
+                              <span class="label">Pagamento</span>
+                          </a>
+
+                      </li>
+
+                      <!-- five Step -->
+                      <li>
+                          <a >
+                              <span class="circle">4</span>
+                              <span class="label">Finito</span>
+                          </a>
+
+                      </li>
+
+
+                  </ul>
+                  <!-- /.Stepers Wrapper -->
+
+              </div>
+              <!--Grid column-->
+            </div>
+
+          </div>
+
+          <!-- Inizio Pagamento -->
+
+          <div class="container">
+
+          <div class="card">
+  <div class="card-body">
+
+    <!--Grid row-->
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-lg-8 mb-4">
+
+        <!-- Pills panels -->
+        <div class="tab-content pt-4">
+
+          <!--Panel 3-->
+          <div class="tab-pane fade in show active" id="tabCheckoutPayment123" role="tabpanel">
+           <div class="custom-control custom-radio custom-control-inline">
+            <div style="margin-left: 16%;" class="row">
+              <div class="col-md-4 mb-3">
+                <img style="margin-bottom: 10%; max-width: 80%;" class="img-responsive" alt="Responsive image" src="../dist/img/checkout/carte.png">
+                <BR></BR>
+                <input name="group2" type="radio" class="custom-control-input" id="radioWithGap4" checked>
+                <label class="custom-control-label" for="radioWithGap4">Carta di Credito</label>
+            </div>
+              <div class="col-md-4 mb-3">
+                <img style="margin-bottom: 13%;max-width: 80%;" class="img-responsive" alt="Responsive image" src="../dist/img/checkout/paypal.png">
+                <BR></BR>
+                <input name="group2" type="radio" class="custom-control-input" id="radioWithGap5">
+                <label class="custom-control-label" for="radioWithGap5">PayPal</label>
+              </div>
+              <div class="col-md-4 mb-3">
+                <img style="margin-bottom: 10%;max-width: 23%;" class="img-responsive" alt="Responsive image" src="../dist/img/checkout/bitcoin.png">
+                <BR></BR>
+                <input name="group2" type="radio" class="custom-control-input" id="radioWithGap6">
+                <label class="custom-control-label" for="radioWithGap6">BitCoin</label>
+              </div>
+            
+            </div>
+
+          </div>
+
+          <div id="print_choose">
+
+            <div style="margin-top: 5%;"class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cc-name123">Proprietario Carta</label>
+                <input type="text" class="form-control" id="cc-name123" placeholder="" required>
+                <small class="text-muted">Proprietario scritto sulla carta</small>
+                <div class="invalid-feedback">
+                  Name on card is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number123">Numero carta di credito</label>
+                <input type="text" class="form-control" id="cc-number123" placeholder="" required>
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration123">Scadenza</label>
+                <input type="text" class="form-control" id="cc-expiration123" placeholder="" required>
+                <div class="invalid-feedback">
+                  Expiration date required
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="cc-cvv123">CCV/CVV</label>
+                <input type="text" class="form-control" id="cc-cvv123" placeholder="" required>
+                <div class="invalid-feedback">
+                  Security code required
+                </div>
+              </div>
+            </div>
+
+            <hr class="mb-4">
+
+            <button data-toggle="modal" data-target="#centralModalSuccess" style="max-width: 50%; margin: auto;" class="btn btn-primary btn-lg btn-block" type="submit">Acquista con Carta <i style="margin-left: 2%;" class="fa fa-credit-card" aria-hidden="true"></i></button>
+
+          </div>
+
+        </div>
+          <!--/.Panel 3-->
+
+        </div>
+        <!-- Pills panels -->
+
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-4 mb-4">
+
+        <!--Card-->
+        <div class="card">
+
+          <!--Card content-->
+          <div class="card-body">
+            <h4 class="mb-4 mt-1 h5 text-center font-weight-bold">Sommario</h4>
+
+            <hr>
+
+            <dl class="row">
+              <dd class="col-sm-8">
+                Pacchetto Standard
+              </dd>
+              <dd class="col-sm-4">
+                € 90,00
+              </dd>
+            </dl>
+
+            <hr>
+
+            <dl class="row">
+              <dd class="col-sm-8">
+                Iva (22%)
+              </dd>
+              <dd class="col-sm-4">
+                € 19,80
+              </dd>
+            </dl>
+
+            <hr>
+
+            <hr>
+
+            <dl class="row">
+              <dt class="col-sm-8">
+                Totale
+              </dt>
+              <dt class="col-sm-4">
+                € 109,80
+              </dt>
+            </dl>
+          </div>
+
+        </div>
+        <!--/.Card-->
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+  </div>
+</div>
+</div>
+
+    <!-- Fine Pagamento -->
+
+<!-- Central Modal Medium Success -->
+<div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-success" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Acquisto effettuato correttamente</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p>Ti è stata mandata una mail con i dettagli dell'ordine. Grazie!</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a type="button" class="btn btn-primary">Torna alla Home</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Central Modal Medium Success-->
+
+</div>
+<!-- FINE STAMPARE AJAX -->
+</main>
