@@ -10,11 +10,11 @@ Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.
 - Modal Cookie da sistemare
 - File di template (navbar e footer) da completare (da prelevare in index) e successivamente importare in tutte le altre pagine
 - Tutti i js di controllo 
-
+- Far apparire label invece di alert (help)
 - Come si fa a centrare un div ? Sia width che heigth
 
 ==============================IN CORSO==============================
-Ivan : index.html, lavoraConNoi.html
+Ivan : index.html, lavoraConNoi.html, index.js
 Romeo: prices.html
 
 ================================BUGS================================
