@@ -32,8 +32,12 @@ function activateModalPassword(idToClose, idToOpen, idToValidate) {
     var r = new RegExp(".@.");
     var input = document.getElementById(idToValidate).value;
     if(!r.test(input)) {
-        if(input == "")
+        if(input == ""){
+            document.getElementById('defaultForm-emailLogin').style.borderColor="red";
+            document.getElementById('control-emailLogin').innerHTML="errore";
+            
             window.alert("Inserisci una email");
+        }
         
         //document.getElementById('labelEmailEntra')
         return; //new Effects().fade('labelEmailEntra', down, 4000);
