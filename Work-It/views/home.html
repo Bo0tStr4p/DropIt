@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Checkout - Pagamento</title>
+    <title>Home</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -14,77 +14,42 @@
     <link href="../dist/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="../dist/css/style.css" rel="stylesheet">
-    </script>
+    <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.5.14.min.css" rel="stylesheet">
+
+    <style>
+    	.stripe.dark{
+    		background-color:rgba(7,38,97,.5) !important;
+    	}
+	</style>
+
 </head>
 
-<body  style="background-color: #EDEDED;">
+<body  style="background-image: url(../dist/img/background/background-york.jpg); background-size: cover;">
     <!-- Main navigation -->
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#intro-section">DropIT</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mr-auto smooth-scroll">
-                        <li class="nav-item">
-                            <a name="intro-section" 
-                            class="nav-link" href="#intro-section">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about" data-offset="90">Caratteristiche</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects" data-offset="90">Prezzi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#gallery" data-offset="90">Lavora con noi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a name="contacts" class="nav-link" href="#contact" data-offset="30">Contattaci</a>
-                        </li>
-            
-                    </ul>
-                    <!-- Sign In & Sign Up -->
-                    <ul class="navbar-nav mr-auto smooth-scroll">
-                    <li class="nav-item">
-                            <a class="nav-link" href="#testimonials" data-offset="30">Sign In</a>
-                        </li>	
-                    <li class="nav-item">
-                            <a class="nav-link" href="#testimonials" data-offset="30">Sign Up</a>
-                        </li>
-            
-                    </ul>
-                    <!-- End Sign In & Sign Up -->
-                    <!-- Social Icon  -->
-                    <ul class="navbar-nav nav-flex-icons">
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <i class="fa fa-facebook light-green-text-2"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <i class="fa fa-twitter light-green-text-2"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <i class="fa fa-instagram light-green-text-2"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Search -->
-                    <!--<form class="form-inline">
-                          <div class="md-form my-0">
-                              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                          </div>
-                      </form>-->
-                </div>
-            </div>
-        </nav>
+        <nav style="background-color:#4584F4;" class="mb-1 fixed-top navbar navbar-expand-lg navbar-dark">
+                  <a class="navbar-brand" href="#">Navbar</a>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                      <ul class="navbar-nav ml-auto">
+                          <li class="nav-item active">
+                              <a class="nav-link waves-effect waves-light" href="#">
+                                  <i class="fa fa-envelope"></i> Contact
+                                  <span class="sr-only">(current)</span>
+                              </a>
+                          </li>
+                          <li class="nav-item avatar dropdown">
+                              <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <img style="height: 30px; margin:0;" src="https://mdbootstrap.com/img/Photos/Categories/Components/img(31).jpg" class="img-fluid rounded-circle z-depth-0" alt="Material Design for Bootstrap - example photo">
+                              </a>
+                              <div class="dropdown-menu dropdown-menu-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-5">
+                                  <a class="dropdown-item waves-effect waves-light" href="#"><i class="fa fa-gear"></i> Impostazioni</a>
+                                  <a class="dropdown-item waves-effect waves-light" href="../index.html"><i class="fa fa-power-off" aria-hidden="true"></i> Log Out</a>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </nav>
         <!-- Navbar -->
     </header>
 
@@ -92,54 +57,210 @@
 
     <!--Inizio Main-->
     <main>
+    	<div style="padding-top: 5%;" class="container">
+    		<div class="row mb-5">
+
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4">
+
+                  <!--Collection card-->
+                  <div style="height: 80%;" class="card collection-card z-depth-1-half">
+                      <!--Card image-->
+                      <div class="view zoom">
+                          <img src="../dist/img/services/cibo.jpg" class="img-fluid" alt="">
+                          <div class="stripe dark">
+                              <a>
+                                  <p>Alimenti
+                                      <i class="fa fa-angle-right"></i>
+                                  </p>
+                              </a>
+                          </div>
+                      </div>
+                      <!--Card image-->
+                  </div>
+                  <!--Collection card-->
+
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4">
+
+                  <!--Collection card-->
+                  <div style="height: 80%;" class="card collection-card z-depth-1-half">
+                      <!--Card image-->
+                      <div class="view zoom">
+                          <img src="../dist/img/services/medicine.jpg" class="img-fluid" alt="">
+                          <div class="stripe light">
+                              <a>
+                                  <p>Farmaci
+                                      <i class="fa fa-angle-right"></i>
+                                  </p>
+                              </a>
+                          </div>
+                      </div>
+                      <!--Card image-->
+                  </div>
+                  <!--Collection card-->
+
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4">
+
+                  <!--Collection card-->
+                  <div style="height: 80%;" class="card collection-card z-depth-1-half">
+                      <!--Card image-->
+                      <div class="view zoom">
+                          <img src="../dist/img/services/abiti.jpg" class="img-fluid" alt="">
+                          <div class="stripe dark">
+                              <a>
+                                  <p>Abbigliamento
+                                      <i class="fa fa-angle-right"></i>
+                                  </p>
+                              </a>
+                          </div>
+                      </div>
+                      <!--Card image-->
+                  </div>
+                  <!--Collection card-->
+
+              </div>
+              <!--Grid column-->
+
+              <!--Fourth column-->
+              <div class="col-lg-3 col-md-6 mb-4">
+
+                  <!--Collection card-->
+                  <div style="height: 80%;" class="card collection-card z-depth-1-half">
+                      <!--Card image-->
+                      <div class="view zoom">
+                          <img src="../dist/img/services/foto.jpg" class="img-fluid" alt="">
+                          <div class="stripe light">
+                              <a>
+                                  <p>Foto e Video
+                                      <i class="fa fa-angle-right"></i>
+                                  </p>
+                              </a>
+                          </div>
+                      </div>
+                      <!--Card image-->
+                  </div>
+                  <!--Collection card-->
+
+              </div>
+              <!--Fourth column-->
+
+          </div>
+          <div style="margin-top: -5%;" class="row mb-5">
+
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4">
+
+                  <!--Collection card-->
+                  <div style="height: 80%;" class="card collection-card z-depth-1-half">
+                      <!--Card image-->
+                      <div class="view zoom">
+                          <img src="../dist/img/services/libri.jpg" class="img-fluid" alt="">
+                          <div class="stripe dark">
+                              <a>
+                                  <p>Libri e Riviste
+                                      <i class="fa fa-angle-right"></i>
+                                  </p>
+                              </a>
+                          </div>
+                      </div>
+                      <!--Card image-->
+                  </div>
+                  <!--Collection card-->
+
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4">
+
+                  <!--Collection card-->
+                  <div style="height: 80%;" class="card collection-card z-depth-1-half">
+                      <!--Card image-->
+                      <div class="view zoom">
+                          <img src="../dist/img/services/posta.jpg" class="img-fluid" alt="">
+                          <div class="stripe light">
+                              <a>
+                                  <p>Posta e Pacchi
+                                      <i class="fa fa-angle-right"></i>
+                                  </p>
+                              </a>
+                          </div>
+                      </div>
+                      <!--Card image-->
+                  </div>
+                  <!--Collection card-->
+
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-lg-3 col-md-6 mb-4">
+
+                  <!--Collection card-->
+                  <div style="height: 80%;" class="card collection-card z-depth-1-half">
+                      <!--Card image-->
+                      <div class="view zoom">
+                          <img src="../dist/img/services/cartolibreria.jpg" class="img-fluid" alt="">
+                          <div class="stripe dark">
+                              <a>
+                                  <p>Cancelleria
+                                      <i class="fa fa-angle-right"></i>
+                                  </p>
+                              </a>
+                          </div>
+                      </div>
+                      <!--Card image-->
+                  </div>
+                  <!--Collection card-->
+
+              </div>
+              <!--Grid column-->
+
+              <!--Fourth column-->
+              <div class="col-lg-3 col-md-6 mb-4">
+
+                  <!--Collection card-->
+                  <div style="height: 80%;" class="card collection-card z-depth-1-half">
+                      <!--Card image-->
+                      <div class="view zoom">
+                          <img src="../dist/img/services/altro.jpg" class="img-fluid" alt="">
+                          <div class="stripe light">
+                              <a>
+                                  <p>Altro
+                                      <i class="fa fa-angle-right"></i>
+                                  </p>
+                              </a>
+                          </div>
+                      </div>
+                      <!--Card image-->
+                  </div>
+                  <!--Collection card-->
+
+              </div>
+              <!--Fourth column-->
+
+          </div>
+    	</div>
     </main>
     <!--Fine Main-->
 
-    <!-- Inizio Footer -->
-    <footer style="background-color: #4584F4;z-index: 0;"  class="page-footer font-small pt-4 fixed-bottom">
-
-        <!-- Footer Elements -->
-        <div class="container">
-    
-        <!-- Social buttons -->
-        <ul class="list-unstyled list-inline text-center">
-            <li class="list-inline-item">
-            <a class="btn-floating btn-fb mx-1">
-                <i class="fa fa-facebook"> </i>
-            </a>
-            </li>
-            <li class="list-inline-item">
-            <a class="btn-floating btn-tw mx-1">
-                <i class="fa fa-twitter"> </i>
-            </a>
-            </li>
-            <li class="list-inline-item">
-            <a class="btn-floating btn-gplus mx-1">
-                <i class="fa fa-google-plus"> </i>
-            </a>
-            </li>
-            <li class="list-inline-item">
-            <a class="btn-floating btn-li mx-1">
-                <i class="fa fa-linkedin"> </i>
-            </a>
-            </li>
-            <li class="list-inline-item">
-            <a class="btn-floating btn-dribbble mx-1">
-                <i class="fa fa-dribbble"> </i>
-            </a>
-            </li>
-        </ul>
-        <!-- Social buttons -->
-    
+   <!-- Inizio Footer -->
+    <footer class="page-footer font-small pt-4 fixed-bottom">
+        <!-- Copyright & Policy -->
+        <div style="background-color: #4285F4;" class="container"></div>
+        <div style="background-color: #4285F4;" class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="https://github.com/Bo0tStr4p/LTW---Project"> Bo0tStr4p & 666TheNumberOfTheBeast</a>
+        <a style="margin-left: 5%;" href=""> Cookie Policy</a>
         </div>
-        <!-- Footer Elements -->
-    
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-        
+        <!-- Copyright & Policy -->
       </footer>
       <!-- Fine Footer -->
 
