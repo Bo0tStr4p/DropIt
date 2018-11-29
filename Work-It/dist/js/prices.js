@@ -37,13 +37,13 @@ function verificaPagamentoCarta(){
 		intestatario_error.innerHTML = "* Inserire un intestatario";
 		debug = 0;
 	}
-	var espressione = /^[a-zA-Z]*\ [a-zA-Z]*$/;
+	var espressione = /^[A-Z][a-z]+(\ [A-Z][a-z']+)+$/;
 
 	if(!espressione.test(intestatario.value)){
-		intestatario_error.innerHTML = "* Inserire un intestatario usando [a-z A-Z]";
+		intestatario_error.innerHTML = "* Inserire un intestatario (es. Mario Rossi))";
 		debug = 0;	
 	}
-	if(codice.value == "" || codice.value.length<16){
+	if(codice.value.length!=16){
 		codice_error.innerHTML = "* Inserire un codice carta (16 cifre)";
 		debug = 0;
 	}
@@ -59,7 +59,7 @@ function verificaPagamentoCarta(){
 		scadenza_error.innerHTML = "* Bisogna scrivere data nel formato mm/aaaa";
 		debug = 0;	
 	}
-	if(cvv.value == "" || cvv.value.length<3){
+	if(cvv.value.length!=3){
 		cvv_error.innerHTML = "* Bisogna scrivere un CCV/CVV di 3 cifre";
 		debug = 0;	
 	}
@@ -81,14 +81,27 @@ function viewModal(){
 }
 
 function controllo_data(stringa){
-	var espressione = /^[0-9]{2}\/[0-9]{4}$/;
+	var espressione = /^(0[1-9]|1[012])\/[0-9]{4}$/;
 	if (!espressione.test(stringa))
 	{
 	    return false;
 	}else{
+		/* The substr() method extracts parts of a string,
+		 beginning at the character at the specified position,
+		 and returns the specified number of characters*/
+
+		/* parseInt: il 2° parametro è The radix that is used to specify
+		 which numeral system to be used (10 sta quindi per sistema decimale) */
 		anno = parseInt(stringa.substr(3, 4),10);
 		mese = parseInt(stringa.substr(0, 2),10);
 		giorno = 1;
+
+		/* Controllo se la data di scadenza inserita sia già scaduta */
+		var date = new Date();
+		if(anno < date.getFullYear() ||
+		  (anno == date.getFullYear() && mese < date.getMonth()+1)
+		  )
+			return false;
 		
 		var data=new Date(anno, mese-1, giorno);
 		if(data.getFullYear()==anno && data.getMonth()+1==mese && data.getDate()==giorno){
