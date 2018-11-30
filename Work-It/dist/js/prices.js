@@ -56,7 +56,7 @@ function verificaPagamentoCarta(){
 		debug = 0;	
 	}
 	if(!controllo_data(scadenza.value)){
-		scadenza_error.innerHTML = "* Bisogna scrivere data nel formato mm/aaaa";
+		scadenza_error.innerHTML = "* Data futura nel formato mm/aaaa";
 		debug = 0;	
 	}
 	if(cvv.value.length!=3){
