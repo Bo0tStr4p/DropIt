@@ -32,12 +32,9 @@ function activateModalPassword(idToClose, idToOpen, idToValidate) {
     var r = new RegExp(".@.");
     var input = document.getElementById(idToValidate).value;
     if(!r.test(input)) {
-        if(input == ""){
-            document.getElementById('defaultForm-emailLogin').style.borderColor="red";
-            document.getElementById('control-emailLogin').innerHTML="errore";
-            
-            window.alert("Inserisci una email");
-        }
+        if(input == "")
+            displayErrorOnField('defaultForm-emailLogin', 'control-emailLogin','errore');
+        
         
         //document.getElementById('labelEmailEntra')
         return; //new Effects().fade('labelEmailEntra', down, 4000);
@@ -46,35 +43,55 @@ function activateModalPassword(idToClose, idToOpen, idToValidate) {
     return modalSwitchHandler(idToClose, idToOpen);
 }
 
-function validateRegistration() {
-    if(!validateCity(document.getElementById('orangeForm-cittaNascita'))) {
-        window.alert("Inserire città di nascita corretta");
-        return false;
-    }
+/* Evidenzia bordo campo di rosso e genera messaggio di errore dinamico */
+function displayErrorOnField(idField, idFeedback, err) {
+    document.getElementById(idField).style.borderColor="red";
+    document.getElementById(idField).style.borderWidth="2px";
+    document.getElementById(idFeedback).innerHTML=err;
+}
 
-    if(!validateAddress(document.getElementById("orangeForm-address"))) {
-        window.alert("Inserire indirizzo corretto");
+/* Reimposta i valori di default del campo e del messaggio di errore dinamico generato */
+function resetField(idField, idFeedback) {
+    document.getElementById(idField).style.borderColor=null;
+    document.getElementById(idField).style.borderWidth=null;
+    document.getElementById(idFeedback).innerHTML="";
+}
+
+function validateRegistration() {
+    if(!validateBirthDate()) {
         return false;
     }
 
     if(!samePassword(document.getElementById("orangeForm-passReg"), 
                      document.getElementById("orangeForm-pass2Reg"))) {
         window.alert("Password diverse");
+        displayErrorOnField("orangeForm-pass2Reg", "control-PasswordReg", "le password non corrispondono");
         return false;
     }
     
     return true;
 }
 
-function validateCity(id) {
-    var v = id.value;
-    window.alert("valore città: "+v);
-    if(!isNaN(v)) return false;
-    return true;
-}
+function validateBirthDate() {
+    /* The substr() method extracts parts of a string,
+	beginning at the character at the specified position,
+	and returns the specified number of characters*/
 
-function validateAddress(id) {
-    return validateCity(id);
+	/* parseInt: il 2° parametro è The radix that is used to specify
+	which numeral system to be used (10 sta quindi per sistema decimale) */
+    giorno = parseInt(stringa.substr(0, 2), 10);
+    mese = parseInt(stringa.substr(3, 2), 10);
+    anno = parseInt(stringa.substr(6, 4), 10);
+
+	/* Controllo se la data di nascita inserita sia nel passato */
+	var date = new Date();
+	if(anno < date.getFullYear() ||
+      (anno == date.getFullYear() && mese < date.getMonth()+1) ||
+      (anno == date.getFullYear() && mese == date.getMonth()+1 && giorno < date.getDate())
+	)
+        return true;
+    
+    else return false;
 }
 
 function samePassword(id1, id2) {
