@@ -101,3 +101,16 @@ header,
 html {
   scroll-behavior: smooth;
 }
+
+.myFeedback {
+  position: absolute;
+  top: 100%;
+  z-index: 5;
+  max-width: 100%;
+  padding: 0.25rem 2.4rem;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgba(220, 53, 69, 0.9);
+  border-radius: 0.25rem;
+}
