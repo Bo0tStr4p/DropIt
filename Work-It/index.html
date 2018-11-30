@@ -15,6 +15,7 @@
     <!-- Your custom styles (optional) -->
     <link href="dist/css/style.css" rel="stylesheet">
     <link href="dist/css/common.css" rel="stylesheet">
+    <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.5.15.min.css?ver=4.5.15" rel="stylesheet"> <!-- Css per md checkbox -->
     <!-- Javascript -->
     <script type="text/javascript" lang="javascript" src="dist/js/index.js"></script>
    
@@ -130,13 +131,13 @@
                 <div class="md-form mb-5">
                     <i class="fa fa-envelope prefix grey-text"></i>
                     <input type="email" id="defaultForm-emailLogin" class="form-control validate"
-                      required onClick="this.style.borderColor=null">
-                      <!-- Il border lo riporto al colore di default dopo aver cliccato-->
+                      required onClick="resetField('defaultForm-emailLogin', 'control-emailLogin')">
+                      <!-- Il border lo riporto al colore e alla dimensione di default dopo aver cliccato-->
                     <label id="labelEmailEntra"
                      data-error="errore" data-success="corretto"
                      for="defaultForm-emailLogin">Email</label>
-                     <div style="color: red;width:100%;margin-top:.25rem;font-size:80%;top:100%;display:-ms-flexbox;" 
-                      id="control-emailLogin"></div>    
+                     <span><div class="myFeedback" id="control-emailLogin"></div>
+                      </span>    
                 </div>
       
                 <div class="md-form mb-4">
@@ -245,8 +246,9 @@
                         <div class="col-sm">
                             <div class="md-form mb-5">
                                 <i class="fa fa-building prefix grey-text"></i>
-                                <input type="text" id="orangeForm-cittaNascita"
-                                  required>
+                                <input type="text" id="orangeForm-cittaNascita" class="form-control validate"
+                                  required pattern="[A-Z]['a-z]+( [A-Z][a-z']+)*" 
+                                  title="Inserire città facendo seguire ad ogni spazio una lettera maiuscola (es. Milano, Citta Del Messico)">
                                 <label data-error="errore" data-success="corretto" 
                                 for="orangeForm-cittaNascita">Città di nascita</label>
                             </div>
@@ -285,8 +287,8 @@
                         <div class="col-sm">
                             <div class="md-form mb-5">
                                 <i class="fa fa-map-marker prefix grey-text"></i>
-                                <input type="text" id="orangeForm-address"
-                                 required>
+                                <input type="text" id="orangeForm-address" class="form-control validate"
+                                 required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+" title="es. Via Roma">
                                 <label data-error="errore" data-success="corretto" for="orangeForm-address">
                                     Indirizzo di residenza</label>
                             </div>
@@ -307,7 +309,8 @@
                             <i class="fa fa-lock prefix grey-text"></i>
                             <input type="password" id="orangeForm-passReg" class="form-control validate"
                              required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
-                             title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
+                             title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale"
+                             onClick="resetField('orangeForm-passReg', 'control-PasswordReg')">
                             <label data-error="errore" data-success="corretto"
                              for="orangeForm-passReg">Password</label>
                         </div>
@@ -317,15 +320,27 @@
                         <div class="md-form mb-4">
                             <i class="fa fa-lock prefix grey-text"></i>
                             <input type="password" id="orangeForm-pass2Reg" class="form-control validate"
-                             required>
+                             required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
+                             onClick="resetField('orangeForm-pass2Reg', 'control-PasswordReg')">
                             <label data-error="errore" data-success="corretto"
                              for="orangeForm-pass2Reg">
                                 Conferma Password</label>
+                            <span><div class="myFeedback" id="control-PasswordReg"></div>
+                            </span>
                             <p class="font-small grey-text d-flex justify-content-end">Hai già un account?
                             <a class="blue-text ml-1"
                              onClick="return modalSwitchHandler('modalSignUpForm', 'modalSignInForm')">
                              Entra</a></p>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Material unchecked -->
+                <div class="md-form mb-4">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="terms_conditions" required>
+                        <label class="form-check-label" for="materialUnchecked">
+                        Ho letto e accetto <a href="views/privacy.html">termini e condizioni</a> </label>
                     </div>
                 </div>
             </div>
