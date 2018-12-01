@@ -310,7 +310,7 @@
                             <input type="password" id="orangeForm-passReg" class="form-control validate"
                              required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
                              title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale"
-                             onClick="resetField('orangeForm-passReg', 'control-PasswordReg')">
+                             >
                             <label data-error="errore" data-success="corretto"
                              for="orangeForm-passReg">Password</label>
                         </div>
@@ -331,11 +331,12 @@
                     </div>
                 </div>      
 
-                <!-- Material unchecked -->
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="terms_conditions" required>
-                    <label class="form-check-label" for="materialUnchecked">
-                     Ho letto e accetto <a href="views/privacy.html">termini e condizioni</a> </label>
+                <!-- Checkbox -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="terms_conditions" required>
+                    <label class="custom-control-label" for="terms_conditions">
+                     Ho letto e accetto <a href="privacy.html">termini e condizioni</a>
+                    </label>
                 </div>
                 <p class="font-small grey-text d-flex justify-content-begin">Hai già un account?
                     <a class="blue-text ml-1"
