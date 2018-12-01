@@ -84,7 +84,7 @@ function birthdateStatus() {
 }
 
 function validateBirthDate(input) {
-    var r = new RegExp("(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/(19|20)[0-9]{2}");
+    var r = new RegExp("([1-9]|(0[1-9]|1[0-9]|2[0-9]|3[01]))/([1-9]|0[1-9]|1[012])/(19|20)[0-9]{2}");
     if(!r.test(input))
         return -1;
 
@@ -93,10 +93,34 @@ function validateBirthDate(input) {
 	and returns the specified number of characters*/
 
 	/* parseInt: il 2° parametro è The radix that is used to specify
-	which numeral system to be used (10 sta quindi per sistema decimale) */
-    day = parseInt(input.substr(0, 2), 10);
-    month = parseInt(input.substr(3, 2), 10) - 1;
-    year = parseInt(input.substr(6, 4), 10);
+    which numeral system to be used (10 sta quindi per sistema decimale) */
+    var i = 0; // uso l'indice per muovermi nella stringa a seconda dell'input dell'utente
+    var day = 0;
+    var month = 0;
+    var year = 0;
+    var str = input.substr(0, 2);
+
+    if(isNaN(str)) {
+        day = parseInt(str.charAt(0), 10);
+        i = 2;
+    }
+    else {
+        day = parseInt(str, 10);
+        i = 3;
+    }
+
+    str = input.substr(i, 2);
+
+    if(isNaN(str)) {
+        month = parseInt(str.charAt(i), 10) - 1;
+        i += 2;
+    }
+    else {
+        month = parseInt(str, 10) - 1;
+        i += 3;
+    }
+    
+    year = parseInt(input.substr(i, 4), 10);
 
     /* Controllo se l'utente abbia almeno 18 anni */
     var birthday = new Date(year, month, day);
