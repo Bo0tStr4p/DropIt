@@ -9,8 +9,7 @@ Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.
 - Tasto cerca (?)
 - Modal Cookie da sistemare
 - File di template (navbar e footer) da completare (da prelevare in index) e successivamente importare in tutte le altre pagine
-- Tutti i js di controllo 
-- Far apparire label invece di alert (help)
+- Tutti i js di controllo
 
 ==============================IN CORSO==============================
 Ivan : index.html, lavoraConNoi.html, index.js
