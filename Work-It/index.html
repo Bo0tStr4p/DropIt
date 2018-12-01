@@ -135,7 +135,7 @@
                     <label id="labelEmailEntra"
                      data-error="errore" data-success="corretto"
                      for="defaultForm-emailLogin">Email</label>
-                     <span><h6 class="myFeedback" id="control-emailLogin"></h6>
+                     <span class="myFeedback" id="control-emailLogin">
                       </span>    
                 </div>
       
@@ -265,7 +265,7 @@
                                 <input type="text" id="orangeForm-date"  class="form-control"
                                  required title="Inserire la data nel formato gg/mm/aaaa"
                                  onClick="resetField('orangeForm-date', 'control-dateReg')"
-                                 onChange="birthdateStatus()">
+                                 onChange="birthdateStatus()" maxlength=10>
                                 <label data-error="errore" data-success="corretto"
                                  for="orangeForm-date"> Data di nascita</label>
                                  <h6 class="myFeedback" id="control-dateReg"></h6>    
