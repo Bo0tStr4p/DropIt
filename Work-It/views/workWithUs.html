@@ -14,7 +14,9 @@
     <link href="../dist/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.5.14.min.css" rel="stylesheet">
-    
+    <!-- Javascript -->
+    <script type="text/javascript" lang="javascript" src="../dist/js/workWithUs.js"></script> <!-- Per Jquery-->
+    <script type="text/javascript" lang="javascript" src="../dist/js/index.js"></script> <!-- Per controllo form -->
 
 </head>
 
@@ -132,7 +134,7 @@
                         <img src="https://www.dronezine.it/wp-content/uploads/2016/11/piloti-di-sapr.jpg"
                          class="img-fluid" alt="" style="height: 357px">
                         <div class="stripe dark">
-                        <a>
+                        <a id="piloti-card" onClick="return caricaHTM('driverForm')">
                             <p>Piloti
                             <i class="fa fa-angle-right"></i>
                             </p>
@@ -154,7 +156,7 @@
                         <img src="https://images.freeimages.com/images/premium/previews/1191/11918255-pizza-close-up-vertical.jpg" class="img-fluid"
                         alt="">
                         <div class="stripe light">
-                        <a>
+                        <a id="negozi-card" onClick="return caricaHTM('shopForm')">
                             <p>Negozi
                             <i class="fa fa-angle-right"></i>
                             </p>
@@ -175,243 +177,11 @@
         </section>
         <!-- Section: Lavora con DropIT -->
         
-        <!-- Sezione registrazione pilota -->
-        <section id="form" class="py-5">
-            <div class="container">
-            <div class="modal-content modal-dialog" role="document" aria-labelledby="myModalLabel">
-                    <div class="modal-header text-center">
-                      <h4 class="modal-title w-100 font-weight-bold">Registrazione</h4>
-                    </div>
+        <div id="dynamic-form"></div>
 
-                    <div class="modal-body mx-3 container">
-                        
-                        <div class="md-form mb-5">
-                            <i class="fa fa-user prefix grey-text"></i>
-                            <input type="text" id="orangeForm-name" class="form-control validate"
-                              required>
-                            <label data-error="wrong" data-success="right" for="orangeForm-name">
-                              Nome e Cognome</label>
-                        </div>
+        
 
-                        <div class="md-form mb-5">
-                            <i class="fa fa-address-card prefix grey-text"></i>
-                            <input type="text" id="orangeForm-codiceFiscale"
-                              class="form-control validate" required 
-                              pattern="[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]">
-                             <label data-error="wrong" data-success="right"
-                              for="orangeForm-codiceFiscale">Codice Fiscale</label>
-                        </div>
-
-                        <div class="md-form mb-5">
-                            <i class="fa fa-building prefix grey-text"></i>
-                            <input type="text" id="orangeForm-citta" required
-                             class="form-control validate" title="Inserisci la città dove vorresti lavorare">
-                            <label data-error="wrong" data-success="right" 
-                             for="orangeForm-luogoNascita">Città</label>
-                        </div>
-
-                        <div class="md-form mb-5">
-                            <i class="fa fa-envelope prefix grey-text"></i>
-                            <input type="email" id="defaultForm-email" class="form-control validate">
-                            <label data-error="wrong" data-success="right" for="defaultForm-email">
-                             Email</label>
-                        </div>
-                  
-                        <div class="md-form mb-4">
-                            <i class="fa fa-lock prefix grey-text"></i>
-                            <input type="password" id="orangeForm-pass" class="form-control validate"
-                             required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
-                             title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
-                            <label data-error="wrong" data-success="right" for="defaultForm-pass">
-                                Password</label>
-                        </div>
-
-                        <div class="md-form mb-4">
-                            <i class="fa fa-lock prefix grey-text"></i>
-                            <input type="password" id="orangeForm-pass2" class="form-control validate"
-                             required>
-                            <label data-error="wrong" data-success="right" for="orangeForm-pass2">
-                             Conferma Password</label>
-                        </div>
-
-                        
-                        <!-- Bottone input file multipli -->
-                        <div class="md-form mb-5">
-                            <div class="file-field">
-                                <div class="btn btn-primary btn-sm float-left">
-                                    <span>Scegli files</span>
-                                    <input type="file" multiple>
-                                </div>
-                                <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text"
-                                     placeholder=" Cv e licenza di pilota APR">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="md-form mb-5 col-sm">
-                            <p class="font-small grey-text d-flex justify-content-end">Hai già un account?
-                                <a class="blue-text ml-1" href=""> Entra</a>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer d-flex justify-content-center">
-                        <button class="btn btn-primary">Registrati</button>
-                    </div>
-            </div>
-            </div>
-        </section>
-
-        <!-- Sezione registrazione negozio-->
-        <section class="py-5">
-        <div class="container">
-                <div class="modal-content modal-dialog" role="document" aria-labelledby="myModalLabel">
-                        <div class="modal-header text-center">
-                          <h4 class="modal-title w-100 font-weight-bold">Registrazione</h4>
-                        </div>
-    
-                        <div class="modal-body mx-3 container">
-
-                            <div class="row">
-                                <div class="col-sm">
-                                    <div class="md-form mb-5">
-                                        <i class="fa fa-user prefix grey-text"></i>
-                                        <input type="text" id="orangeForm-nameProp" class="form-control validate"
-                                          required>
-                                        <label data-error="wrong" data-success="right" for="orangeForm-nameProp">
-                                          Nome e Cognome</label>
-                                    </div>
-                                </div>
-                                            
-                                <div class="col-sm">
-                                    <div class="md-form mb-5">
-                                        <i class="fa fa-address-card prefix grey-text"></i>
-                                        <input type="text" id="orangeForm-codiceFiscaleProp"
-                                         class="form-control validate" required 
-                                         pattern="[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]">
-                                        <label data-error="wrong" data-success="right"
-                                          for="orangeForm-codiceFiscaleProp">Codice Fiscale</label>
-                                    </div>
-                                </div>    
-                            </div>
-                    
-                            <div class="row">
-                                <div class="col-sm">
-                                    <div class="md-form mb-5">
-                                        <i class="fa fa-building prefix grey-text"></i>
-                                        <input type="text" id="orangeForm-nomeNegozio"
-                                         class="form-control validate" required>
-                                        <label data-error="wrong" data-success="right" 
-                                         for="orangeForm-nomeNegozio">Nome negozio</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm">
-                                    <div class="md-form mb-5">
-                                        <i class="fa fa-industry prefix grey-text"></i>
-                                        <input type="text" id="orangeForm-attivita"
-                                         class="form-control validate" required>
-                                        <label data-error="wrong" data-success="right" 
-                                         for="orangeForm-attivita">Tipo di attività</label>    
-                                    </div>
-                                </div>
-                
-                            </div>
-                    
-                            <div class="row">
-                                <div class="col-sm">
-                                    <div class="md-form mb-5">
-                                        <i class="fa fa-building prefix grey-text"></i>
-                                        <input type="text" id="orangeForm-cittaNegozio"
-                                         class="form-control validate" required
-                                         title="Inserire la città dove risiede l'attività">
-                                        <label data-error="wrong" data-success="right" 
-                                         for="orangeForm-cittaNegozio">Città attività</label>    
-                                    </div>
-                                </div>
-
-                                <div class="col-sm">
-                                    <div class="md-form mb-5">
-                                        <i class="fa fa-building prefix grey-text"></i>
-                                        <input type="text" id="orangeForm-comune" class="form-control validate"
-                                         required title="Inserire il comune dove risiede l'attività">
-                                        <label data-error="wrong" data-success="right" for="orangeForm-comune">
-                                         Comune attività</label>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <div class="row">
-                                <div class="col-sm">
-                                    <div class="md-form mb-5">
-                                        <i class="fa fa-map-marker prefix grey-text"></i>
-                                        <input type="text" id="orangeForm-addressNegozio" class="form-control validate"
-                                         required title="Inserire l'indirizzo dove risiede l'attività">
-                                        <label data-error="wrong" data-success="right" for="orangeForm-addressNegozio">
-                                         Indirizzo attività</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm">
-                                    <div class="md-form mb-5">
-                                        <i class="fa fa-envelope prefix grey-text"></i>
-                                        <input type="email" id="orangeForm-emailProp" class="form-control validate" required>
-                                        <label data-error="wrong" data-success="right" for="orangeForm-emailProp">Email</label>
-                                    </div>
-                               </div>
-                            </div> 
-                    
-                            <div class="row">
-                                <div class="col-sm">
-                                    <div class="md-form mb-4">
-                                        <i class="fa fa-lock prefix grey-text"></i>
-                                        <input type="password" id="orangeForm-passProp" class="form-control validate"
-                                         required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
-                                         title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
-                                        <label data-error="wrong" data-success="right" for="orangeForm-passProp">Password</label>
-                                    </div>
-                                </div>
-                    
-                                <div class="col-sm">
-                                    <div class="md-form mb-4">
-                                        <i class="fa fa-lock prefix grey-text"></i>
-                                        <input type="password" id="orangeForm-pass2Prop" class="form-control validate"
-                                         required>
-                                        <label data-error="wrong" data-success="right" for="orangeForm-pass2Prop">
-                                         Conferma Password</label>
-                                   </div>
-                                </div>
-                            </div>
-    
-                            
-                            <!-- Bottone input file multipli -->
-                            <div class="md-form mb-5">
-                                <div class="file-field">
-                                    <div class="btn btn-primary btn-sm float-left">
-                                        <span>Scegli files</span>
-                                        <input type="file" multiple>
-                                    </div>
-                                    <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text"
-                                         placeholder=" Cv e titolo di vendita">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="md-form mb-5 col-sm">
-                                <p class="font-small grey-text d-flex justify-content-end">Hai già un account?
-                                    <a class="blue-text ml-1" href=""> Entra</a>
-                                </p>
-                            </div>
-                        </div>
-    
-                        <div class="modal-footer d-flex justify-content-center">
-                            <button class="btn btn-primary">Registrati</button>
-                        </div>
-                </div>
-                </div>
-            </section>   
+        
 
     </main>
         <!--Fine Main-->
