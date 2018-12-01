@@ -15,7 +15,6 @@
     <!-- Your custom styles (optional) -->
     <link href="dist/css/style.css" rel="stylesheet">
     <link href="dist/css/common.css" rel="stylesheet">
-    <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.5.15.min.css?ver=4.5.15" rel="stylesheet"> <!-- Css per md checkbox -->
     <!-- Javascript -->
     <script type="text/javascript" lang="javascript" src="dist/js/index.js"></script>
    
@@ -136,7 +135,7 @@
                     <label id="labelEmailEntra"
                      data-error="errore" data-success="corretto"
                      for="defaultForm-emailLogin">Email</label>
-                     <span><div class="myFeedback" id="control-emailLogin"></div>
+                     <span><h6 class="myFeedback" id="control-emailLogin"></h6>
                       </span>    
                 </div>
       
@@ -263,12 +262,13 @@
                                     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Birth Date</label>-->
                 
                                 <!-- Soluzione con text e parsing stringa come data -->
-                                <input type="text" id="orangeForm-date" class="form-control validate"
-                                 pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}"
-                                 required
-                                 title="Inserire la data nel formato gg/mm/aaaa">
+                                <input type="text" id="orangeForm-date"  class="form-control"
+                                 required title="Inserire la data nel formato gg/mm/aaaa"
+                                 onClick="resetField('orangeForm-date', 'control-dateReg')"
+                                 onChange="birthdateStatus()">
                                 <label data-error="errore" data-success="corretto"
-                                 for="orangeForm-date"> Data di nascita</label>    
+                                 for="orangeForm-date"> Data di nascita</label>
+                                 <h6 class="myFeedback" id="control-dateReg"></h6>    
                             </div>
                         </div>
                     </div>
@@ -319,30 +319,30 @@
                     <div class="col-sm">
                         <div class="md-form mb-4">
                             <i class="fa fa-lock prefix grey-text"></i>
-                            <input type="password" id="orangeForm-pass2Reg" class="form-control validate"
-                             required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
+                            <input type="password" id="orangeForm-pass2Reg" class="form-control"
+                             required
                              onClick="resetField('orangeForm-pass2Reg', 'control-PasswordReg')">
                             <label data-error="errore" data-success="corretto"
                              for="orangeForm-pass2Reg">
                                 Conferma Password</label>
-                            <span><div class="myFeedback" id="control-PasswordReg"></div>
+                            <span><h6 class="myFeedback" id="control-PasswordReg"></h6>
                             </span>
-                            <p class="font-small grey-text d-flex justify-content-end">Hai già un account?
-                            <a class="blue-text ml-1"
-                             onClick="return modalSwitchHandler('modalSignUpForm', 'modalSignInForm')">
-                             Entra</a></p>
                         </div>
                     </div>
-                </div>
+                </div>      
 
                 <!-- Material unchecked -->
-                <div class="md-form mb-4">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="terms_conditions" required>
-                        <label class="form-check-label" for="materialUnchecked">
-                        Ho letto e accetto <a href="views/privacy.html">termini e condizioni</a> </label>
-                    </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="terms_conditions" required>
+                    <label class="form-check-label" for="materialUnchecked">
+                     Ho letto e accetto <a href="views/privacy.html">termini e condizioni</a> </label>
                 </div>
+                <p class="font-small grey-text d-flex justify-content-begin">Hai già un account?
+                    <a class="blue-text ml-1"
+                     onClick="return modalSwitchHandler('modalSignUpForm', 'modalSignInForm')">
+                     Entra</a>
+                </p>
+                    
             </div>
             <div class="modal-footer d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary">Registrati</button>
