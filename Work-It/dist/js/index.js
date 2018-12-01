@@ -43,8 +43,17 @@ function activateModalPassword(idToClose, idToOpen, idToValidate) {
     return modalSwitchHandler(idToClose, idToOpen);
 }
 
+/* Evidenzia bordo campo di verde e genera messaggio di ok dinamico */
+function displayOkOnField(idField, idFeedback) {
+    document.getElementById(idFeedback).style.color="#34ce57";
+    document.getElementById(idField).style.borderColor="#34ce57";
+    document.getElementById(idField).style.borderWidth="2px";
+    document.getElementById(idFeedback).innerHTML="corretto";
+}
+
 /* Evidenzia bordo campo di rosso e genera messaggio di errore dinamico */
 function displayErrorOnField(idField, idFeedback, err) {
+    document.getElementById(idFeedback).style.color="red";
     document.getElementById(idField).style.borderColor="red";
     document.getElementById(idField).style.borderWidth="2px";
     document.getElementById(idFeedback).innerHTML=err;
@@ -58,13 +67,8 @@ function resetField(idField, idFeedback) {
 }
 
 function validateRegistration() {
-    if(!validateBirthDate()) {
-        return false;
-    }
-
     if(!samePassword(document.getElementById("orangeForm-passReg"), 
                      document.getElementById("orangeForm-pass2Reg"))) {
-        window.alert("Password diverse");
         displayErrorOnField("orangeForm-pass2Reg", "control-PasswordReg", "le password non corrispondono");
         return false;
     }
@@ -72,28 +76,49 @@ function validateRegistration() {
     return true;
 }
 
-function validateBirthDate() {
+function birthdateStatus() {
+    var s = validateBirthDate(document.getElementById("orangeForm-date").value);
+    if(s == -1) displayErrorOnField("orangeForm-date", "control-dateReg", "errore");
+    else if(s > 0) displayErrorOnField("orangeForm-date", "control-dateReg", "errore: utente "+s+"enne");
+    else displayOkOnField("orangeForm-date", "control-dateReg");
+}
+
+function validateBirthDate(input) {
+    var r = new RegExp("(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/(19|20)[0-9]{2}");
+    if(!r.test(input))
+        return -1;
+
     /* The substr() method extracts parts of a string,
 	beginning at the character at the specified position,
 	and returns the specified number of characters*/
 
 	/* parseInt: il 2° parametro è The radix that is used to specify
 	which numeral system to be used (10 sta quindi per sistema decimale) */
-    giorno = parseInt(stringa.substr(0, 2), 10);
-    mese = parseInt(stringa.substr(3, 2), 10);
-    anno = parseInt(stringa.substr(6, 4), 10);
+    day = parseInt(input.substr(0, 2), 10);
+    month = parseInt(input.substr(3, 2), 10) - 1;
+    year = parseInt(input.substr(6, 4), 10);
 
-	/* Controllo se la data di nascita inserita sia nel passato */
-	var date = new Date();
-	if(anno < date.getFullYear() ||
-      (anno == date.getFullYear() && mese < date.getMonth()+1) ||
-      (anno == date.getFullYear() && mese == date.getMonth()+1 && giorno < date.getDate())
-	)
-        return true;
+    /* Controllo se l'utente abbia almeno 18 anni */
+    var birthday = new Date(year, month, day);
+    var today = new Date();
     
-    else return false;
+    var years = today.getFullYear() - birthday.getFullYear();
+
+    /* Controllo se l'utente ha inserito una data successiva all'anno corrente */
+    if(years < 0)
+        return -1;
+
+    /* Imposto il compleanno all'anno corrente per quanto detto a riga 97 */
+    birthday.setFullYear(today.getFullYear());
+
+    /* Se l'utente non ha ancora compiuto gli anni devo sottrarre uno */
+    if(today < birthday) 
+        years--;
+
+    if(years >= 18) return 0;
+    else return years;
 }
 
 function samePassword(id1, id2) {
-    return id1.value.equals(id2.value);
+    return id1.value == (id2.value);
 }
