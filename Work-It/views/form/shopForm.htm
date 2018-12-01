@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <!-- Sezione registrazione negozio-->
 <section class="py-5">
     <div class="container">
@@ -5,7 +7,8 @@
                     <div class="modal-header text-center">
                       <h4 class="modal-title w-100 font-weight-bold">Registrazione</h4>
                     </div>
-
+                    <form name="registration" method="post" action=""
+                     onSubmit="return validateRegistration()">
                     <div class="modal-body mx-3 container">
 
                         <div class="row">
@@ -13,8 +16,9 @@
                                 <div class="md-form mb-5">
                                     <i class="fa fa-user prefix grey-text"></i>
                                     <input type="text" id="orangeForm-nameProp" class="form-control validate"
-                                      required>
-                                    <label data-error="wrong" data-success="right" for="orangeForm-nameProp">
+                                     required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+"
+                                     title="es. Mario Rossi">
+                                    <label data-error="errore" data-success="corretto" for="orangeForm-nameProp">
                                       Nome e Cognome</label>
                                 </div>
                             </div>
@@ -25,7 +29,7 @@
                                     <input type="text" id="orangeForm-codiceFiscaleProp"
                                      class="form-control validate" required 
                                      pattern="[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]">
-                                    <label data-error="wrong" data-success="right"
+                                    <label data-error="errore" data-success="corretto"
                                       for="orangeForm-codiceFiscaleProp">Codice Fiscale</label>
                                 </div>
                             </div>    
@@ -36,8 +40,8 @@
                                 <div class="md-form mb-5">
                                     <i class="fa fa-building prefix grey-text"></i>
                                     <input type="text" id="orangeForm-nomeNegozio"
-                                     class="form-control validate" required>
-                                    <label data-error="wrong" data-success="right" 
+                                     class="form-control validate" required> 
+                                     <label data-error="errore" data-success="corretto" 
                                      for="orangeForm-nomeNegozio">Nome negozio</label>
                                 </div>
                             </div>
@@ -46,8 +50,8 @@
                                 <div class="md-form mb-5">
                                     <i class="fa fa-industry prefix grey-text"></i>
                                     <input type="text" id="orangeForm-attivita"
-                                     class="form-control validate" required>
-                                    <label data-error="wrong" data-success="right" 
+                                     class="form-control validate" pattern="[A-Za-z ']+" required>
+                                    <label data-error="errore" data-success="corretto" 
                                      for="orangeForm-attivita">Tipo di attività</label>    
                                 </div>
                             </div>
@@ -59,9 +63,9 @@
                                 <div class="md-form mb-5">
                                     <i class="fa fa-building prefix grey-text"></i>
                                     <input type="text" id="orangeForm-cittaNegozio"
-                                     class="form-control validate" required
-                                     title="Inserire la città dove risiede l'attività">
-                                    <label data-error="wrong" data-success="right" 
+                                     class="form-control validate" required pattern="[A-Z]['a-z]+( [A-Z][a-z']+)*" 
+                                     title="Inserire la città dove risiede l'attività, facendo seguire ad ogni spazio una lettera maiuscola (es. Milano, Citta Del Messico)">
+                                    <label data-error="errore" data-success="corretto" 
                                      for="orangeForm-cittaNegozio">Città attività</label>    
                                 </div>
                             </div>
@@ -70,8 +74,8 @@
                                 <div class="md-form mb-5">
                                     <i class="fa fa-building prefix grey-text"></i>
                                     <input type="text" id="orangeForm-comune" class="form-control validate"
-                                     required title="Inserire il comune dove risiede l'attività">
-                                    <label data-error="wrong" data-success="right" for="orangeForm-comune">
+                                     required pattern="[A-Z]{2}" title="In maiuscolo (es. RM)">
+                                    <label data-error="errore" data-success="corretto" for="orangeForm-comune">
                                      Comune attività</label>
                                 </div>
                             </div>
@@ -82,8 +86,9 @@
                                 <div class="md-form mb-5">
                                     <i class="fa fa-map-marker prefix grey-text"></i>
                                     <input type="text" id="orangeForm-addressNegozio" class="form-control validate"
-                                     required title="Inserire l'indirizzo dove risiede l'attività">
-                                    <label data-error="wrong" data-success="right" for="orangeForm-addressNegozio">
+                                     required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+" 
+                                     title="es. Via Roma">
+                                    <label data-error="errore" data-success="corretto" for="orangeForm-addressNegozio">
                                      Indirizzo attività</label>
                                 </div>
                             </div>
@@ -92,7 +97,7 @@
                                 <div class="md-form mb-5">
                                     <i class="fa fa-envelope prefix grey-text"></i>
                                     <input type="email" id="orangeForm-emailProp" class="form-control validate" required>
-                                    <label data-error="wrong" data-success="right" for="orangeForm-emailProp">Email</label>
+                                    <label data-error="errore" data-success="corretto" for="orangeForm-emailProp">Email</label>
                                 </div>
                            </div>
                         </div> 
@@ -101,20 +106,22 @@
                             <div class="col-sm">
                                 <div class="md-form mb-4">
                                     <i class="fa fa-lock prefix grey-text"></i>
-                                    <input type="password" id="orangeForm-passProp" class="form-control validate"
+                                    <input type="password" id="orangeForm-passReg" class="form-control validate"
                                      required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
                                      title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
-                                    <label data-error="wrong" data-success="right" for="orangeForm-passProp">Password</label>
+                                    <label data-error="errore" data-success="corretto" for="orangeForm-passReg">Password</label>
                                 </div>
                             </div>
                 
                             <div class="col-sm">
                                 <div class="md-form mb-4">
                                     <i class="fa fa-lock prefix grey-text"></i>
-                                    <input type="password" id="orangeForm-pass2Prop" class="form-control validate"
-                                     required>
-                                    <label data-error="wrong" data-success="right" for="orangeForm-pass2Prop">
+                                    <input type="password" id="orangeForm-pass2Reg" class="form-control"
+                                     required onClick="resetField('orangeForm-pass2Reg', 'control-PasswordReg')">
+                                    <label data-error="errore" data-success="corretto" for="orangeForm-pass2Reg">
                                      Conferma Password</label>
+                                     <span><h6 class="myFeedback" id="control-PasswordReg"></h6>
+                                     </span>
                                </div>
                             </div>
                         </div>
@@ -125,13 +132,21 @@
                             <div class="file-field">
                                 <div class="btn btn-primary btn-sm float-left">
                                     <span>Scegli files</span>
-                                    <input type="file" multiple>
+                                    <input type="file" multiple required>
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text"
                                      placeholder=" Cv e titolo di vendita">
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="terms_conditions" required>
+                            <label class="custom-control-label" for="terms_conditions">
+                             Ho letto e accetto <a href="privacy.html">termini e condizioni</a>
+                            </label>
                         </div>
                         
                         <div class="md-form mb-5 col-sm">
@@ -142,8 +157,10 @@
                     </div>
 
                     <div class="modal-footer d-flex justify-content-center">
-                        <button class="btn btn-primary">Registrati</button>
+                        <button type="submit" class="btn btn-primary">Registrati</button>
                     </div>
+            </form>
             </div>
             </div>
-        </section>   
+        </section>
+</html>   
