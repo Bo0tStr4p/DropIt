@@ -110,9 +110,10 @@ function validateBirthDate(input) {
     }
 
     str = input.substr(i, 2);
+    
 
     if(isNaN(str)) {
-        month = parseInt(str.charAt(i), 10) - 1;
+        month = parseInt(str.charAt(0), 10) - 1;
         i += 2;
     }
     else {
