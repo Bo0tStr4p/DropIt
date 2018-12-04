@@ -1,9 +1,17 @@
-/* Script Cookies */
-/* Viene lanciato ogni volta che viene caricata la pagina */
-function cookies(){$('#modalCookie').modal("show");}
+/* Banner Cookies */
+function cookies() {
+    $('#modalCookie').modal("show");
+}
 
-document.addEventListener('DOMContentLoaded', function(event) {        
-    cookies();
+/* Viene lanciato ogni volta che viene caricata la pagina, se i cookie non sono stati accettati
+mostra il banner altrimenti no */
+document.addEventListener('DOMContentLoaded', function(event) {
+    if(localStorage.getItem("cookie") == null) {
+        cookies();
+        $("#cookie_button").click(function(){
+            localStorage.setItem("cookie", true);
+        });
+    }
 });
 
 /* Script per passare da un modal form all'altro.
@@ -146,4 +154,7 @@ function validateBirthDate(input) {
 
 function samePassword(id1, id2) {
     return id1.value == (id2.value);
+}
+
+function validateLogin() {
 }
