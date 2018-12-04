@@ -781,7 +781,8 @@
                     <!-- Grid column -->
                     <div class="col-md-9 mb-md-0 mb-5">
 
-                    <form>
+                    <form name="login" method="post" action=""
+                     onSubmit="return validateContact()">
 
                         <!-- Grid row -->
                         <div class="row">
@@ -789,8 +790,11 @@
                         <!-- Grid column -->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                            <input type="text" id="contact-name" class="form-control">
-                            <label for="contact-name" class="">Nome</label>
+                            <input type="text" id="contact-name" class="form-control validate"
+                             required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+"
+                             title="es. Mario Rossi">
+                            <label data-error="errore" data-success="corretto" for="contact-name">
+                             Nome e Cognome</label>
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -798,8 +802,9 @@
                         <!-- Grid column -->
                         <div class="col-md-6">
                             <div class="md-form mb-0">
-                            <input type="text" id="contact-email" class="form-control">
-                            <label for="contact-email" class="">Email</label>
+                            <input type="email" id="contact-email" class="form-control validate">
+                            <label data-error="errore" data-success="corretto" for="contact-email"
+                            >Email</label>
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -813,8 +818,10 @@
                         <!-- Grid column -->
                         <div class="col-md-12">
                             <div class="md-form mb-0">
-                            <input type="text" id="contact-Subject" class="form-control">
-                            <label for="contact-Subject" class="">Oggetto</label>
+                            <input type="text" id="contact-Subject" class="form-control validate"
+                             required>
+                            <label data-error="errore" data-success="corretto" for="contact-Subject">
+                             Oggetto</label>
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -828,8 +835,10 @@
                         <!-- Grid column -->
                         <div class="col-md-12">
                             <div class="md-form">
-                            <textarea type="text" id="contact-message" class="form-control md-textarea" rows="3"></textarea>
-                            <label for="contact-message">Messaggio</label>
+                            <textarea type="text" id="contact-message" class="form-control md-textarea"
+                             rows="3" required></textarea>
+                            <label data-error="errore" data-success="corretto" for="contact-message">
+                             Messaggio</label>
                             </div>
                         </div>
                         <!-- Grid column -->
@@ -837,11 +846,12 @@
                         </div>
                         <!-- Grid row -->
 
-                    </form>
+                    
 
                     <div class="text-center text-md-left">
-                        <a class="btn btn-blue btn-md">Invia</a>
+                        <button type="submit" class="btn btn-primary">Invia</button>
                     </div>
+                </form>
 
                     </div>
                     <!-- Grid column -->
