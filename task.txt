@@ -12,7 +12,7 @@ Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.
 - Tutti i js di controllo
 
 ==============================IN CORSO==============================
-Ivan : index.html, lavoraConNoi.html, index.js
+Ivan : index.html, index.js
 Romeo: prices.html, prices.js, cookiepolicy.html
 
 ================================BUGS================================
