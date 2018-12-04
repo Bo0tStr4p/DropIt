@@ -17,7 +17,6 @@
     <link href="dist/css/common.css" rel="stylesheet">
     <!-- Javascript -->
     <script type="text/javascript" lang="javascript" src="dist/js/index.js"></script>
-   
 </head>
 
 <body>
@@ -105,7 +104,8 @@
                 <p class="pt-3 pr-2">Usiamo i cookies per migliorare la tua esperienza sul web</p>
 
                 <a href="views/cookiepolicy.html" type="button" class="btn btn-primary">Leggi di più <i class="fa fa-book ml-1"></i></a>
-                <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Ok, grazie</a>
+                <a type="button" id="cookie_button" class="btn btn-outline-primary waves-effect"
+                 data-dismiss="modal">Ok, grazie</a>
                 </div>
             </div>
             </div>
@@ -125,7 +125,7 @@
                 </button>
                 </div>
                 <div class="modal-body mx-3">
-                <form name="login" method="post" action=""
+                <form name="login" method="post" action="views/home.html"
                  onSubmit="return validateLogin()">
                 <div class="md-form mb-5">
                     <i class="fa fa-envelope prefix grey-text"></i>
@@ -142,7 +142,8 @@
                 <div class="md-form mb-4">
                     <i class="fa fa-lock prefix grey-text"></i>
                     <input type="password" id="defaultForm-passLogin" required
-                     class="form-control validate" pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}">
+                     class="form-control validate" pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
+                     title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
                     <label data-error="errore" data-success="corretto"
                      for="defaultForm-passLogin">Password</label>
                     
@@ -168,8 +169,8 @@
             <div class="modal-footer d-flex justify-content-center">
               <button type="submit" class="btn btn-primary">Entra</button>
             </div>
-          </div>
           </form>
+          </div>
         </div>
         </div>
 
