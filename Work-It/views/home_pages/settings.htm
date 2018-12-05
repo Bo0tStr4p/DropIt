@@ -6,6 +6,7 @@
 
 <body>
     <main id="main">
+        <div class="container-fluid">
     <!-- Tab panels -->
     <div class="py-5 tab-content">
 
@@ -13,8 +14,8 @@
         <div class="tab-pane fade in show active" id="panel555" role="tabpanel">
       
           <!-- Nav tabs -->
-          <div class="row">
-            <div class="col-md-3">
+          <div class="row justify-content-center">
+            <div class="col-md-5">
               <ul class="nav md-pills pills-primary flex-column" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active" data-toggle="tab" href="#panel12" role="tab">Traccia ordini
@@ -48,37 +49,81 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md-9">
+            <div class="col md-8 align-self-center justify-content-end">
               <!-- Tab panels -->
-              <div class="tab-content vertical">
+              <div class="tab-content">
                 <!-- Panel 1 -->
                 <div class="tab-pane fade in show active" id="panel12" role="tabpanel">
-                  <h5 class="my-2 h5">Panel 1</h5>
+                  <h5 class="py-5 h5">Panel 1</h5>
                 </div>
 
                 <!-- Panel 2 -->
                 <div class="tab-pane fade" id="panel22" role="tabpanel">
-                  <h5 class="my-2 h5">Panel 2</h5>
+                  <h5 class="py-5 h5">Panel 2</h5>
                 </div>
                 
                 <!-- Panel 3 -->
                 <div class="tab-pane fade" id="panel32" role="tabpanel">
-                  <h5 class="my-2 h5">Panel 3</h5>
+                  <h5 class="py-5 h5">Panel 3</h5>
                 </div>
                 
                 <!-- Panel 4 -->
                 <div class="tab-pane fade" id="panel42" role="tabpanel">
-                    <h5 class="my-2 h5 justify-content-center">Al momento non hai alcuna offerta disponibile</h5>
+                    <h5 class="py-5 h5 justify-content-center">Al momento non hai alcuna offerta disponibile</h5>
                 </div>
                 
                 <!-- Panel 5 -->
                 <div class="tab-pane fade" id="panel52" role="tabpanel">
-                    <h5 class="my-2 h5">Panel 5</h5>
+                    <h5 class="py-5 h5" id="abbonamento">Il tuo piano attivo è</h5>
                 </div>
 
                 <!-- Panel 6 -->
                 <div class="tab-pane fade" id="panel62" role="tabpanel">
-                    <h5 class="my-2 h5">Panel 6</h5>
+                    <h5 class="py-5 h5">Vuoi cambiare password?</h5>
+
+                        <form name="changePasswordForm" method="post" action=""
+                         onSubmit="return validatePassword()">
+    
+                            <div class="row">
+                              <div class="md-form mb-4">
+                                    <i class="fa fa-lock prefix grey-text"></i>
+                                    <input type="password" id="orangeForm-passReg" class="form-control validate"
+                                     required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
+                                     title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
+                                    <label data-error="errore" data-success="corretto"
+                                     for="orangeForm-passReg">Vecchia password</label>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="md-form mb-4">
+                                <i class="fa fa-lock prefix grey-text"></i>
+                                <input type="password" id="orangeForm-pass2Reg" class="form-control validate"
+                                 required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
+                                 title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
+                                <label data-error="errore" data-success="corretto"
+                                 for="orangeForm-passReg">Nuova password</label>      
+                              </div>
+                            </div>
+            
+                            <div class="row">
+                              <div class="md-form mb-4">
+                                <i class="fa fa-lock prefix grey-text"></i>
+                                <input type="password" id="orangeForm-pass3Reg" class="form-control"
+                                 required
+                                 onClick="resetField('orangeForm-pass3Reg', 'control-PasswordReg')">
+                                 <label data-error="errore" data-success="corretto"
+                                  for="orangeForm-pass2Reg">
+                                  Conferma Password</label>
+                                 <span><h6 class="myFeedback" id="control-PasswordReg"></h6>
+                                 </span>
+                              </div>
+                            </div>
+
+                            <div class="justify-content-center">
+                                <button type="submit" class="btn btn-primary">Invia</button>
+                            </div>    
+                        </form>
                 </div>
 
               </div>
@@ -100,6 +145,7 @@
       
     </div>
     <!-- Tab panels -->
+  </div>
     </main>
 </body>
 
