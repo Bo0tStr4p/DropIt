@@ -6,11 +6,18 @@ function cookies() {
 /* Viene lanciato ogni volta che viene caricata la pagina, se i cookie non sono stati accettati
 mostra il banner altrimenti no */
 document.addEventListener('DOMContentLoaded', function(event) {
+    
     if(localStorage.getItem("cookie") == null) {
         cookies();
         $("#cookie_button").click(function(){
             localStorage.setItem("cookie", true);
         });
+    }
+    
+    /* Verifico se ho compilato la form di contatto, in caso positivo lancio la modal */
+    if(localStorage.getItem("showModalSuccessContact") == "true") {
+        localStorage.removeItem("showModalSuccessContact");
+        $("#ModalSuccessContact").modal("show");
     }
 });
 
@@ -43,11 +50,10 @@ function activateModalPassword(idToClose, idToOpen, idToValidate) {
         if(input == "")
             displayErrorOnField('defaultForm-emailLogin', 'control-emailLogin','errore');
         
-        
-        //document.getElementById('labelEmailEntra')
-        return; //new Effects().fade('labelEmailEntra', down, 4000);
+        return;
     }
 
+    $(idToOpen).modal("show");
     return modalSwitchHandler(idToClose, idToOpen);
 }
 
@@ -157,4 +163,11 @@ function samePassword(id1, id2) {
 }
 
 function validateLogin() {
+}
+
+/* Per mostrare la modal al caricamento successivo della pagina (causata dalla action della form)
+, setto un parametro nel localStorage che andrò a verificare ad ogni caricamento della pagina */
+function validateContact(idModalSuccess) {
+    var s = "show"+idModalSuccess;
+    localStorage.setItem(s, true);
 }
