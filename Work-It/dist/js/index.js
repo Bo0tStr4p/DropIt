@@ -15,10 +15,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
     }
     
     /* Verifico se ho compilato la form di contatto, in caso positivo lancio la modal */
-    if(localStorage.getItem("showModalSuccessContact") == "true") {
-        localStorage.removeItem("showModalSuccessContact");
+    if(sessionStorage.getItem("showModalSuccessContact") == "true") {
+        sessionStorage.removeItem("showModalSuccessContact");
         $("#ModalSuccessContact").modal("show");
     }
+    
 });
 
 /* Script per passare da un modal form all'altro.
@@ -166,8 +167,8 @@ function validateLogin() {
 }
 
 /* Per mostrare la modal al caricamento successivo della pagina (causata dalla action della form)
-, setto un parametro nel localStorage che andrò a verificare ad ogni caricamento della pagina */
+, setto un parametro nel sessionStorage che andrò a verificare ad ogni caricamento della pagina */
 function validateContact(idModalSuccess) {
     var s = "show"+idModalSuccess;
-    localStorage.setItem(s, true);
+    sessionStorage.setItem(s, true);
 }
