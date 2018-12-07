@@ -6,17 +6,15 @@ Altro: https://mdbootstrap.com/docs/jquery/modals/additional/
 Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.com/snippets/jquery/mdb-tutorials/49347?action=full_screen_mode
 ==============================DA FARE==============================
 - Controllare CDN YouTube,colori e footer
-- Tasto cerca (?)
 - Modal Cookie da sistemare
 - File di template (navbar e footer) da completare (da prelevare in index) e successivamente importare in tutte le altre pagine
 - Tutti i js di controllo
 
 ==============================IN CORSO==============================
-Ivan : index.html, index.js
-Romeo: prices.html, prices.js, cookiepolicy.html
+Ivan : interno
+Romeo: esterno
 
 ================================BUGS================================
-- Modal cookie rende la navbar trasparente e ne impedisce lo smooth scrolling finchè non viene chiusa (Firefox)
 - MALEDETTE FOOTER
 
 ================================ CONTROLLI DA EFFETTUARE (JS) ================================
