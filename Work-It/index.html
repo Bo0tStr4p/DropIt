@@ -15,81 +15,23 @@
     <!-- Your custom styles (optional) -->
     <link href="dist/css/style.css" rel="stylesheet">
     <link href="dist/css/common.css" rel="stylesheet">
-    <!-- Javascript -->
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="dist/js/jquery-3.3.1.min.js"></script>
+    <!-- Javascript - index -->
     <script type="text/javascript" lang="javascript" src="dist/js/index.js"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="dist/img/logo/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="dist/img/logo/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <!-- Main navigation -->
     <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-            <div class="container">
-                <a class="navbar-brand" href="#intro-section"><img src="dist/img/logo/Icon.png" style="width: 30px; height: 30px;"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mr-auto smooth-scroll">
-                        <li class="nav-item">
-                            <a name="intro-section" 
-                            class="nav-link" href="#intro-section">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about" data-offset="90">Caratteristiche</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="views/prices.html" data-offset="90">Prezzi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="views/workWithUs.html" data-offset="90">Lavora con noi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a name="contacts" class="nav-link" href="#contact" data-offset="30">Contattaci</a>
-                        </li>
-            
-                    </ul>
-                    <!-- Sign In & Sign Up -->
-                    <ul class="navbar-nav mr-auto smooth-scroll">
-                    <li class="nav-item">
-                            <a class="nav-link" data-offset="30" data-toggle="modal" 
-                             data-target="#modalSignInForm">Entra</a>
-                        </li>	
-                    <li class="nav-item">
-                            <a class="nav-link" data-offset="30" data-toggle="modal"
-                             data-target="#modalSignUpForm">Registrati</a>
-                        </li>
-            
-                    </ul>
-                    <!-- End Sign In & Sign Up -->
-                    <!-- Social Icon  -->
-                    <ul class="navbar-nav nav-flex-icons">
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <i class="fa fa-facebook light-green-text-2"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <i class="fa fa-twitter light-green-text-2"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <i class="fa fa-instagram light-green-text-2"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Search -->
-                    <!--<form class="form-inline">
-                          <div class="md-form my-0">
-                              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                          </div>
-                      </form>-->
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar -->
+
+    	<!-- navbar with AJAX -->
+        <div id="navbar_ajax"></div>
+        <!-- navbar with AJAX -->
 
         <!-- Modal Cookie -->
         <div class="modal fade bottom" id="modalCookie" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -385,7 +327,7 @@
         <!-- Video Intro -->
         <div id="intro-section" class="view">
             <video class="video-intro" poster="https://mdbootstrap.com/img/Photos/Others/background.jpg" playsinline autoplay muted loop>
-                <source src="https://12-lvl3-pdl.vimeocdn.com/01/388/4/101941083/274276934.mp4?expires=1543694053&token=045236d520f7ec82d3fe0" type="video/mp4">
+                <source src="https://r3---sn-hpa7zn76.googlevideo.com/videoplayback?ei=uasLXOSqK8zXgQe_nLe4BQ&txp=5431432&c=WEB&itag=22&ratebypass=yes&mt=1544268061&lmt=1542947719865304&requiressl=yes&ipbits=0&mm=31%2C26&expire=1544290329&mime=video%2Fmp4&mn=sn-hpa7zn76%2Csn-25glen7l&key=yt6&ip=95.110.232.240&ms=au%2Conr&fvip=3&mv=u&sparams=dur%2Cei%2Cid%2Cip%2Cipbits%2Citag%2Clmt%2Cmime%2Cmm%2Cmn%2Cms%2Cmv%2Cpl%2Cratebypass%2Crequiressl%2Csource%2Cexpire&source=youtube&pl=21&dur=138.158&id=o-AKNfFn3BPLv1qQ7uLq65h0MDJTHf4SeUs8koOZWyxsSC&signature=D35523500198853F5823C61AA7F7A36330349637.4340F30A2EB9B4D5E4B7D82046B0AF554CEFACBC" type="video/mp4">
             </video>
             <!-- Mask & flexbox options-->
             <div class="mask rgba-gradient d-flex justify-content-center align-items-center">
@@ -914,31 +856,18 @@
     </main>
     <!--Fine Main-->
 
-    <!-- Inizio Footer -->
-    <footer style="margin-top: -21px;" class="page-footer font-small pt-4">
-        <!-- Copyright & Policy -->
-        <div style="background-color: #2175D1;" class="container"></div>
-        <div style="background-color: #2175D1;" class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://github.com/Bo0tStr4p/LTW---Project"> Bo0tStr4p & 666TheNumberOfTheBeast</a>
-        <a style="margin-left: 5%;" href=""> Cookie Policy</a>
-        </div>
-        <!-- Copyright & Policy -->
-      </footer>
-      <!-- Fine Footer -->
+    <div id="footer_ajax">
+    	<footer></footer>
+    </div>
 
-
-
-
-
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="dist/js/jquery-3.3.1.min.js"></script>
+    <!-- OTHER SCRIPTS -->
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="dist/js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="dist/js/mdb.min.js"></script>
+
 </body>
 
 </html>

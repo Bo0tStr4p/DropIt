@@ -14,84 +14,32 @@
     <link href="../dist/css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="../dist/css/style.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="../dist/js/jquery-3.3.1.min.js"></script>
+    <!-- script per caricare navbar e footer -->
+    <script>
+    $(document).ready(function(){
+        var directory_navbar = 'structure_files/header_fixed.htm #nav';
+        var directory_footer = 'structure_files/footer_fixed.htm #footer';
+        $( "#navbar_ajax" ).load(directory_navbar);
+        $( "#footer_ajax" ).load(directory_footer);
+        });
     </script>
+    
 </head>
 
 <body  style="background-image: url('../dist/img/background/background-york.jpg');">
     <!-- Main navigation -->
     <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="../index.html">DropIT</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mr-auto smooth-scroll">
-                        <li class="nav-item">
-                            <a name="intro-section" 
-                            class="nav-link" href="../index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html#about" data-offset="90">Caratteristiche</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html#projects" data-offset="90">Prezzi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="workWithUs.html" data-offset="90">Lavora con noi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a name="contacts" class="nav-link" href="../index.html#contact" data-offset="30">Contattaci</a>
-                        </li>
-            
-                    </ul>
-                    <!-- Sign In & Sign Up -->
-                    <ul class="navbar-nav mr-auto smooth-scroll">
-                    <li class="nav-item">
-                            <a class="nav-link" href="#testimonials" data-offset="30">Sign In</a>
-                        </li>	
-                    <li class="nav-item">
-                            <a class="nav-link" href="#testimonials" data-offset="30">Sign Up</a>
-                        </li>
-            
-                    </ul>
-                    <!-- End Sign In & Sign Up -->
-                    <!-- Social Icon  -->
-                    <ul class="navbar-nav nav-flex-icons">
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <i class="fa fa-facebook light-green-text-2"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <i class="fa fa-twitter light-green-text-2"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <i class="fa fa-instagram light-green-text-2"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- Search -->
-                    <!--<form class="form-inline">
-                          <div class="md-form my-0">
-                              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                          </div>
-                      </form>-->
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar -->
+        <div id="navbar_ajax">
+            <nav id="nav"></nav>
+        </div>
     </header>
 
 
 
     <!--Inizio Main-->
-    <main style="margin: auto;" >
+    <main style="margin-top: 5%;" >
         <div class="container" style="text-align:justify;">
                 
                     <h1 style="text-align: center;">Testo informativa estesa sull'uso dei cookie</h1>
@@ -112,25 +60,11 @@
 
     <!--Fine Main-->
 
-   <!-- Inizio Footer -->
-    <footer style="margin-top: -21px;" class="page-footer fixed-bottom font-small pt-4">
-        <!-- Copyright & Policy -->
-        <div style="background-color: #4285F4;" class="container"></div>
-        <div style="background-color: #4285F4;" class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://github.com/Bo0tStr4p/LTW---Project"> Bo0tStr4p & 666TheNumberOfTheBeast</a>
-        <a style="margin-left: 5%;" href=""> Cookie Policy</a>
-        </div>
-        <!-- Copyright & Policy -->
-      </footer>
-      <!-- Fine Footer -->
-
-
-
-
+    <div id="footer_ajax">
+        <footer id="footer"></footer>
+    </div>
 
     <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="../dist/js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="../dist/js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
