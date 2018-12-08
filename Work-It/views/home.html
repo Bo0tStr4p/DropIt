@@ -15,7 +15,20 @@
     <!-- Your custom styles (optional) -->
     <link href="../dist/css/style.css" rel="stylesheet">
     <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.5.15.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="../dist/js/jquery-3.3.1.min.js"></script>
 
+    <!-- Caricamento header e footer ajax -->
+    <script>
+        $(document).ready(function(){
+        var directory_navbar = 'structure_files/header_user.htm #nav';
+        var directory_footer = 'structure_files/footer_fixed.htm #footer';
+        $( "#navbar_ajax" ).load(directory_navbar);
+        $( "#footer_ajax" ).load(directory_footer);
+        });
+    </script>
+
+    <!-- CSS Aggiuntivo -->
     <style>
     	.stripe.dark{
     		background-color:rgba(7,38,97,.5) !important;
@@ -43,40 +56,9 @@
 <body  style="background-image: url(../dist/img/background/background-york.jpg); background-size: cover;">
     <!-- Main navigation -->
     <header>
-        <!-- Navbar -->
-        <nav style="background-color: #4584F4;" class="navbar navbar-expand-lg navbar-dark fixed-top">
-                <a class="navbar-brand" href=""><img src="../dist/img/logo/Icon.png" style="width: 30px; height: 30px;"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mr-auto smooth-scroll">
-                        <li class="nav-item">
-                            <a name="intro-section" 
-                            class="nav-link" onclick="return caricaSezione('panoramica');">Panoramica</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="return caricaSezione('services');" data-offset="90">Richiesta Servizio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="return caricaSezione('orders');" data-offset="90">Riepilogo Ordini</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
-                          <li class="nav-item avatar dropdown">
-                              <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <img style="height: 40px; margin:0;" src="https://mdbootstrap.com/img/Photos/Categories/Components/img(31).jpg" class="img-fluid rounded-circle z-depth-0" alt="Material Design for Bootstrap - example photo"> 
-                              </a>
-                              <div class="dropdown-menu dropdown-menu-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-5">
-                                  <a id="items-color" class="dropdown-item waves-effect waves-light" onclick="return caricaSezione('settings');"><i class="fa fa-gear"></i> Impostazioni</a>
-                                  <a id="items-color" class="dropdown-item waves-effect waves-light" href="../index.html"><i class="fa fa-power-off" aria-hidden="true"></i> Log Out</a>
-                              </div>
-                          </li>
-                      </ul>
-                  
-                </div>
-        </nav>
-        <!-- Navbar -->
+        <div id="navbar_ajax">
+            <nav></nav>
+        </div>
     </header>
 
 
@@ -101,25 +83,12 @@
     </main>
     <!--Fine Main-->
 
-   <!-- Inizio Footer -->
-    <footer class="page-footer font-small pt-4 fixed-bottom">
-        <!-- Copyright & Policy -->
-        <div style="background-color: #4285F4;" class="container"></div>
-        <div style="background-color: #4285F4;" class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://github.com/Bo0tStr4p/LTW---Project"> Bo0tStr4p & 666TheNumberOfTheBeast</a>
-        <a style="margin-left: 5%;" href=""> Cookie Policy</a>
-        </div>
-        <!-- Copyright & Policy -->
-      </footer>
-      <!-- Fine Footer -->
-
-
-
+    <div id="footer_ajax">
+        <footer></footer>
+    </div>
 
 
     <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="../dist/js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="../dist/js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
