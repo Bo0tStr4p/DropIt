@@ -1,12 +1,3 @@
-/* Caricamento della navbar e footer */
-$(document).ready(function(){
-    var directory_navbar = 'views/structure_files/header_index.htm #navbar_ajax';
-    var directory_footer = 'views/structure_files/footer.htm #footer_ajax';
-    $( "#navbar_ajax" ).load(directory_navbar);
-    $( "#footer_ajax" ).load(directory_footer);
-});
-
-
 /* Banner Cookies */
 function cookies() {
     $('#modalCookie').modal("show");
