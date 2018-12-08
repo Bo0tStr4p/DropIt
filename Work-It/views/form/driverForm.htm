@@ -11,10 +11,11 @@
     <div class="container">
     <div class="modal-content modal-dialog" aria-labelledby="myModalLabel">
             <div class="modal-header text-center">
-              <h4 class="modal-title w-100 font-weight-bold">Registrazione</h4>
+              <h4 class="modal-title w-100 font-weight-bold">Registrazione nuovo pilota</h4>
             </div>
             <form name="registration" method="post" action="" onSubmit="return validateRegistration()">
-            <div class="modal-body mx-3 container">
+            <div class="modal-body mx-1 container">
+              <div class="col-sm">
                 <div class="md-form mb-5">
                     <i class="fa fa-user prefix grey-text"></i>
                     <input type="text" id="orangeForm-name" class="form-control validate"
@@ -23,7 +24,9 @@
                     <label data-error="errore" data-success="corretto" for="orangeForm-name">
                       Nome e Cognome</label>
                 </div>
+              </div>
 
+              <div class="col-sm">
                 <div class="md-form mb-5">
                     <i class="fa fa-address-card prefix grey-text"></i>
                     <input type="text" id="orangeForm-codiceFiscale"
@@ -32,7 +35,9 @@
                      <label data-error="errore" data-success="corretto"
                       for="orangeForm-codiceFiscale">Codice Fiscale</label>
                 </div>
+              </div>
 
+              <div class="col-sm">
                 <div class="md-form mb-5">
                     <i class="fa fa-building prefix grey-text"></i>
                     <input type="text" id="orangeForm-citta" required pattern="[A-Z]['a-z]+( [A-Z][a-z']+)*" 
@@ -40,14 +45,18 @@
                     <label data-error="errore" data-success="corretto" 
                      for="orangeForm-luogoNascita">Città</label>
                 </div>
+              </div>
 
+              <div class="col-sm">
                 <div class="md-form mb-5">
                     <i class="fa fa-envelope prefix grey-text"></i>
                     <input type="email" id="defaultForm-email" class="form-control validate" required>
                     <label data-error="errore" data-success="corretto" for="defaultForm-email">
                      Email</label>
                 </div>
+              </div>
           
+              <div class="col-sm">
                 <div class="md-form mb-4">
                     <i class="fa fa-lock prefix grey-text"></i>
                     <input type="password" id="orangeForm-passReg" class="form-control validate"
@@ -56,7 +65,9 @@
                     <label data-error="errore" data-success="corretto" for="defaultForm-pass">
                         Password</label>
                 </div>
+              </div>
 
+              <div class="col-sm">
                 <div class="md-form mb-4">
                     <i class="fa fa-lock prefix grey-text"></i>
                     <input type="password" id="orangeForm-pass2Reg" class="form-control"
@@ -67,8 +78,10 @@
                      <span><h6 class="myFeedback" id="control-PasswordReg"></h6>
                      </span>
                 </div>
+              </div>
 
                 <!-- Bottone input file multipli -->
+              <div class="col-sm">
                 <div class="md-form mb-5">
                     <div class="file-field">
                         <div class="btn btn-primary btn-sm float-left">
@@ -81,6 +94,7 @@
                         </div>
                     </div>
                 </div>
+              </div>
 
                 <!-- Checkbox -->
                 <div class="custom-control custom-checkbox">
