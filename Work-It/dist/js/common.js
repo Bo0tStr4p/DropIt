@@ -6,7 +6,6 @@ function cookies() {
 /* Viene lanciato ogni volta che viene caricata la pagina, se i cookie non sono stati accettati
 mostra il banner altrimenti no */
 document.addEventListener('DOMContentLoaded', function(event) {
-    
     if(localStorage.getItem("cookie") == null) {
         cookies();
         $("#cookie_button").click(function(){
@@ -164,6 +163,8 @@ function samePassword(id1, id2) {
 }
 
 function validateLogin() {
+    window.alert("invio");
+    
 }
 
 /* Per mostrare la modal al caricamento successivo della pagina (causata dalla action della form)
