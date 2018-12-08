@@ -1,14 +1,17 @@
 function caricaPagamento(e){
+	$( "#navbar_ajax" ).load('structure_files/header_user.htm #navbar_ajax');
 	var directory = 'checkout_steps/'+e+'.htm #main';
 	 $( "#main" ).load(directory);
 }
 
 function caricaSceltaPiano(e){
+	$( "#navbar_ajax" ).load('structure_files/header_fixed.htm #navbar_ajax');
 	var directory = 'checkout_steps/'+e+'.htm #main';
 	 $( "#main" ).load(directory);
 }
 
 function caricaMetodoPagamento(e){
+	$( "#navbar_ajax" ).load('structure_files/header_user.htm #navbar_ajax');
 	var directory = 'checkout_steps/'+e+'.htm #divv';
 	 $( "#print_choose" ).load(directory);
 }

@@ -21,12 +21,16 @@
     <!-- Caricamento header e footer ajax -->
     <script>
         $(document).ready(function(){
-        var directory_navbar = 'structure_files/header_user.htm #nav';
+        var directory_navbar = 'structure_files/header_user.htm #navbar_ajax';
         var directory_footer = 'structure_files/footer_fixed.htm #footer';
         $( "#navbar_ajax" ).load(directory_navbar);
         $( "#footer_ajax" ).load(directory_footer);
         });
     </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../dist/img/logo/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../dist/img/logo/favicon.ico" type="image/x-icon">
 
     <!-- CSS Aggiuntivo -->
     <style>
@@ -55,10 +59,7 @@
 
 <body  style="background-image: url(../dist/img/background/background-york.jpg); background-size: cover;">
     <!-- Main navigation -->
-    <header>
-        <div id="navbar_ajax">
-            <nav></nav>
-        </div>
+    <header id="navbar_ajax">
     </header>
 
 

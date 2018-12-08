@@ -18,9 +18,9 @@ Romeo: esterno
 - MALEDETTE FOOTER
 
 ================================ CONTROLLI DA EFFETTUARE (JS) ================================
-- index.html : 
-- lavoraConNoi.html :
-- prices.html :				Completi
+- index.html : 			Completi
+- lavoraConNoi.html :		Completi
+- prices.html :			Completi
 - cookiepolicy.html :		Completi
 - home.html
 

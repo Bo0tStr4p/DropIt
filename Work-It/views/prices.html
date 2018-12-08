@@ -20,27 +20,49 @@
     <script type="text/javascript" src="../dist/js/jquery-3.3.1.min.js"></script>
     <!-- Javascript - common -->
     <script type="text/javascript" lang="javascript" src="../dist/js/common.js"></script>
+    <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.5.15.min.css" rel="stylesheet">
     <script>
     $(document).ready(function(){
-        var directory_navbar = 'structure_files/header_fixed.htm #nav';
+        var directory_navbar = 'structure_files/header_fixed.htm #navbar_ajax';
         var directory_footer = 'structure_files/footer_fixed.htm #footer';
         $( "#navbar_ajax" ).load(directory_navbar);
         $( "#footer_ajax" ).load(directory_footer);
         });
     </script>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../dist/img/logo/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../dist/img/logo/favicon.ico" type="image/x-icon">
+
+    <!-- CSS Aggiuntivo -->
+    <style>
+      .stripe.dark{
+        background-color:rgba(7,38,97,.5) !important;
+      }
+      #items-color:hover{
+        background-color: #4584F4 !important;
+      }
+      .map-container-6{
+      overflow:hidden;
+      padding-bottom:56.25%;
+      position:relative;
+      height:0;
+    }
+    .map-container-6 iframe{
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+      position:absolute;
+      }
+  </style>
+
 </head>
 
 <body style="background-image: url(../dist/img/background/background-york.jpg); background-size: cover;">
     <!-- Main navigation -->
-    <header>
-        <!-- Navbar -->
-        <div id="navbar_ajax">
-          <nav></nav>
-        </div>
+    <header id="navbar_ajax">
     </header>
-
-
 
     <!--Inizio Main-->
     <main id="main">
