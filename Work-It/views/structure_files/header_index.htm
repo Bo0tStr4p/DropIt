@@ -102,9 +102,9 @@
                     <span aria-hidden="true" >&times;</span>
                 </button>
                 </div>
-                <div class="modal-body mx-3">
-                <form name="login" method="post" action="../home.html"
+                <form name="login" id="login"  method="post" action="views/home.html"
                  onSubmit="return validateLogin();">
+                <div class="modal-body mx-3">
                 <div class="md-form mb-5">
                     <i class="fa fa-envelope prefix grey-text"></i>
                     <input type="email" id="defaultForm-emailLogin" class="form-control validate"
@@ -145,7 +145,7 @@
       
             </div>
             <div class="modal-footer d-flex justify-content-center">
-              <button type="submit" class="btn btn-primary" onClick="return validateLogin()">Entra</button>
+              <button id="login_btn" type="submit" class="btn btn-primary">Entra</button>
             </div>
           </form>
           </div>
@@ -193,11 +193,10 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-
+            <form name="registration" method="post" action=""
+             onSubmit="return validateRegistration();">
             <div class="modal-body mx-3">
                 <div class="container">
-                    <form name="registration" method="post" action=""
-                     onSubmit="return validateRegistration();">
                     <div class="row">
                         <div class="col-sm">
                             <div class="md-form mb-5">
