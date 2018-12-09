@@ -84,54 +84,65 @@
             </div>
         </div>
         <!-- Modal Sign In -->
-        <div class="modal fade" id="modalSignInForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold">
+        <div class="modal fade" id="modalSignInForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">
                         <i class="fa fa-lock">&nbsp;</i>Entra</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" >&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body mx-3">
-                        <form name="login" method="post" action="../home.html" onsubmit="return validateLogin()">
-                            <div class="md-form mb-5">
-                                <i class="fa fa-envelope prefix grey-text"></i>
-                                <input type="email" id="defaultForm-emailLogin" class="form-control validate" required onClick="resetField('defaultForm-emailLogin', 'control-emailLogin')">
-                                <!-- Il border lo riporto al colore e alla dimensione di default dopo aver cliccato-->
-                                <label id="labelEmailEntra" data-error="errore" data-success="corretto" for="defaultForm-emailLogin">Email</label>
-                                <span class="myFeedback" id="control-emailLogin">
-                      </span>
-                            </div>
-                            <div class="md-form mb-4">
-                                <i class="fa fa-lock prefix grey-text"></i>
-                                <input type="password" id="defaultForm-passLogin" required class="form-control validate" pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}" title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
-                                <label data-error="errore" data-success="corretto" for="defaultForm-passLogin">Password</label>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <p class="font-small blue-text d-flex justify-content-begin">
-                                                <a class="blue-text ml-1"
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" >&times;</span>
+                </button>
+                </div>
+                <form name="login" id="login"  method="post" action="views/home.html"
+                 onSubmit="return validateLogin();">
+                <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="email" id="defaultForm-emailLogin" class="form-control validate"
+                      required onClick="resetField('defaultForm-emailLogin', 'control-emailLogin')">
+                      <!-- Il border lo riporto al colore e alla dimensione di default dopo aver cliccato-->
+                    <label id="labelEmailEntra"
+                     data-error="errore" data-success="corretto"
+                     for="defaultForm-emailLogin">Email</label>
+                     <span class="myFeedback" id="control-emailLogin">
+                      </span>    
+                </div>
+      
+                <div class="md-form mb-4">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <input type="password" id="defaultForm-passLogin" required
+                     class="form-control validate" pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
+                     title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
+                    <label data-error="errore" data-success="corretto"
+                     for="defaultForm-passLogin">Password</label>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="font-small blue-text d-flex justify-content-begin">
+                                <a class="blue-text ml-1"
                                  onClick="return activateModalPassword('modalSignInForm', 'ModalSuccessForgotPassword', 'defaultForm-emailLogin')">
                                  Hai dimenticato la password?</a>
-                                            </p>
-                                        </div>
-                                        <div class="col-sm">
-                                            <p class="font-small grey-text d-flex justify-content-end">Non sei registrato?
-                                                <a class="blue-text ml-1"
-                                 onClick="return modalSwitchHandler('modalSignInForm', 'modalSignUpForm');">Registrati</a></p>
-                                        </div>
-                                    </div>
-                                </div>
+                                </p>
                             </div>
+                            <div class="col-sm">
+                                <p class="font-small grey-text d-flex justify-content-end">Non sei registrato?
+                                <a class="blue-text ml-1"
+                                 onClick="return modalSwitchHandler('modalSignInForm', 'modalSignUpForm');">Registrati</a></p>     
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-footer d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary">Entra</button>
-                    </div>
-                    </form>
                 </div>
+
             </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button id="login_btn" type="submit" class="btn btn-primary">Entra</button>
+            </div>
+          </form>
+          </div>
+        </div>
         </div>
         <!-- Modal Success Forgot Password -->
         <div class="modal fade" id="ModalSuccessForgotPassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -167,9 +178,9 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    <form name="registration" method="post" action="" onSubmit="return validateRegistration()">
                     <div class="modal-body mx-3">
                         <div class="container">
-                            <form name="registration" method="post" action="" onSubmit="return validateRegistration()">
                                 <div class="row">
                                     <div class="col-sm">
                                         <div class="md-form mb-5">
