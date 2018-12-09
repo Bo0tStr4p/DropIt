@@ -32,6 +32,11 @@ Romeo: esterno
 - cookiepolicy.html :
 - home.html : 
 
+++++++++++++++++++++++++++++++++++++++++++ PER ROMEO ++++++++++++++++++++++++++++++++++++++++++
+Sistemate le form di login e registrazione riguardo il submit :) , resta solo la dimensione in workWithUs che è esagerata.
+Ho lavorato sui prezzi dinamicamente, dimmi che ne pensi. Visto che l'esterno ora è tuo, lascio continuare a te con checkout_2 e 3.
+Continuo con il php, i file che ho caricato sono da implementare quindi momentaneamente non funzionanti
+
 
 ============PER IVAN
 $("#centralModalSuccess").modal();
