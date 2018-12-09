@@ -163,7 +163,6 @@ function samePassword(id1, id2) {
 }
 
 function validateLogin() {
-    window.alert("invio");
     
 }
 
