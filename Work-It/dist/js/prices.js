@@ -1,21 +1,21 @@
-function caricaPagamento(e){
+function caricaPagamento(prezzo){
 	$( "#navbar_ajax" ).load('structure_files/header_user.htm #navbar_ajax');
-	var directory = 'checkout_steps/'+e+'.htm #main';
+	var directory = 'checkout_steps/checkout_pay.htm #main';
 	 $( "#main" ).load(directory);
 	 $("#main").ready(function(){
 		var sale = sessionStorage.getItem("sale");
-		var price = 90.00;
-		var iva = 22.0/100;
+		var price = prezzo;
+		var iva = parseFloat(22.0/100);
 		
 		if(sale != null){
-			price -= 90.00 * sale/100;
 			if(price == parseInt(price))
 				price += ".00"; 
 			iva *= price;
 			document.getElementById("costo_pacchetto").innerHTML = ("€ " + price);
 			$("#costo_pacchetto").text("€ " + price);
-			$("#iva_pacchetto").text("€ " + iva);
-			$("#totale_pacchetto").text("€ " + (parseFloat(price) + iva));
+			$("#iva_pacchetto").text("€ " + iva.toFixed(2));
+			$("#sconto").text("-€ " + parseFloat(sale).toFixed(2));
+			$("#totale_pacchetto").text("€ " + (parseFloat(price) + iva - sale).toFixed(2));
 		}
 
 		else{
@@ -23,8 +23,9 @@ function caricaPagamento(e){
 			price += ".00";
 			iva *= price;
 			$("#costo_pacchetto").text("€ " + price);
-			$("#iva_pacchetto").text("€ " + iva);
-			$("#totale_pacchetto").text("€ " + (parseFloat(price) + iva));
+			$("#iva_pacchetto").text("€ " + iva.toFixed(2));
+			$("#sconto").text("-€" + "0.00");
+			$("#totale_pacchetto").text("€ " + (parseFloat(price) + iva).toFixed(2));
 		}
 	});
 }

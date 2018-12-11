@@ -1,4 +1,4 @@
-    <main id="main">
+<main id="main">
       <!-- STAMPARE AJAX -->
             <div name="toPrint">
       <div style="margin-top: 2%;" class="container">
@@ -77,19 +77,19 @@
             <div style="margin-left: 16%;" class="row">
               <div class="col-md-4 mb-3">
                 <img style="margin-bottom: 10%; max-width: 80%;" class="img-responsive" alt="Responsive image" src="../dist/img/checkout/carte.png">
-                <BR>
+                <BR></BR>
                 <input onclick="return caricaMetodoPagamento('radioWithGap4');" name="group2" type="radio" class="custom-control-input" id="radioWithGap4" checked>
                 <label class="custom-control-label" for="radioWithGap4">Carta di Credito</label>
             </div>
               <div class="col-md-4 mb-3">
                 <img style="margin-bottom: 13%;max-width: 80%;" class="img-responsive" alt="Responsive image" src="../dist/img/checkout/paypal.png">
-                <BR>
+                <BR></BR>
                 <input onclick="return caricaMetodoPagamento('radioWithGap5');" name="group2" type="radio" class="custom-control-input" id="radioWithGap5">
                 <label class="custom-control-label" for="radioWithGap5">PayPal</label>
               </div>
               <div class="col-md-4 mb-3">
                 <img style="margin-bottom: 10%;max-width: 23%;" class="img-responsive" alt="Responsive image" src="../dist/img/checkout/bitcoin.png">
-                <BR>
+                <BR></BR>
                 <input onclick="return caricaMetodoPagamento('radioWithGap6');" name="group2" type="radio" class="custom-control-input" id="radioWithGap6">
                 <label class="custom-control-label" for="radioWithGap6">BitCoin</label>
               </div>
@@ -99,9 +99,8 @@
           </div>
 
           <div id="print_choose">
-
-            <!-- E' stato messo un return false alla submit per evitare il refresh finale e vedere modal -->
-            <form id="formCard" method="POST" action="" onSubmit = "verificaPagamentoCarta();return false;" >
+          	<!-- E' stato messo un return false alla submit per evitare il refresh finale e vedere modal -->
+          	<form id="formCard" method="POST" action="" onSubmit = "verificaPagamentoCarta();return false;" >
             <div style="margin-top: 5%;"class="row">
               <div class="col-md-6 mb-3">
                 <label for="cc-name123">Proprietario Carta</label>
@@ -136,7 +135,7 @@
             </form>
             <button type="submit" form="formCard" value="Submit" style="max-width: 50%; margin: auto;" class="btn btn-primary btn-lg btn-block">Acquista con Carta <i style="margin-left: 2%;" class="fa fa-credit-card" aria-hidden="true"></i></button>
 
-          </div>
+      	</div>
 
         </div>
           <!--/.Panel 3-->
@@ -162,10 +161,10 @@
 
             <dl class="row">
               <dd class="col-sm-8">
-                Pacchetto Business
+                Pacchetto selezionato
               </dd>
-              <dd class="col-sm-4">
-                € Da Definire
+              <dd class="col-sm-4" id="costo_pacchetto">
+                  <!--€ 90,00-->
               </dd>
             </dl>
 
@@ -175,8 +174,19 @@
               <dd class="col-sm-8">
                 Iva (22%)
               </dd>
-              <dd class="col-sm-4">
-                € Da Definire
+              <dd class="col-sm-4" id="iva_pacchetto">
+                <!--€ 19,80-->
+              </dd>
+            </dl>
+
+            <hr>
+
+            <dl class="row">
+              <dd class="col-sm-8">
+                Sconto
+              </dd>
+              <dd class="col-sm-4" id="sconto">
+                <!--€ 19,80-->
               </dd>
             </dl>
 
@@ -188,8 +198,8 @@
               <dt class="col-sm-8">
                 Totale
               </dt>
-              <dt class="col-sm-4">
-                € Da Definire
+              <dt class="col-sm-4"  id="totale_pacchetto">
+                <!--€ 109,80-->
               </dt>
             </dl>
           </div>
@@ -243,5 +253,4 @@
 
 </div>
 <!-- FINE STAMPARE AJAX -->
-
-    </main>
+</main>
