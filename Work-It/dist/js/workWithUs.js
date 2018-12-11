@@ -2,4 +2,5 @@
 function caricaHTM(doc) {
     var file = "form/"+doc+".htm";
     $("#dynamic-form").load(file);
+    $("#sezione").hide();
 }
