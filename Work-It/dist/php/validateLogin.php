@@ -11,8 +11,8 @@
                 $email = $_POST['defaultForm-emailLogin'];
                 $password = $_POST['defaultForm-passLogin'];
                 //$q1="select nome from utente where email=$1 and password=$2";
-                $select = "select nome";
-                $from = "from utente";
+                $select = "select name";
+                $from = "from user";
                 $where = "where email=$1 and password=$2";
                 $q1=$select + $from + $where;
                 $result=pg_query_params($dbconn,$q1,array($email,md5($password)));
