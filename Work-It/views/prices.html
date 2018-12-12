@@ -306,8 +306,11 @@
           <p>Anche quest'anno DropIT diventa più buona a Natale. Solo per pochissimi giorni è possibile
              avere il 10% di sconto su ogni abbonamento.Approfittane ora!</p>
           <p>
-            <strong>Copia il codice sconto ed utilizzalo al checkout. E' valido per
-              <u>un giorno</u>.</strong>
+            <!--<strong>Copia il codice sconto ed utilizzalo al checkout. E' valido per
+              <u>un giorno</u>.</strong>-->
+            <strong>Ottenerlo è semplicissimo, clicca su "voglio lo sconto" e seleziona il piano, al checkout
+              troverai il tuo abbonamento scontato 
+            </strong> 
           </p>
           <h2>
             <span style="background-color: #ff5656;" class="badge">v52gs1</span>
@@ -319,11 +322,11 @@
 
     <!--Footer-->
     <div class="modal-footer flex-center">
-      <!-- Nel sessionStorage salvo il valore dello sconto per poterlo applicare succesivamente -->
-      <a onclick="sessionStorage.setItem('sale', 10);document.getElementById('divcookie').style.display = 'none'; return caricaPagamento(90.00);"
+      <!-- Nel sessionStorage salvo il valore dello sconto per poterlo applicare successivamente -->
+      <button type="button" onclick="return saleActivated(10.00);"
        data-dismiss="modal" style="background-color: #ff5656;" class="btn btn-danger">Voglio lo sconto
         <i class="fa fa-diamond ml-1 white-text"></i>
-      </a>
+      </button>
       <a style="color: #ff5656;" type="button" class="btn btn-outline-danger waves-effect"  onClick="document.getElementById('divcookie').style.display = 'none';" data-dismiss="modal">No, Grazie</a>
     </div>
   </div>

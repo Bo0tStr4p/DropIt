@@ -1,27 +1,32 @@
-function caricaPagamento(prezzo){
+function saleActivated(sale) {
+	sessionStorage.setItem('sale', sale);
+	//document.getElementById('divcookie').style.display = 'none';
+	$("#divcookie").hide();
+}
+
+function caricaPagamento(price){
+	$("#divcookie").hide();
+	var sale = sessionStorage.getItem("sale");
+	var iva = parseFloat(22.0/100);
+	if(price == parseInt(price))
+				price += ".00"; 
+	iva *= price;
+
 	$( "#navbar_ajax" ).load('structure_files/header_user.htm #navbar_ajax');
 	var directory = 'checkout_steps/checkout_pay.htm #main';
 	 $( "#main" ).load(directory);
-	 $("#main").ready(function(){
-		var sale = sessionStorage.getItem("sale");
-		var price = prezzo;
-		var iva = parseFloat(22.0/100);
-		
+
+	 $("#main").ready(function(){		
 		if(sale != null){
-			if(price == parseInt(price))
-				price += ".00"; 
-			iva *= price;
 			document.getElementById("costo_pacchetto").innerHTML = ("€ " + price);
 			$("#costo_pacchetto").text("€ " + price);
 			$("#iva_pacchetto").text("€ " + iva.toFixed(2));
+			sale = price * sale/100;
 			$("#sconto").text("-€ " + parseFloat(sale).toFixed(2));
 			$("#totale_pacchetto").text("€ " + (parseFloat(price) + iva - sale).toFixed(2));
 		}
 
 		else{
-			if(price == parseInt(price))
-			price += ".00";
-			iva *= price;
 			$("#costo_pacchetto").text("€ " + price);
 			$("#iva_pacchetto").text("€ " + iva.toFixed(2));
 			$("#sconto").text("-€" + "0.00");
@@ -35,6 +40,7 @@ function caricaSceltaPiano(e){
 	var directory = 'checkout_steps/'+e+'.htm #main';
 	 $( "#main" ).load(directory);
 	 sessionStorage.removeItem("sale");
+	 $("#divcookie").show();
 }
 
 function caricaMetodoPagamento(e){
