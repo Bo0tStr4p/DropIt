@@ -180,6 +180,7 @@ function validateLogin() {
 function validateContact(idModalSuccess) {
     var s = "show"+idModalSuccess;
     sessionStorage.setItem(s, true);
+    return true;
 }
 
 /* Ritorna il cookie nome se presente altrimenti la stringa vuota */
