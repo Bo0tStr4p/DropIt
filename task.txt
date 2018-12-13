@@ -6,9 +6,8 @@ Altro: https://mdbootstrap.com/docs/jquery/modals/additional/
 Per Ivan: Tutorial fatto con il nostro template per login : https://mdbootstrap.com/snippets/jquery/mdb-tutorials/49347?action=full_screen_mode
 ==============================DA FARE==============================
 - Controllare CDN YouTube,colori e footer
-- Modal Cookie da sistemare
-- File di template (navbar e footer) da completare (da prelevare in index) e successivamente importare in tutte le altre pagine
-- Tutti i js di controllo
+- Se si vuole implementare il php nei pagamenti c'è da verificare se radiowithgap5 e 6 (paypal e bitcoin) inviano realmente i dati, oltre al php per il pagamento tramite carta di credito
+  (Può servire se vogliamo registrare il piano di abbonamento di ogni utente e mostrarlo in "il mio account")
 
 ==============================IN CORSO==============================
 Ivan : interno
