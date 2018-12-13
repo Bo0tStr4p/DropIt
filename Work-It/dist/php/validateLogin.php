@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
-    <head></head>
+    <head><meta charset="UTF-8"></head>
     <body>
         <?php
 
-            $dbconn = pg_connect("host=localhost port=5434 dbname=Esercitazione2-LTW user=postgres password=password") or die('Could not connect: ' . pg_last_error());
+            $dbconn = pg_connect("host=localhost port=49987 dbname=DropIt_DB user=postgres") or die('Could not connect: ' . pg_last_error());
             if(!(isset($_POST['loginButton']))){
                 header("Location: ../../index.html");
             }
@@ -12,13 +13,12 @@
                 $password = $_POST['defaultForm-passLogin'];
                 //$q1="select nome from utente where email=$1 and password=$2";
                 $select = "select name";
-                $from = "from user";
+                $from = "from myuser";
                 $where = "where email=$1 and password=$2";
-                $q1=$select + $from + $where;
+                $q1 = $select + $from + $where;
                 $result=pg_query_params($dbconn,$q1,array($email,md5($password)));
                 if($line=pg_fetch_array($result,null,PGSQL_ASSOC)){
                     $nome=$line['nome'];
-                    //header("Location: ../Welcome.php?name=$nome");
                     header("Location: views/home.html");
                 }
                 else{
@@ -46,6 +46,8 @@
                     secure transmission using HTTPS otherwise set to 0 which mean cookie can be sent by 
                     regular HTTP. */
                     setcookie("err_login", "err_login", time() + 3600, "/",  0);
+                    header("Location: views/home.html");
+                    //echo "Error, not registred";
                 } 
             }
         ?>
