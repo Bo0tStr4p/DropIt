@@ -18,6 +18,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
         sessionStorage.removeItem("showModalSuccessContact");
         $("#ModalSuccessContact").modal("show");
     }
+
+    /* Verifico se il login ha generato errori */
+    if(getCookie("err_login") != "") {
+        deleteCookie("err_login");
+        $('#modalSignInForm').modal("show");
+        $('#modalSignInForm').on('shown.bs.modal', function(){
+            displayErrorOnField('defaultForm-emailLogin', 'control-emailLogin', 'errore: email o password non valida');
+        }); 
+    }
     
 });
 
@@ -93,7 +102,7 @@ function validateRegistration() {
 function birthdateStatus() {
     var s = validateBirthDate(document.getElementById("orangeForm-date").value);
     if(s == -1) displayErrorOnField("orangeForm-date", "control-dateReg", "errore");
-    else if(s > 0) displayErrorOnField("orangeForm-date", "control-dateReg", "errore: utente "+s+"enne");
+    else if(s > 0) displayErrorOnField("orangeForm-date", "control-dateReg", "errore: utente minorenne di anni "+s);
     else displayOkOnField("orangeForm-date", "control-dateReg");
 }
 
@@ -172,3 +181,20 @@ function validateContact(idModalSuccess) {
     var s = "show"+idModalSuccess;
     sessionStorage.setItem(s, true);
 }
+
+/* Ritorna il cookie nome se presente altrimenti la stringa vuota */
+function getCookie(nome) {
+    var name = nome + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ')
+        c = c.substring(1);
+      if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+  }
+
+  function deleteCookie(name){
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  }
