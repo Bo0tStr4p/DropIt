@@ -1,6 +1,5 @@
 function saleActivated(sale) {
 	sessionStorage.setItem('sale', sale);
-	//document.getElementById('divcookie').style.display = 'none';
 	$("#divcookie").hide();
 }
 
@@ -39,8 +38,6 @@ function caricaSceltaPiano(e){
 	$( "#navbar_ajax" ).load('structure_files/header_fixed.htm #navbar_ajax');
 	var directory = 'checkout_steps/'+e+'.htm #main';
 	 $( "#main" ).load(directory);
-	 sessionStorage.removeItem("sale");
-	 $("#divcookie").show();
 }
 
 function caricaMetodoPagamento(e){
@@ -105,16 +102,19 @@ function verificaPagamentoCarta(){
 	}
 
 	if(debug){
-		viewModal();
+		//viewModal();
+		/* Per mostrare la modal al caricamento successivo della pagina (causata dalla action della form)
+		, setto un parametro nel sessionStorage che andrò a verificare ad ogni caricamento della pagina */		
+		sessionStorage.setItem("showModalSuccessPayment", true);
 		return true;
 	}
 	else
 		return false;
 }
 
-function viewModal(){
+/*function viewModal(){
 	$("#centralModalSuccess").modal();
-}
+}*/
 
 function controllo_data(stringa){
 	var espressione = /^(0[1-9]|1[012])\/[0-9]{4}$/;
