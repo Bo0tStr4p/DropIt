@@ -19,6 +19,7 @@
                 $result=pg_query_params($dbconn, $q1, array($email));
                 if($line=pg_fetch_array($result,null,PGSQL_ASSOC)){
                     //header("Location: alreadyRegistered.html");
+                    header("Location: ../../index.html");
                     echo "<h1> Sorry, you are already a registered user</h1>";
                     setcookie("err_signup", "err_signup", time() + 3600, "/",  0);
                 }
@@ -35,6 +36,7 @@
                                                             $birthCity,$comune,$address));
                     if($data){
                         //header("Location: registrationCompleted.html");
+                        header("Location: ../../index.html");
                         echo "<h1> Registration is completed. Start using the website <br/></h1>";
                         /*echo "<a href=../Welcome.php?name=$nome> Premi qui
                         </a>
