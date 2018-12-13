@@ -19,7 +19,7 @@
                 $result=pg_query_params($dbconn,$q1,array($email,md5($password)));
                 if($line=pg_fetch_array($result,null,PGSQL_ASSOC)){
                     $nome=$line['nome'];
-                    header("Location: views/home.html");
+                    header("Location: ../../views/home.html");
                 }
                 else{
                     //header("Location: TryAgain.html");
@@ -46,7 +46,7 @@
                     secure transmission using HTTPS otherwise set to 0 which mean cookie can be sent by 
                     regular HTTP. */
                     setcookie("err_login", "err_login", time() + 3600, "/",  0);
-                    header("Location: views/home.html");
+                    header("Location: ../../index.html");
                     //echo "Error, not registred";
                 } 
             }
