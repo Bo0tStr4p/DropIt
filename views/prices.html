@@ -25,7 +25,13 @@
         var directory_footer = 'structure_files/footer_fixed.htm #footer';
         $( "#navbar_ajax" ).load(directory_navbar);
         $( "#footer_ajax" ).load(directory_footer);
-        });
+        
+        /* Verifico se ho completato un pagamento, in caso positivo lancio la modal */
+        if(sessionStorage.getItem("showModalSuccessPayment") == "true") {
+          sessionStorage.removeItem("showModalSuccessPayment");
+          $("#centralModalSuccess").modal("show");
+        }
+	 });
     </script>
 
     <!-- Favicon -->
@@ -65,6 +71,40 @@
 
     <!--Inizio Main-->
     <main id="main">
+
+    <!-- Central Modal Medium Success -->
+<div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-success" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">Acquisto effettuato correttamente</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+          <p>Ti è stata mandata una mail con i dettagli dell'ordine. Grazie!</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a href="home.html" type="button" class="btn btn-primary">Torna alla Home</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Central Modal Medium Success-->
+
       <div style="margin-top: 2%;" class="container">
       <div class="row">
 
@@ -312,9 +352,9 @@
               troverai il tuo abbonamento scontato 
             </strong> 
           </p>
-          <h2>
+          <!--<h2>
             <span style="background-color: #ff5656;" class="badge">v52gs1</span>
-          </h2>
+          </h2>-->
 
         </div>
       </div>
