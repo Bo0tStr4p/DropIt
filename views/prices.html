@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Prezzi</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="../dist/css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="../dist/css/style.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="../dist/js/jquery-3.3.1.min.js"></script>
+    <!-- Javascript - common -->
+    <script type="text/javascript" lang="javascript" src="../dist/js/common.js"></script>
+    <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.5.15.min.css" rel="stylesheet">
+    <script>
+    $(document).ready(function(){
+        var directory_navbar = 'structure_files/header_fixed.htm #navbar_ajax';
+        var directory_footer = 'structure_files/footer_fixed.htm #footer';
+        $( "#navbar_ajax" ).load(directory_navbar);
+        $( "#footer_ajax" ).load(directory_footer);
+        });
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../dist/img/logo/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../dist/img/logo/favicon.ico" type="image/x-icon">
+
+    <!-- CSS Aggiuntivo -->
+    <style>
+      .stripe.dark{
+        background-color:rgba(7,38,97,.5) !important;
+      }
+      #items-color:hover{
+        background-color: #4584F4 !important;
+      }
+      .map-container-6{
+      overflow:hidden;
+      padding-bottom:56.25%;
+      position:relative;
+      height:0;
+    }
+    .map-container-6 iframe{
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+      position:absolute;
+      }
+  </style>
+  <!-- Prezzi CSS -->
+    <link href="../dist/css/prices.css" rel="stylesheet">
+</head>
+
+<body style="background-image: url(../dist/img/background/background-york.jpg); background-size: cover;">
+    <!-- Main navigation -->
+    <header id="navbar_ajax">
+    </header>
+
+    <!--Inizio Main-->
+    <main id="main">
+      <div style="margin-top: 2%;" class="container">
+      <div class="row">
+
+              <!--Grid column-->
+              <div class="col-md-12">
+
+                  <!-- Stepers Wrapper -->
+                  <ul class="stepper stepper-horizontal">
+
+                      <!-- First Step -->
+                      <li class="completed">
+                          <a >
+                              <span class="circle">1</span>
+                              <span class="label">Piano</span>
+                          </a>
+
+                      </li>
+
+                      <!-- Second Step -->
+                      <li>
+                          <a >
+                              <span class="circle">2</span>
+                              <span class="label">Login</span>
+                          </a>
+
+                      </li>
+                      <!-- third Step -->
+                      <li>
+                          <a >
+                              <span class="circle">3</span>
+                              <span class="label">Pagamento</span>
+                          </a>
+
+                      </li>
+
+                      <!-- five Step -->
+                      <li>
+                          <a >
+                              <span class="circle">4</span>
+                              <span class="label">Finito</span>
+                          </a>
+
+                      </li>
+
+
+                  </ul>
+                  <!-- /.Stepers Wrapper -->
+
+              </div>
+              <!--Grid column-->
+            </div>
+
+          </div>
+      <!-- Sezione Prezzi -->
+        <section id="prezzi" class="text-center py-5" style=" margin-top:-80px;">
+        <!-- Riferimento per la funzione js di scrolling-->
+        <a name="prezzi"></a>
+          <div class="container">
+            <h2 class="h1-responsive font-weight-bold text-center mb-5">I nostri prezzi</h2>
+            <div style="margin-top: -2%;" class="row mb-5">
+
+            <!-- Grid column -->
+            <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+              <!-- Card -->
+              <div class="card card-cascade wider card-ecommerce">
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                  <img style="border-radius: 5%;" src="../dist/img/index/user.jpg" class="card-img-top" alt="sample photo">
+                  <a>
+                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                  </a>
+                </div>
+                <!-- Card image -->
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+                  <!-- Category & Title -->
+                  <a href="" class="text-muted">
+                    <h5>User</h5>
+                  </a>
+                  <h4 class="card-title">
+                    <strong>
+                      <a href="">Standard</a>
+                    </strong>
+                  </h4>
+                  <!-- Description -->
+                  <p class="card-text">Una consegna al giorno in meno di un'ora.</p>
+                  <!-- Card footer -->
+                  <div style="background-color: #FFFFFF;" class="card-footer px-1">
+                    <span class="float-left font-weight-bold">
+                      <strong>89€/Mese</strong>
+                    </span>
+                    <span class="float-right">
+                      <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Quick Look">
+                        <i class="fa fa-eye grey-text ml-3"></i>
+                      </a>
+                      <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist">
+                        <i class="fa fa-heart grey-text ml-3"></i>
+                      </a>
+                    </span>
+                  </div>
+                    <button onclick="return caricaPagamento(89.00);" name="90.00" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
+                </div>
+                <!-- Card content -->
+              </div>
+              <!-- Card -->
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-lg-4 col-md-6 mb-lg-0 mb-4">
+              <!-- Card -->
+              <div class="card card-cascade wider card-ecommerce">
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                  <img style="border-radius: 5%;" src="../dist/img/index/family.jpg" class="card-img-top" alt="sample photo">
+                  <a>
+                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                  </a>
+                </div>
+                <!-- Card image -->
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+                  <!-- Category & Title -->
+                  <a href="" class="text-muted">
+                    <h5>Family</h5>
+                  </a>
+                  <h4 class="card-title">
+                    <strong>
+                      <a href="">Premium</a>
+                    </strong>
+                  </h4>
+                  <!-- Description -->
+                  <p class="card-text">Fino a quattro consegne al giorno in meno di un'ora, compresi i farmaci.</p>
+                  <!-- Card footer -->
+                  <div style="background-color: #FFFFFF;" class="card-footer px-1">
+                    <span class="float-left font-weight-bold">
+                      <strong>199€/Mese</strong>
+                    </span>
+                    <span class="float-right">
+                      <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Quick Look">
+                        <i class="fa fa-eye grey-text ml-3"></i>
+                      </a>
+                      <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist">
+                        <i class="fa fa-heart grey-text ml-3"></i>
+                      </a>
+                    </span>
+                  </div>
+                  <button onclick="return caricaPagamento(199.00);" name="200.00" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
+                </div>
+                <!-- Card content -->
+              </div>
+              <!-- Card -->
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-lg-4 col-md-6">
+              <!-- Card -->
+              <div class="card card-cascade wider card-ecommerce">
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                  <img style="border-radius: 5%;" src="../dist/img/index/business.jpg" class="card-img-top" alt="sample photo">
+                  <a>
+                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                  </a>
+                </div>
+                <!-- Card image -->
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+                  <!-- Category & Title -->
+                  <a href="" class="text-muted">
+                    <h5>Aziende</h5>
+                  </a>
+                  <h4 class="card-title">
+                    <strong>
+                      <a href="">Business</a>
+                    </strong>
+                  </h4>
+                  <!-- Description -->
+                  <p class="card-text">Offerta riservata ai possessori di partita Iva.</p>
+                  <!-- Card footer -->
+                  <div style="background-color: #FFFFFF;" class="card-footer px-1">
+                    <span class="float-left font-weight-bold">
+                      <strong>1999€/Mese</strong>
+                    </span>
+                    <span class="float-right">
+                      <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Quick Look">
+                        <i class="fa fa-eye grey-text ml-3"></i>
+                      </a>
+                      <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist">
+                        <i class="fa fa-heart grey-text ml-3"></i>
+                      </a>
+                    </span>
+                  </div>
+                  <button onclick="return caricaPagamento(1999.00);" name="1000.00" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
+                </div>
+                <!-- Card content -->
+              </div>
+              <!-- Card -->
+            </div>
+            <!-- Grid column -->
+
+          </div>
+          </div>
+        </section>
+        <!-- Fine sezione prezzi -->
+
+    </main>
+    <!--Fine Main-->
+
+
+    <!-- Sezione dedicata agli sconti -->
+    <div style="position: fixed; right: 1%;bottom: 5%; z-index: +2;" id="divcookie" class="animated zoomIn modal-dialog modal-side modal-bottom-right modal-notify modal-danger" role="document">
+  <!--Content-->
+  <div class="modal-content">
+    <!--Header-->
+    <div class="modal-header" style="background-color: #ff5656;">
+      <p class="heading">Offerta di Natale:
+        <strong>10% di sconto</strong>
+      </p>
+
+      <button type="button" class="close" data-dismiss="modal" onClick="document.getElementById('divcookie').style.display = 'none';" aria-label="Close">
+        <span aria-hidden="true" class="white-text">&times;</span>
+      </button>
+    </div>
+
+    <!--Body-->
+    <div class="modal-body">
+
+      <div class="row">
+        <div class="col-3">
+          <p></p>
+          <p class="text-center">
+            <i style="color:#ff5656;"class="fa fa-gift fa-4x"></i>
+          </p>
+        </div>
+
+        <div class="col-9">
+          <p>Anche quest'anno DropIT diventa più buona a Natale. Solo per pochissimi giorni è possibile
+             avere il 10% di sconto su ogni abbonamento.Approfittane ora!</p>
+          <p>
+            <!--<strong>Copia il codice sconto ed utilizzalo al checkout. E' valido per
+              <u>un giorno</u>.</strong>-->
+            <strong>Ottenerlo è semplicissimo, clicca su "voglio lo sconto" e seleziona il piano, al checkout
+              troverai il tuo abbonamento scontato 
+            </strong> 
+          </p>
+          <h2>
+            <span style="background-color: #ff5656;" class="badge">v52gs1</span>
+          </h2>
+
+        </div>
+      </div>
+    </div>
+
+    <!--Footer-->
+    <div class="modal-footer flex-center">
+      <!-- Nel sessionStorage salvo il valore dello sconto per poterlo applicare successivamente -->
+      <button type="button" onclick="return saleActivated(10.00);"
+       data-dismiss="modal" style="background-color: #ff5656;" class="btn btn-danger">Voglio lo sconto
+        <i class="fa fa-diamond ml-1 white-text"></i>
+      </button>
+      <a style="color: #ff5656;" type="button" class="btn btn-outline-danger waves-effect"  onClick="document.getElementById('divcookie').style.display = 'none';" data-dismiss="modal">No, Grazie</a>
+    </div>
+  </div>
+  <!--/.Content-->
+</div>
+    <!-- Fine sezione dedicata agli sconti -->
+
+   <!-- FOOTER -->
+   <div id="footer_ajax">
+    <footer></footer>
+   </div>
+
+
+
+
+    <!-- SCRIPTS -->
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../dist/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../dist/js/mdb.min.js"></script>
+    <!-- Javascript gestione prezzi -->
+    <script type="text/javascript" src="../dist/js/prices.js"></script>
+</body>
+
+</html>

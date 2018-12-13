@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Lavora con noi</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="../dist/css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled-4.5.14.min.css" rel="stylesheet">
+    <!-- Javascript -->
+    <script type="text/javascript" lang="javascript" src="../dist/js/workWithUs.js"></script> <!-- Per Jquery-->
+    <!-- JQuery -->
+    <script type="text/javascript" src="../dist/js/jquery-3.3.1.min.js"></script>
+    <!-- Javascript - common -->
+    <script type="text/javascript" lang="javascript" src="../dist/js/common.js"></script>
+    <script>
+    $(document).ready(function(){
+        var directory_navbar = 'structure_files/header_fixed.htm #navbar_ajax';
+        var directory_footer = 'structure_files/footer_fixed.htm #footer';
+        $( "#navbar_ajax" ).load(directory_navbar);
+        $( "#footer_ajax" ).load(directory_footer);
+        });
+    </script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../dist/img/logo/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../dist/img/logo/favicon.ico" type="image/x-icon">
+
+    <style>
+    .my-form {
+    max-width: 100%;
+    margin: 1.75rem auto;
+    }
+    </style>
+
+</head>
+
+<body  style="background-color: #EDEDED;" aria-busy="true">
+    <!-- Main navigation -->
+    <header>
+        <!-- Navbar -->
+        <div id="navbar_ajax">
+            <nav></nav>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Script per le label che si sollevano quando inizia l'inserimento -->
+        <script type="text/javascript" id="scriptLabel"
+         src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/js/compiled-4.5.14.min.js">
+        </script>
+        
+        <!-- Section: Lavora con DropIT -->
+        <section id = "sezione" class="py-5">
+            <div class="container">
+            <!-- Section heading -->
+            <h2 class="h1-responsive font-weight-bold text-center my-5">Lavora con DropIT</h2>
+            <!-- Section description -->
+            <p class="grey-text text-center w-responsive mx-auto mb-5">
+                
+                <ul class="grey-text">
+                    <h4 class="black-text">Per negozi</h4>
+                    <li>Che tu sia proprietario di un piccolo negozio o di una grande catena, a noi non fa differenza,
+                        se sei alla ricerca di un servizio di spedizioni di qualità sei nel posto
+                        giusto</li>
+                    <li>Il nostro obiettivo è diminuire i tempi di attesa del cliente aumentando
+                        l'efficienza e la sicurezza delle consegne, più vantaggi per tutti</li>
+                </ul>
+                <ul class="grey-text">
+                        <h4 class="black-text">Per privati</h4> 
+                    <li>Hai una licenza di pilota APR? Cosa aspetti? Registrati e diventa un fattorino
+                        del futuro inaugurando una rivoluzione nel mondo delle consegne</li>
+                    <li> Niente traffico, niente inquinamento, nessun pericolo per te. Inizia subito,
+                         tanti vantaggi ti attendono </li>
+                </ul>
+            </p>
+            
+                <!-- Grid row -->
+                <div style="margin-top: 3%;" class="row justify-content-center">
+            
+                <!-- Grid column -->
+                <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
+                    <!-- Collection card -->
+                    <div class="card collection-card z-depth-1-half">
+                    <!-- Card image -->
+                    <div class="view zoom">
+                        <img src="../dist/img/overlays/pilot.jpg"
+                         class="img-fluid">
+                        <div class="stripe dark">
+                        <a id="piloti-card" onClick="return caricaHTM('driverForm');">
+                            <p>Piloti
+                            <i class="fa fa-angle-right"></i>
+                            </p>
+                        </a>
+                        </div>
+                    </div>
+                    <!-- Card image -->
+                    </div>
+                    <!-- Collection card -->
+                </div>
+                <!-- Grid column -->
+            
+                <!-- Grid column -->
+                <div class="col-lg-3 col-md-6 mb-lg-0 mb-4">
+                    <!-- Collection card -->
+                    <div class="card collection-card z-depth-1-half">
+                    <!-- Card image -->
+                    <div class="view zoom">
+                        <img src="../dist/img/overlays/shop.jpg" class="img-fluid"
+                        alt="">
+                        <div class="stripe light">
+                        <a id="negozi-card" onClick="return caricaHTM('shopForm');">
+                            <p>Negozi
+                            <i class="fa fa-angle-right"></i>
+                            </p>
+                        </a>
+                        </div>
+                    </div>
+                    <!-- Card image -->
+                    </div>
+                    <!-- Collection card -->
+                </div>
+                <!-- Fourth column -->
+            
+                </div>
+                <!-- Grid row -->
+            
+            </div>
+            
+        </section>
+        <!-- Section: Lavora con DropIT -->
+        
+        <div id="dynamic-form"></div>        
+
+    </main>
+        <!--Fine Main-->
+
+    <!-- FOOTER -->
+   <div id="footer_ajax">
+    <footer></footer>
+   </div>
+    
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="../dist/js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../dist/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../dist/js/mdb.min.js"></script>
+</body>
+
+</html>

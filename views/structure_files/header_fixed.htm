@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header id="navbar_ajax">
+        <nav id="nav" class="navbar navbar-expand-lg navbar-dark fixed-top primary-color">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html"><img src="../dist/img/logo/Icon.png" style="width: 30px; height: 30px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto smooth-scroll">
+                        <li class="nav-item">
+                            <a name="intro-section"
+                            class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#about" data-offset="90">Caratteristiche</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="prices.html" data-offset="90">Prezzi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="workWithUs.html" data-offset="90">Lavora con noi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a name="contacts" class="nav-link" href="../index.html#contact" data-offset="30">Contattaci</a>
+                        </li>
+                    </ul>
+                    <!-- Sign In & Sign Up -->
+                    <ul class="navbar-nav mr-auto smooth-scroll">
+                    <li class="nav-item">
+                            <a class="nav-link" data-offset="30" data-toggle="modal" 
+                             data-target="#modalSignInForm">Entra</a>
+                        </li>   
+                    <li class="nav-item">
+                            <a class="nav-link" data-offset="30" data-toggle="modal"
+                             data-target="#modalSignUpForm">Registrati</a>
+                        </li>
+            
+                    </ul>
+                    <!-- End Sign In & Sign Up -->
+                    <!-- Social Icon  -->
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="fa fa-facebook light-green-text-2"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="fa fa-twitter light-green-text-2"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="fa fa-instagram light-green-text-2"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Modal Cookie -->
+        <div class="modal fade bottom" id="modalCookie" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog modal-frame modal-bottom modal-notify modal-info" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <p class="pt-3 pr-2">Usiamo i cookies per migliorare la tua esperienza sul web</p>
+                            <a href="views/cookiepolicy.html" type="button" class="btn btn-primary">Leggi di più <i class="fa fa-book ml-1"></i></a>
+                            <a type="button" id="cookie_button" class="btn btn-outline-primary waves-effect"
+                 data-dismiss="modal">Ok, grazie</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Sign In -->
+        <div class="modal fade" id="modalSignInForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">
+                        <i class="fa fa-lock">&nbsp;</i>Entra</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" >&times;</span>
+                </button>
+                </div>
+                <form name="login" id="login"  method="post" action="views/home.html"
+                 onSubmit="return validateLogin();">
+                <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="email" id="defaultForm-emailLogin" class="form-control validate"
+                      required onClick="resetField('defaultForm-emailLogin', 'control-emailLogin')">
+                      <!-- Il border lo riporto al colore e alla dimensione di default dopo aver cliccato-->
+                    <label id="labelEmailEntra"
+                     data-error="errore" data-success="corretto"
+                     for="defaultForm-emailLogin">Email</label>
+                     <span class="myFeedback" id="control-emailLogin">
+                      </span>    
+                </div>
+      
+                <div class="md-form mb-4">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <input type="password" id="defaultForm-passLogin" required
+                     class="form-control validate" pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
+                     title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
+                    <label data-error="errore" data-success="corretto"
+                     for="defaultForm-passLogin">Password</label>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <p class="font-small blue-text d-flex justify-content-begin">
+                                <a class="blue-text ml-1"
+                                 onClick="return activateModalPassword('modalSignInForm', 'ModalSuccessForgotPassword', 'defaultForm-emailLogin')">
+                                 Hai dimenticato la password?</a>
+                                </p>
+                            </div>
+                            <div class="col-sm">
+                                <p class="font-small grey-text d-flex justify-content-end">Non sei registrato?
+                                <a class="blue-text ml-1"
+                                 onClick="return modalSwitchHandler('modalSignInForm', 'modalSignUpForm');">Registrati</a></p>     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button id="login_btn" type="submit" class="btn btn-primary">Entra</button>
+            </div>
+          </form>
+          </div>
+        </div>
+        </div>
+        <!-- Modal Success Forgot Password -->
+        <div class="modal fade" id="ModalSuccessForgotPassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-success" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading lead">Email inviata con successo</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                            <p id="modal_success_body_text">Abbiamo inviato alla tua mail un link per resettare la tua password. Enjoy</p>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+        <!-- Modal Sign Up -->
+        <div class="modal fade" id="modalSignUpForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">
+                        <i class="fa fa-user">&nbsp;</i>Registrati</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form name="registration" method="post" action="" onSubmit="return validateRegistration()">
+                    <div class="modal-body mx-3">
+                        <div class="container">
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <div class="md-form mb-5">
+                                            <i class="fa fa-user prefix grey-text"></i>
+                                            <input type="text" id="orangeForm-name" class="form-control validate" required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+" title="es. Mario Rossi">
+                                            <label data-error="errore" data-success="corretto" for="orangeForm-name">
+                                                Nome e Cognome</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm">
+                                        <div class="md-form mb-5">
+                                            <i class="fa fa-address-card prefix grey-text"></i>
+                                            <input type="text" id="orangeForm-codiceFiscale" class="form-control validate" required pattern="[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]">
+                                            <label data-error="errore" data-success="corretto" for="orangeForm-codiceFiscale">Codice Fiscale</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <div class="md-form mb-5">
+                                            <i class="fa fa-building prefix grey-text"></i>
+                                            <input type="text" id="orangeForm-cittaNascita" class="form-control validate" required pattern="[A-Z]['a-z]+( [A-Z][a-z']+)*" title="Inserire città facendo seguire ad ogni spazio una lettera maiuscola (es. Milano, Citta Del Messico)">
+                                            <label data-error="errore" data-success="corretto" for="orangeForm-cittaNascita">Città di nascita</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm">
+                                        <div class="md-form mb-5">
+                                            <i class="fa fa-calendar prefix grey-text"></i>
+                                            <!--
+                                <input type="date" id="orangeForm-date" class="form-control validate">
+                                <label data-error="wrong" data-success="right" for="orangeForm-date">
+                                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Birth Date</label>-->
+                                            <!-- Soluzione con text e parsing stringa come data -->
+                                            <input type="text" id="orangeForm-date" class="form-control" required title="Inserire la data nel formato gg/mm/aaaa" onClick="resetField('orangeForm-date', 'control-dateReg')" onChange="birthdateStatus()" maxlength=10>
+                                            <label data-error="errore" data-success="corretto" for="orangeForm-date"> Data di nascita</label>
+                                            <h6 class="myFeedback" id="control-dateReg"></h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm">
+                                        <div class="md-form mb-5">
+                                            <i class="fa fa-building prefix grey-text"></i>
+                                            <input type="text" id="orangeForm-comune" class="form-control validate" required pattern="[A-Z]{2}" title="In maiuscolo (es. RM)">
+                                            <label data-error="errore" data-success="corretto" for="orangeForm-comune">
+                                                Comune di residenza</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm">
+                                        <div class="md-form mb-5">
+                                            <i class="fa fa-map-marker prefix grey-text"></i>
+                                            <input type="text" id="orangeForm-address" class="form-control validate" required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+" title="es. Via Roma">
+                                            <label data-error="errore" data-success="corretto" for="orangeForm-address">
+                                                Indirizzo di residenza</label>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="md-form mb-5">
+                            <i class="fa fa-envelope prefix grey-text"></i>
+                            <input type="email" id="orangeForm-email" class="form-control validate" required>
+                            <label data-error="errore" data-success="corretto" for="orangeForm-email">Email</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="md-form mb-4">
+                                    <i class="fa fa-lock prefix grey-text"></i>
+                                    <input type="password" id="orangeForm-passReg" class="form-control validate" required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}" title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
+                                    <label data-error="errore" data-success="corretto" for="orangeForm-passReg">Password</label>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="md-form mb-4">
+                                    <i class="fa fa-lock prefix grey-text"></i>
+                                    <input type="password" id="orangeForm-pass2Reg" class="form-control" required onClick="resetField('orangeForm-pass2Reg', 'control-PasswordReg')">
+                                    <label data-error="errore" data-success="corretto" for="orangeForm-pass2Reg">
+                                        Conferma Password</label>
+                                    <span><h6 class="myFeedback" id="control-PasswordReg"></h6>
+                            </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Checkbox -->
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="terms_conditions" required>
+                            <label class="custom-control-label" for="terms_conditions">
+                                Ho letto e accetto <a href="privacy.html">termini e condizioni</a>
+                            </label>
+                        </div>
+                        <p class="font-small grey-text d-flex justify-content-begin">Hai già un account?
+                            <a class="blue-text ml-1"
+                     onClick="return modalSwitchHandler('modalSignUpForm', 'modalSignInForm')">
+                     Entra</a>
+                        </p>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Registrati</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    <!-- Navbar -->
+    </header>
+    <!-- Navbar -->
+</body>
+
+</html>
