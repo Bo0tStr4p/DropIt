@@ -4,21 +4,20 @@
     <body>
         <?php
 
-            $dbconn = pg_connect("host=localhost port=49987 dbname=DropIt_DB user=postgres") or die('Could not connect: ' . pg_last_error());
-            if(!(isset($_POST['loginButton']))){
-                header("Location: ../../index.html");
-            }
-            else{
+            $dbconn = pg_connect("host=localhost port=5432 dbname=DropItDatabase user=postgres password=postgres") or die('Could not connect: ' . pg_last_error());
+            //if(!(isset($_POST['loginButton']))){
+            //    header("Location: ../../index.html");
+
                 $email = $_POST['defaultForm-emailLogin'];
                 $password = $_POST['defaultForm-passLogin'];
-                //$q1="select nome from utente where email=$1 and password=$2";
-                $select = "select name";
+                $q1="select name from myuser where email=$1 and password=$2";
+                /*$select = "select name";
                 $from = "from myuser";
                 $where = "where email=$1 and password=$2";
-                $q1 = $select + $from + $where;
+                $q1 = $select + $from + $where;*/
                 $result=pg_query_params($dbconn,$q1,array($email,md5($password)));
                 if($line=pg_fetch_array($result,null,PGSQL_ASSOC)){
-                    $nome=$line['nome'];
+                    //$nome=$line['nome'];
                     header("Location: ../../views/home.html");
                 }
                 else{
@@ -47,9 +46,13 @@
                     regular HTTP. */
                     setcookie("err_login", "err_login", time() + 3600, "/",  0);
                     header("Location: ../../index.html");
+
+                    //$data = $dom->getElementById("myElement");
+                    //$html = $dom->saveHTML($data); QUESTO E' PER ESTRARRE
+
                     //echo "Error, not registred";
                 } 
-            }
+            
         ?>
     </body>
 </html>

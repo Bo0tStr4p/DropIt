@@ -5,17 +5,9 @@
 
         <?php
 
-            $dbconn = pg_connect("host=localhost port=49987 dbname=DropIt_DB user=postgres") or die('Could not connect: ' . pg_last_error());
-            if(!(isset($_POST['registrationButton']))){
-                header("Location: ../../index.html");
-            }
-            else{
+            $dbconn = pg_connect("host=localhost port=5432 dbname=DropItDatabase user=postgres password=postgres") or die('Could not connect: ' . pg_last_error());
                 $email = $_POST['orangeForm-email'];
-                /* $q1="select * from user where email= $1"; */
-                $select = "select *";
-                $from = "from myuser";
-                $where = "where email=$1";
-                $q1 = $select + $from + $where;
+                $q1="select * from myuser where email= $1";
                 $result=pg_query_params($dbconn, $q1, array($email));
                 if($line=pg_fetch_array($result,null,PGSQL_ASSOC)){
                     //header("Location: alreadyRegistered.html");
@@ -31,7 +23,7 @@
                     $birthCity = $_POST['orangeForm-cittaNascita'];
                     $comune = $_POST['orangeForm-comune'];
                     $address = $_POST['orangeForm-address'];
-                    $q2="insert into user values ($1,$2,$3,$4,$5,$6,$7,$8)";
+                    $q2="insert into myuser values ($1,$2,$3,$4,$5,$6,$7,$8)";
                     $data=pg_query_params($dbconn,$q2,array($email,$password,$cf,$name,$birthDate,
                                                             $birthCity,$comune,$address));
                     if($data){
@@ -43,7 +35,7 @@
                         per inziare ad utilizzare il sito web";*/
                     }
                 }
-            }
+            
 
         ?>
 

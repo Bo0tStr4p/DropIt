@@ -15,7 +15,7 @@
 CREATE TABLE myuser(
   email      	  VARCHAR(45) PRIMARY KEY,
   password      VARCHAR(45) NOT NULL,
-  cf		        VARCHAR(15) NOT NULL,
+  cf		VARCHAR(16) NOT NULL,
   name          VARCHAR(45) NOT NULL,
   birthDate     Date NOT NULL,
   birthCity     VARCHAR(20) NOT NULL,
@@ -50,3 +50,4 @@ CREATE TABLE makes(
   
 ALTER TABLE myorder add constraint reference_id foreign key (id) references makes(id)
 DEFERRABLE INITIALLY DEFERRED;
+
