@@ -17,11 +17,10 @@
                 $q1 = $select + $from + $where;*/
                 $result=pg_query_params($dbconn,$q1,array($email,md5($password)));
                 if($line=pg_fetch_array($result,null,PGSQL_ASSOC)){
-                    //$nome=$line['nome'];
+                    $nome=$line['name'];
                     header("Location: ../../views/home.html");
                 }
                 else{
-                    //header("Location: TryAgain.html");
 
                     /* setcookie(name, value, expire, path, domain, security);
                     Name − This sets the name of the cookie and is stored in an environment variable 
