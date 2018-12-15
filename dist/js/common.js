@@ -171,10 +171,6 @@ function samePassword(id1, id2) {
     return id1.value == (id2.value);
 }
 
-function validateLogin() {
-    
-}
-
 /* Per mostrare la modal al caricamento successivo della pagina (causata dalla action della form)
 , setto un parametro nel sessionStorage che andrò a verificare ad ogni caricamento della pagina */
 function validateContact(idModalSuccess) {

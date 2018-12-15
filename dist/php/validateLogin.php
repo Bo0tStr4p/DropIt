@@ -18,7 +18,9 @@
                 $result=pg_query_params($dbconn,$q1,array($email,md5($password)));
                 if($line=pg_fetch_array($result,null,PGSQL_ASSOC)){
                     $nome=$line['name'];
-                    header("Location: ../../views/home.html");
+                    $_SESSION['userid'] = $email;
+    				echo "Success";
+                    //header("Location: ../../views/home.html");
                 }
                 else{
 
@@ -44,10 +46,8 @@
                     secure transmission using HTTPS otherwise set to 0 which mean cookie can be sent by 
                     regular HTTP. */
                     setcookie("err_login", "err_login", time() + 3600, "/",  0);
-                    header("Location: ../../index.html");
-
-                    //$data = $dom->getElementById("myElement");
-                    //$html = $dom->saveHTML($data); QUESTO E' PER ESTRARRE
+                    echo "Error";
+                    //header("Location: ../../index.html");
 
                     //echo "Error, not registred";
                 } 
