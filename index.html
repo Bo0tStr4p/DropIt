@@ -29,25 +29,6 @@
 	});
 	</script>
 
-  <script>
-    function validateLogin() {
-      var email = document.getElementById("defaultForm-emailLogin").value;
-      var password = document.getElementById("defaultForm-passLogin").value;
-      var data_string = "defaultForm-emailLogin="+email+"&defaultForm-passLogin="+password;
-
-      $.ajax({
-          type:"post",
-          url:"dist/php/validateLogin.php",
-          data:data_string,
-          cache:false,
-          success: function(result){
-              alert(result);
-              $("#error-login").html(result);
-          }
-      });
-    }
-  </script>
-
     <!-- Favicon -->
     <link rel="shortcut icon" href="dist/img/logo/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="dist/img/logo/favicon.ico" type="image/x-icon">

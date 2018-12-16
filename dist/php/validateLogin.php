@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head><meta charset="UTF-8"></head>
-    <body>
-        <?php
-
+<?php
+            
             $dbconn = pg_connect("host=localhost port=5432 dbname=DropItDatabase user=postgres password=postgres") or die('Could not connect: ' . pg_last_error());
             //if(!(isset($_POST['loginButton']))){
             //    header("Location: ../../index.html");
@@ -17,9 +13,11 @@
                 $q1 = $select + $from + $where;*/
                 $result=pg_query_params($dbconn,$q1,array($email,md5($password)));
                 if($line=pg_fetch_array($result,null,PGSQL_ASSOC)){
+                    session_start();
                     $nome=$line['name'];
                     $_SESSION['userid'] = $email;
-    				echo "Success";
+                    $_SESSION['passid'] = md5($password);
+    				echo "true";
                     //header("Location: ../../views/home.html");
                 }
                 else{
@@ -46,12 +44,10 @@
                     secure transmission using HTTPS otherwise set to 0 which mean cookie can be sent by 
                     regular HTTP. */
                     setcookie("err_login", "err_login", time() + 3600, "/",  0);
-                    echo "Error";
+                    echo "Nome utente o password errati";
                     //header("Location: ../../index.html");
 
                     //echo "Error, not registred";
                 } 
             
         ?>
-    </body>
-</html>

@@ -4,35 +4,36 @@ function saleActivated(sale) {
 }
 
 function caricaPagamento(price){
-	$("#divcookie").hide();
-	var sale = sessionStorage.getItem("sale");
-	var iva = parseFloat(22.0/100);
-	if(price == parseInt(price))
-				price += ".00"; 
-	iva *= price;
+		$("#divcookie").hide();
+		var sale = sessionStorage.getItem("sale");
+		var iva = parseFloat(22.0/100);
+		if(price == parseInt(price))
+					price += ".00"; 
+		iva *= price;
 
-	$( "#navbar_ajax" ).load('structure_files/header_user.htm #navbar_ajax');
-	var directory = 'checkout_steps/checkout_pay.htm #main';
-	 $( "#main" ).load(directory);
+		$( "#navbar_ajax" ).load('structure_files/header_user.htm #navbar_ajax');
+		var directory = 'checkout_steps/checkout_pay.htm #main';
+	 	$( "#main" ).load(directory);
 
-	 $("#main").ready(function(){		
-		if(sale != null){
-			document.getElementById("costo_pacchetto").innerHTML = ("€ " + price);
-			$("#costo_pacchetto").text("€ " + price);
-			$("#iva_pacchetto").text("€ " + iva.toFixed(2));
-			sale = price * sale/100;
-			$("#sconto").text("-€ " + parseFloat(sale).toFixed(2));
-			$("#totale_pacchetto").text("€ " + (parseFloat(price) + iva - sale).toFixed(2));
-		}
+	 	$("#main").ready(function(){		
+			if(sale != null){
+				document.getElementById("costo_pacchetto").innerHTML = ("€ " + price);
+				$("#costo_pacchetto").text("€ " + price);
+				$("#iva_pacchetto").text("€ " + iva.toFixed(2));
+				sale = price * sale/100;
+				$("#sconto").text("-€ " + parseFloat(sale).toFixed(2));
+				$("#totale_pacchetto").text("€ " + (parseFloat(price) + iva - sale).toFixed(2));
+			}
 
-		else{
-			$("#costo_pacchetto").text("€ " + price);
-			$("#iva_pacchetto").text("€ " + iva.toFixed(2));
-			$("#sconto").text("-€" + "0.00");
-			$("#totale_pacchetto").text("€ " + (parseFloat(price) + iva).toFixed(2));
-		}
-	});
-}
+			else{
+				$("#costo_pacchetto").text("€ " + price);
+				$("#iva_pacchetto").text("€ " + iva.toFixed(2));
+				$("#sconto").text("-€" + "0.00");
+				$("#totale_pacchetto").text("€ " + (parseFloat(price) + iva).toFixed(2));
+			}
+		});
+	}
+
 
 function caricaSceltaPiano(e){
 	$( "#navbar_ajax" ).load('structure_files/header_fixed.htm #navbar_ajax');

@@ -37,8 +37,7 @@
                     <!-- Sign In & Sign Up -->
                     <ul class="navbar-nav mr-auto smooth-scroll">
                     <li class="nav-item">
-                            <a class="nav-link" data-offset="30" data-toggle="modal" 
-                             data-target="#modalSignInForm">Entra</a>
+                            <a class="nav-link" data-offset="30" onclick="alreadyLoggedIn();">Entra</a>
                         </li>	
                     <li class="nav-item">
                             <a class="nav-link" data-offset="30" data-toggle="modal"
@@ -102,7 +101,8 @@
                     <span aria-hidden="true" >&times;</span>
                 </button>
                 </div>
-                <form name="login" id="login"  method="post" onsubmit="return false;">
+                <!-- POST GESTITA DIRETTAMENTE ALL'INTERNO DELLA FUNZIONE validateLogin -->
+                <form name="login" id="login"  method="post" onsubmit="validateLogin();return false;">
                 <div class="modal-body mx-3">
                 <div class="md-form mb-5">
                     <i class="fa fa-envelope prefix grey-text"></i>
@@ -126,7 +126,7 @@
                     <div class="container">
                         <div class="row">
                         <div class="col-sm">
-                    <p id="error-login" name="error-login" style="color: red; font-weight: bold;"></p>
+                            <p id="error-login" style="text-align: center;color: red;font-family: 'Times New Roman';font-weight: bold;" name="error-login" ></p>
                         </div>
                     </div>
                     </div>
@@ -147,12 +147,11 @@
                         </div>
                     </div>
                 </div>
-      
-            </div>
+              </div>
             <div class="modal-footer d-flex justify-content-center">
-              <button id="login_btn" onclick = "return validateLogin();"class="btn btn-primary">Entra</button>
+              <button id="login_btn" class="btn btn-primary">Entra</button>
             </div>
-          </form>
+           </form>
           </div>
         </div>
         </div>
@@ -184,6 +183,33 @@
             </div>
         </div>
 
+        <!-- Modal Success Registration -->
+        <div class="modal fade" id="ModalSuccessRegistration" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-success" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading lead">Registrazione completata</p>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                        <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p id="modal_success_body_text">Abbiamo inviato alla tua mail un link per attivare il tuo account. </p>
+                        </div>
+                    </div>
+                </div>
+            <!--/.Content-->
+            </div>
+        </div>
+
         
 
         <!-- Modal Sign Up -->
@@ -198,8 +224,9 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form name="registration" method="post" action="dist/php/validateRegistration.php"
-             onSubmit="return validateRegistration();">
+            <!-- Return false perchè POST gestita in AJAX -->
+            <form name="registration" method="post"
+             onsubmit="validateRegistration(); return false;">
             <div class="modal-body mx-3">
                 <div class="container">
                     <div class="row">
@@ -330,8 +357,15 @@
                 </p>
                     
             </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <p id="error-login-registration" style="text-align: center;color: red;font-family: 'Times New Roman';font-weight: bold;" name="error-login-registration" ></p>
+                    </div>
+                </div>
+            </div>
             <div class="modal-footer d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary">Registrati</button>
+                <button class="btn btn-primary">Registrati</button>
             </div>
             </div>     
         </form>

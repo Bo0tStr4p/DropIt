@@ -93,10 +93,66 @@ function validateRegistration() {
     if(!samePassword(document.getElementById("orangeForm-passReg"), 
                      document.getElementById("orangeForm-pass2Reg"))) {
         displayErrorOnField("orangeForm-pass2Reg", "control-PasswordReg", "le password non corrispondono");
-        return false;
+        return;
     }
+
+      var email = document.getElementById("orangeForm-email").value;
+      var password = document.getElementById("orangeForm-passReg").value;
+      var cf = document.getElementById("orangeForm-codiceFiscale").value;
+      var name = document.getElementById("orangeForm-name").value;
+      var date = document.getElementById("orangeForm-date").value;
+      var city = document.getElementById("orangeForm-cittaNascita").value;
+      var comune = document.getElementById("orangeForm-comune").value;
+      var address = document.getElementById("orangeForm-address").value;
+      var data_string = "orangeForm-email="+email+"&orangeForm-codiceFiscale="+cf+"&orangeForm-passReg="+password+"&orangeForm-name="+name+"&orangeForm-date="+date+"&orangeForm-cittaNascita="+city+"&orangeForm-comune="+comune+"&orangeForm-address="+address;
+
+      $.ajax({
+          type:"post",
+          url:"dist/php/validateRegistration.php",
+          data:data_string,
+          cache:false,
+          success: function(result){
+              if(result == "true")
+                modalSwitchHandler('modalSignUpForm','ModalSuccessRegistration');
+              else{
+                $('#error-login-registration').html("Utente già registrato!");
+                }
+          }
+      });
     
-    return true;
+}
+
+function validateRegistrationInside() {
+    if(!samePassword(document.getElementById("orangeForm-passReg"), 
+                     document.getElementById("orangeForm-pass2Reg"))) {
+        displayErrorOnField("orangeForm-pass2Reg", "control-PasswordReg", "le password non corrispondono");
+        return;
+    }
+
+      var email = document.getElementById("orangeForm-email").value;
+      var password = document.getElementById("orangeForm-passReg").value;
+      var cf = document.getElementById("orangeForm-codiceFiscale").value;
+      var name = document.getElementById("orangeForm-name").value;
+      var date = document.getElementById("orangeForm-date").value;
+      var city = document.getElementById("orangeForm-cittaNascita").value;
+      var comune = document.getElementById("orangeForm-comune").value;
+      var address = document.getElementById("orangeForm-address").value;
+      var data_string = "orangeForm-email="+email+"&orangeForm-codiceFiscale="+cf+"&orangeForm-passReg="+password+"&orangeForm-name="+name+"&orangeForm-date="+date+"&orangeForm-cittaNascita="+city+"&orangeForm-comune="+comune+"&orangeForm-address="+address;
+
+      $.ajax({
+          type:"post",
+          url:"../dist/php/validateRegistration.php",
+          data:data_string,
+          cache:false,
+          success: function(result){
+              if(result == "true")
+                modalSwitchHandler('modalSignUpForm','ModalSuccessRegistration');
+              else{
+                $('#error-login-registration').html("Utente già registrato!");
+                }
+          }
+      });
+    
 }
 
 function birthdateStatus() {
@@ -195,3 +251,52 @@ function getCookie(nome) {
   function deleteCookie(name){
     document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   }
+
+  function validateLogin() {
+      var email = document.getElementById("defaultForm-emailLogin").value;
+      var password = document.getElementById("defaultForm-passLogin").value;
+      var data_string = "defaultForm-emailLogin="+email+"&defaultForm-passLogin="+password;
+
+      $.ajax({
+          type:"post",
+          url:"dist/php/validateLogin.php",
+          data:data_string,
+          cache:false,
+          success: function(result){
+              if(result == "true")
+                window.location.replace("views/home.html");
+              else
+                $("#error-login").html(result);
+          }
+      });
+    }
+
+
+
+    function validateLoginInside() {
+      var email = document.getElementById("defaultForm-emailLogin").value;
+      var password = document.getElementById("defaultForm-passLogin").value;
+      var data_string = "defaultForm-emailLogin="+email+"&defaultForm-passLogin="+password;
+
+      $.ajax({
+          type:"post",
+          url:"../dist/php/validateLogin.php",
+          data:data_string,
+          cache:false,
+          success: function(result){
+              if(result == "true")
+                window.location.replace("home.html");
+              else
+                $("#error-login").html(result);
+          }
+      });
+    }
+
+
+    function alreadyLoggedIn(){
+        $('#modalSignInForm').modal("show");
+    }
+
+    function alreadyLoggedInInside(){
+            $('#modalSignInForm').modal("show");
+    }
