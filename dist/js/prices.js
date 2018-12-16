@@ -11,7 +11,7 @@ function caricaPagamento(price){
 					price += ".00"; 
 		iva *= price;
 
-		$( "#navbar_ajax" ).load('structure_files/header_user.htm #navbar_ajax');
+		$( "#navbar_ajax" ).load('structure_files/header_user.php #navbar_ajax');
 		var directory = 'checkout_steps/checkout_pay.htm #main';
 	 	$( "#main" ).load(directory);
 
