@@ -7,19 +7,18 @@
                 $email = $_POST['defaultForm-emailLogin'];
                 $password = $_POST['defaultForm-passLogin'];
                 $q1="select name from myuser where email=$1 and password=$2";
-                /*$select = "select name";
-                $from = "from myuser";
-                $where = "where email=$1 and password=$2";
-                $q1 = $select + $from + $where;*/
                 $result=pg_query_params($dbconn,$q1,array($email,md5($password)));
+
                 if($line=pg_fetch_array($result,null,PGSQL_ASSOC)){
                     session_start();
-                    $nome=$line['name'];
+                    //$nome=$line['name'];
+                    $_SESSION['username']=$line['name'];
                     $_SESSION['userid'] = $email;
                     $_SESSION['passid'] = md5($password);
     				echo "true";
                     //header("Location: ../../views/home.html");
                 }
+                
                 else{
 
                     /* setcookie(name, value, expire, path, domain, security);

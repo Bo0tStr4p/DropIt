@@ -5,12 +5,14 @@
                 $cf = $_POST['orangeForm-codiceFiscale'];
                 $q1="select * from myuser where email= $1 or cf=$1";
                 $result=pg_query_params($dbconn, $q1, array($email,$cf));
+
                 if($line=pg_fetch_array($result,null,PGSQL_ASSOC)){
                     //header("Location: ../../index.html");
                     //echo "<h1> Sorry, you are already a registered user</h1>";
                     setcookie("err_signup", "err_signup", time() + 3600, "/",  0);
                     echo "false";
                 }
+                
                 else{
                     $password = md5($_POST['orangeForm-passReg']);
                     $name=$_POST['orangeForm-name'];
