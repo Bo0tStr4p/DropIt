@@ -20,7 +20,7 @@
                             <a class="nav-link" onclick="return caricaSezione('services');" data-offset="90">Richiesta Servizio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" onclick="return caricaSezione('orders');" data-offset="90">Riepilogo Ordini</a>
+                            <a class="nav-link" onclick="caricaSezioneOrdini();" data-offset="90">Riepilogo Ordini</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
@@ -37,8 +37,7 @@
                               <div class="dropdown-menu dropdown-menu-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-5">
                                   <a id="items-color" class="dropdown-item waves-effect waves-light" 
                                    onclick="return caricaSezione('settings');"><i class="fa fa-gear"></i> Impostazioni</a>
-                                  <a id="items-color" class="dropdown-item waves-effect waves-light" 
-                                   href="../index.html" onclick="<?php session_start(); session_unset(); session_destroy();?>"><i class="fa fa-power-off" aria-hidden="true"></i> Log Out</a>
+                                  <a id="items-color" class="dropdown-item waves-effect waves-light"><i class="fa fa-power-off" aria-hidden="true"></i> Log Out</a>
                               </div>
                           </li>
                       </ul>
