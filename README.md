@@ -1,7 +1,7 @@
 ## Progetto per Linguaggi e Tecnologie del Web
 
 Progetto sviluppato durante il primo semestre dell'anno accademico 2018/2019 Università "La Sapienza", Roma.  
-L'obiettivo del progetto è realizzare un applicazione web lato front-end.
+L'obiettivo è realizzare un'applicazione web lato front-end.
 
 
 ![alt text](https://github.com/Bo0tStr4p/LTW---Project/blob/master/dist/img/logo/Icon%20with%20text%20grey.png)
