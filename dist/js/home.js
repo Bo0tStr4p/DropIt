@@ -5,8 +5,7 @@ function caricaSezione(e){
 
 function caricaSezioneOrdini(){
 	var directory = 'home_pages/orders.htm #main';
-	$( "#main" ).load(directory);
-	$("#main").ready(function(){
+	 $( "#main" ).load(directory);
 	$.ajax({
           type:"post",
           url:"../dist/php/getOrderList.php",
@@ -28,45 +27,10 @@ function caricaSezioneOrdini(){
               }
           }
       });
-	});
+
 }
 
-function generatoreOrdine(){
-	var date = new Date();
-	var result = date.getDate()+date.getMonth()+date.getFullYear()+date.getHours()+date.getMinutes()+date.getSeconds()+date.getMilliseconds();
-	return result+getRandomInt(4000);
-}
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
-function getToday(){
-	var date = new Date();
-	return date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
-}
-
-function inviaOrdine(){
-	var id = generatoreOrdine();
-    var description = document.getElementById("nome-attivita").value;
-    var date =  getToday();
-    var address = document.getElementById("indirizzo-ordine").value; 
-    var data_string = "id="+id+"&description="+description+"&date="+date+"&address="+address;
-	$.ajax({
-          type:"post",
-          url:"../dist/php/addOrder.php",
-          data:data_string,
-          cache:false,
-          success: function(result){
-              if(result == "true")
-              	$('#ModalSuccessOrder').modal("show");
-              else
-              	alert("Si è verificato un errore col database. Riprovare");
-          }
-      });
-}
-
-function verificaFormEInvia(){
+function verificaForm(){
 	/* L'attività potremmo metterla con una select che prende i negozi dalla tabella shop + alcune 
 	attività standard statiche (es. sorveglianza, ...) */
 	var attivita = $("#nome-attivita");
@@ -80,7 +44,8 @@ function verificaFormEInvia(){
 		$("#error-indirizzo").text("Inserire un indirizzo");
 	}
 
-	inviaOrdine();
+	var date = new Date(); // Inutile far inserire la data al cliente, la prendiamo noi con questa funzione
+	// Gestione php
 }
 
 function validatePassword(){
@@ -98,8 +63,10 @@ function validatePassword(){
 		data:data_string,
 		cache:false,
 		success: function(result){
-			if(result == "true")
+			if(result == "true") {
+				$('#control-PasswordReg').html('');
 				$('#modalSuccessChangePassword').modal("show");
+			}
 			else if(result == "false")
 				displayErrorOnField("orangeForm-pass3Reg", "control-PasswordReg", "Vecchia password errata");
 			else
