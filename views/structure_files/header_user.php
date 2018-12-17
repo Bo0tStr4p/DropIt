@@ -45,6 +45,34 @@
                 </div>
         </nav>
         <!-- Navbar -->
+
+        <!-- Modal Success Change Password -->
+        <div class="modal fade" id="modalSuccessChangePassword" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-success" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading lead">Password cambiata con successo</p>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                        <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p id="modal_success_body_text"></p>
+                        </div>
+                    </div>
+                </div>
+            <!--/.Content-->
+            </div>
+        </div>
+
       </header>
     </body>
   </html>
