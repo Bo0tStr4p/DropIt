@@ -14,7 +14,7 @@
                     <ul class="navbar-nav mr-auto smooth-scroll">
                         <li class="nav-item">
                             <a name="intro-section" 
-                            class="nav-link" onclick="return caricaSezione('panoramica');">Panoramica</a>
+                            class="nav-link" href="home.html">Panoramica</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" onclick="return caricaSezione('services');" data-offset="90">Richiesta Servizio</a>
@@ -32,12 +32,12 @@
                         </li>
                           <li class="nav-item avatar dropdown">
                               <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <img style="height: 40px; margin:0;" src="https://mdbootstrap.com/img/Photos/Categories/Components/img(31).jpg" class="img-fluid rounded-circle z-depth-0" alt="Material Design for Bootstrap - example photo"> 
+                              <img style="height: 40px; margin:0;" <?php echo 'src="../dist/php/myuploads/' . $_SESSION['userid'] . '.png"';?> class="img-fluid rounded-circle z-depth-0" alt="Material Design for Bootstrap - example photo"> 
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-5">
                                   <a id="items-color" class="dropdown-item waves-effect waves-light" 
                                    onclick="return caricaSezione('settings');"><i class="fa fa-gear"></i> Impostazioni</a>
-                                  <a id="items-color" class="dropdown-item waves-effect waves-light"><i class="fa fa-power-off" aria-hidden="true"></i> Log Out</a>
+                                  <a id="items-color" class="dropdown-item waves-effect waves-light" href="../dist/php/logout.php"><i class="fa fa-power-off" aria-hidden="true"></i> Log Out</a>
                               </div>
                           </li>
                       </ul>
