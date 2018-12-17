@@ -1,13 +1,29 @@
-<?php
-            
-    $dbconn = pg_connect("host=localhost port=5432 dbname=DropItDatabase user=postgres password=postgres") or die('Could not connect: ' . pg_last_error());
-            
-    session_start();
-    $email = $_SESSION['userid'];
-    $img = $_POST['changeImage'];
-    $q2 = "update myuser set picture=$1 where email=$2";
-    $result=pg_query_params($dbconn,$q2,array($img, $email));
+<?php  
+    // Percorso della cartella dove mettere i file caricati dagli utenti
+    $uploaddir = 'myuploads/';
 
-    if($result)     echo "true";
-    else            echo "Error";    
+    // Recupero il percorso temporaneo del file
+    $userfile_tmp = $_FILES['changeImage']['tmp_name'];
+
+    // Controllo se il file è un'immagine
+    if (!getimagesize($userfile_tmp)) {
+        echo 'Puoi inviare solo immagini';
+        exit;    
+    }
+
+    session_start();
+    
+    // Recupero il nome originale del file caricato
+    $userfile_name = $_FILES['changeImage']['name'];
+
+    // Prendo l'estensione del file
+    $extension = end(explode(".", $userfile_name));
+
+    // Creo nuovo nome per l'immagine con l'email dell'utente (primary key)
+    $newfilename = $_SESSION['userid'] .".".$extension;
+
+    // Copio il file dalla sua posizione temporanea alla mia cartella upload
+    if (move_uploaded_file($userfile_tmp, $uploaddir . $newfilename))
+        header("Location: ../../views/home.html");     //echo "true";
+    else    echo "Error";  
 ?>
