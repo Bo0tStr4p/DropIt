@@ -22,9 +22,7 @@
     <script>
         $(document).ready(function(){
             var directory_navbar = 'structure_files/header_user.php #navbar_ajax';
-            var directory_footer = 'structure_files/footer_fixed.htm #footer';
             $( "#navbar_ajax" ).load(directory_navbar);
-            $( "#footer_ajax" ).load(directory_footer);
         });
     </script>
 
@@ -53,6 +51,12 @@
 			width:100%;
 			position:absolute;
 			}
+        .table-wrapper-scroll-y {
+            display: block;
+            max-height: 700px;
+            overflow-y: auto;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
 	</style>
 
 </head>
