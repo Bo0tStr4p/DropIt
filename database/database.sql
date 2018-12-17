@@ -21,6 +21,8 @@ CREATE TABLE myuser(
   birthCity     VARCHAR(20) NOT NULL,
   city          VARCHAR(20) NOT NULL,
   address       VARCHAR(30) NOT NULL,
+  subscription  VARCHAR(10),
+  picture	text,
   UNIQUE (cf)
   );
 
