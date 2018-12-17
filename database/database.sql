@@ -15,7 +15,7 @@
 CREATE TABLE myuser(
   email      	  VARCHAR(45) PRIMARY KEY,
   password      VARCHAR(45) NOT NULL,
-  cf		VARCHAR(16) NOT NULL,
+  cf		        VARCHAR(16) NOT NULL,
   name          VARCHAR(45) NOT NULL,
   birthDate     Date NOT NULL,
   birthCity     VARCHAR(20) NOT NULL,
@@ -51,3 +51,32 @@ CREATE TABLE makes(
 ALTER TABLE myorder add constraint reference_id foreign key (id) references makes(id)
 DEFERRABLE INITIALLY DEFERRED;
 
+/* ===================================================================
+-- Create table shop
+-- ================================================================ */
+
+CREATE TABLE shop(
+  email      	  VARCHAR(45) PRIMARY KEY,
+  password      VARCHAR(45) NOT NULL,
+  cf		        VARCHAR(16) NOT NULL,
+  name          VARCHAR(45) NOT NULL,
+  city          VARCHAR(20) NOT NULL,
+  UNIQUE (cf)
+  );
+
+  /* ===================================================================
+-- Create table driver
+-- ================================================================ */
+
+CREATE TABLE driver(
+  email      	  VARCHAR(45) PRIMARY KEY,
+  password      VARCHAR(45) NOT NULL,
+  cf		        VARCHAR(16) NOT NULL,
+  propName      VARCHAR(45) NOT NULL,
+  shopName      VARCHAR(45) NOT NULL,
+  activity      VARCHAR(45) NOT NULL,
+  city          VARCHAR(20) NOT NULL,
+  comune        VARCHAR(2)  NOT NULL,
+  address       VARCHAR(30) NOT NULL,
+  UNIQUE (cf)
+  );
