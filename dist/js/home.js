@@ -3,6 +3,31 @@ function caricaSezione(e){
 	 $( "#main" ).load(directory);
 }
 
+function caricaSezioneNuovoOrdine(nome_categoria){
+	var directory = 'home_pages/new_order.htm #main';
+	 $( "#main" ).load(directory,function(){
+	 	var data_string = "category="+nome_categoria;
+	 	$.ajax({
+          type:"post",
+          url:"../dist/php/listServices.php",
+          data:data_string,
+          cache:false,
+          success: function(result){
+              if(result == "Error")
+              	alert("Problema col database, riprovare");
+              else{
+              	var obj = JSON.parse(result);
+              	var str = "<option value='0"+"'"+" disabled selected>Seleziona attività</option>";
+              	for(var i=0;i<obj.length;i++){
+              		str += "<option value='"+nome_categoria+": "+obj[i].name+"'>"+obj[i].name+"</option>";
+              	}
+              	document.getElementById("nome-attivita").innerHTML = str;
+              }
+          }
+      });
+	 });
+}
+
 function caricaSezioneOrdini(){
 	var directory = 'home_pages/orders.htm #main';
 	 $( "#main" ).load(directory,function(){
@@ -68,16 +93,22 @@ function inviaOrdine(){
 function verificaFormEInvia(){
 	/* L'attività potremmo metterla con una select che prende i negozi dalla tabella shop + alcune 
 	attività standard statiche (es. sorveglianza, ...) */
-	var attivita = $("#nome-attivita");
-	var indirizzo = $("indirizzo-ordine");
-
-	if(attivita.val() == ""){
-		$("#error-attivita").text("Inserire nome attività");
+	$("#error-attivita").text("");
+	$("#error-indirizzo").text("");
+	var debug = 0;
+	var attivita = document.getElementById("nome-attivita").value;
+	var indirizzo = document.getElementById("indirizzo-ordine").value;
+	if(attivita == 0){
+		$("#error-attivita").text("Scegliere attività");
+		debug = 1;
+	}
+	if(indirizzo == ""){
+		$("#error-ordine").text("Inserire un indirizzo");
+		debug = 1;
 	}
 
-	if(indirizzo.val() == ""){
-		$("#error-indirizzo").text("Inserire un indirizzo");
-	}
+	if(debug)
+		return false;
 
 	inviaOrdine();
 }
