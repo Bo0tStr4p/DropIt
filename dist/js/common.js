@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
     }
 
     /* Verifico se il login ha generato errori */
-    if(getCookie("err_login") != "") {
+    /*if(getCookie("err_login") != "") {
         deleteCookie("err_login");
         $('#modalSignInForm').modal("show");
         $('#modalSignInForm').on('shown.bs.modal', function(){
             displayErrorOnField('defaultForm-emailLogin', 'control-emailLogin', 'errore: email o password non valida');
         }); 
-    }
+    }*/
     
 });
 
