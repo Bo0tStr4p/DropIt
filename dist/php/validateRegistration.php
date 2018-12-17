@@ -3,7 +3,7 @@
             $dbconn = pg_connect("host=localhost port=5432 dbname=DropItDatabase user=postgres password=postgres") or die('Could not connect: ' . pg_last_error());
                 $email = $_POST['orangeForm-email'];
                 $cf = $_POST['orangeForm-codiceFiscale'];
-                $q1="select * from myuser where email= $1 or cf=$1";
+                $q1="select * from myuser where email=$1 or cf=$1";
                 $result=pg_query_params($dbconn, $q1, array($email,$cf));
 
                 if($line=pg_fetch_array($result,null,PGSQL_ASSOC)){
