@@ -139,22 +139,3 @@ function validatePassword(){
 		}
 	});
 }
-
-function validateImage() {
-	var data_string = "changeImage="+ document.getElementById("changeImage").value;
-	window.alert(document.getElementById("changeImage").value);
-	$.ajax({
-		type:"post",
-		url:"../dist/php/changeImage.php",
-		data:data_string,
-		cache:false,
-		success: function(result){
-			if(result == "true") {
-				$('#control-changeImage').html('');
-				$('#modalSuccessChangeImage').modal("show");
-			}
-			else
-				displayErrorOnField("changeImage", "control-changeImage", "Errore imprevisto, riprova");
-		}
-	});
-}
