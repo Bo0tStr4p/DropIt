@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
+<head>
 </head>
 
 <body>
     <!--Inizio Main-->
     <main id="main">
+        <!-- Modal Success Order -->
+        <div class="modal fade" id="ModalSuccessOrder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-success" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading lead">Ordine completato</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                            <p id="modal_success_body_text">Il tuo ordine è stato affidato ad un nostro pilota e dovresti riceverlo a breve. </p>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
         <div style="margin-top: 6%; background-color: rgba(255,255,255,.8); border-radius: 20px 20px 20px 20px;" class='container'>
             <!-- Inizio Step -->
             <div style="margin-bottom: -5%;" class="row">
@@ -34,71 +57,68 @@
                 <!--Grid column-->
             </div>
             <!-- Fine step -->
-                <h3 class="h2-responsive font-weight-bold text-center my-5">Inserisci ordine</h3>
-                <!-- Grid row -->
-                <div class="row">
-                    <!-- Grid column -->
-                    <div class="col-md-12">
-                        <form>
-                            <!-- Grid row -->
-                            <div class="row">
-                                <!-- Grid column -->
-                                <div class="col-md-12">
-                                    <div class="md-form mb-0">
-                                        <input type="text" id="nome-attivita" class="form-control">
-                                        <label for="nome-attivita" class="">Nome attività</label>
-                                        <p id="error-attivita" style="color:red; font-weight: bold;"></p>
-                                    </div>
+            <h3 class="h2-responsive font-weight-bold text-center my-5">Inserisci ordine</h3>
+            <!-- Grid row -->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-12">
+                    <form method="post" onsubmit="verificaFormEInvia();return false;">
+                        <!-- Grid row -->
+                        <div class="row">
+                            <!-- Grid column -->
+                            <div class="col-md-12">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="nome-attivita" class="form-control">
+                                    <label for="nome-attivita" class="">Nome attività</label>
+                                    <p id="error-attivita" style="color:red; font-weight: bold;"></p>
                                 </div>
-                                <!-- Grid column -->
-                                <!-- Grid column -->
-                                <!--<div class="col-md-6">
+                            </div>
+                            <!-- Grid column -->
+                            <!-- Grid column -->
+                            <!--<div class="col-md-6">
                                     <div class="md-form mb-0">
                                         <input type="text" id="data-ordine" class="form-control">
                                         <label for="data-ordine" class="">Data</label>
                                         <p id="error-data" style="color:red;font-weight: bold;"></p>
                                     </div>
                                 </div>-->
-                                <!-- Grid column -->
-                            </div>
-                            <!-- Grid row -->
-                            <!-- Grid row -->
-                            <div class="row">
-                                <!-- Grid column -->
-                                <div class="col-md-12">
-                                    <div class="md-form mb-0">
-                                        <input type="text" id="indirizzo-ordine" 
-                                         class="form-control validate" required 
-                                         pattern="[A-Z][a-z]+( [A-Z][a-z']+)+ [0-9]{3}" 
-                                         title="es. Via Roma 100">
-                                        <label data-error="errore" data-success="corretto" for="indirizzo-ordine">
-                                        Indirizzo attività</label>
-                                    </div>
-                                </div>
-                                <!-- Grid column -->
-                            </div>
-                            <!-- Grid row -->
-                            <!-- Grid row -->
-                            <div class="row">
-                                <!-- Grid column -->
-                                <div class="col-md-12">
-                                    <div class="md-form">
-                                        <textarea type="text" id="note-ordine" class="form-control md-textarea" rows="3"></textarea>
-                                        <label for="note-ordine">Note per il drone</label>
-                                        <p id="error-note" style="color:red;font-weight: bold;"></p>
-                                    </div>
-                                </div>
-                                <!-- Grid column -->
-                            </div>
-                            <!-- Grid row -->
-                        <div class="text-center text-md-center">
-                            <a onclick = "return verificaForm();" class="btn btn-primary btn-md">invia</a>
+                            <!-- Grid column -->
                         </div>
-                        </form>
-                    </div>
-                    <!-- Grid column -->
+                        <!-- Grid row -->
+                        <!-- Grid row -->
+                        <div class="row">
+                            <!-- Grid column -->
+                            <div class="col-md-12">
+                                <div class="md-form mb-0">
+                                    <input type="text" id="indirizzo-ordine" class="form-control validate" required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+ [0-9]{3}" title="es. Via Roma 100">
+                                    <label data-error="errore" data-success="corretto" for="indirizzo-ordine">
+                                        Indirizzo attività</label>
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+                        <!-- Grid row -->
+                        <div class="row">
+                            <!-- Grid column -->
+                            <div class="col-md-12">
+                                <div class="md-form">
+                                    <textarea type="text" id="note-ordine" class="form-control md-textarea" rows="3"></textarea>
+                                    <label for="note-ordine">Note per il drone</label>
+                                    <p id="error-note" style="color:red;font-weight: bold;"></p>
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+                        <div class="text-center text-md-center">
+                            <button class="btn btn-primary btn-md">invia</button>
+                        </div>
+                    </form>
                 </div>
-                <!-- Grid row -->
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
         </div>
     </main>
     <!--Fine Main-->
