@@ -70,7 +70,11 @@
                 
                 <!-- Panel 3 -->
                 <div class="tab-pane fade" id="panel32" role="tabpanel">
-                  <h5 class="py-5 h5">Panel 3</h5>
+                  <h5 class="py-5 h5">Non esitare a <a href="../index.html#contact">contattarci</a> se riscontri dei problemi
+                    con i prodotti che hai ordinato. Tramite mail ti comunicheremo nel più
+                    breve tempo possibile come agire secondo quanto indicato in 
+                    <a href="privacy.html">Termini e condizioni</a>
+                  </h5>
                 </div>
                 
                 <!-- Panel 4 -->
@@ -80,7 +84,10 @@
                 
                 <!-- Panel 5 -->
                 <div class="tab-pane fade" id="panel52" role="tabpanel">
-                    <h5 class="py-5 h5" id="abbonamento">Il tuo piano attivo è</h5>
+                    <h5 class="py-5 h5" id="abbonamento">Il tuo piano attivo</h5>
+                    <br>
+                    <!-- CONVERTIRE IN FILE PHP QUANDO PRONTO PHP PREZZI -->
+                    <!--<?php echo $_SESSION['subscription'] . "data di attivazione: " . $_SESSION['subscriptionDate'] ?>-->
                 </div>
 
                 <!-- Panel 6 -->
@@ -137,18 +144,17 @@
                 <div class="tab-pane fade" id="panel72" role="tabpanel">
                     <h5 class="py-5 h5">Vuoi cambiare immagine?</h5>
 
-                    <form name="changeImageForm" method="post"
-                     onSubmit="validateImage(); return false;">
-                      <div class="md-form file-field">
-                        <div class="btn btn-primary btn-sm float-left">
-                          <span>Scegli un'immagine</span>
-                          <input type="file" name="changeImage" id="changeImage" required
-                           onClick="resetField('changeImage', 'control-changeImage')">
-                        </div>
-                        <div class="file-path-wrapper">
-                          <input class="file-path validate" type="text">
-                          <span><h6 class="myFeedback" id="control-changeImage"></h6>
-                          </span>
+                    <form name="changeImageForm" method="post" enctype="multipart/form-data"
+                     action="../dist/php/changeImage.php">
+                      <div class="md-form">
+                        <div class="file-field">
+                          <div class="btn btn-primary btn-sm float-left">
+                            <span>Scegli un'immagine</span>
+                            <input type="file" name="changeImage" id="changeImage" required>
+                          </div>
+                          <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder=" Carica immagine (solo .png, max 2 Mb)">
+                          </div>
                         </div>
                       </div>
                       <br>
