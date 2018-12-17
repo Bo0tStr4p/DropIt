@@ -11,6 +11,7 @@
 /* ===================================================================
 -- Create table user
 -- ================================================================ */
+/* Implementazione naif, subscription sarebbe più corretta come tabella a sè*/
 
 CREATE TABLE myuser(
   email      	  VARCHAR(45) PRIMARY KEY,
@@ -22,7 +23,7 @@ CREATE TABLE myuser(
   city          VARCHAR(20) NOT NULL,
   address       VARCHAR(30) NOT NULL,
   subscription  VARCHAR(10),
-  picture	text,
+  subscriptionDate Date,
   UNIQUE (cf)
   );
 
