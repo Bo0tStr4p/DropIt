@@ -136,14 +136,19 @@
                 <!-- Panel 7 -->
                 <div class="tab-pane fade" id="panel72" role="tabpanel">
                     <h5 class="py-5 h5">Vuoi cambiare immagine?</h5>
-                    <form class="md-form">
-                      <div class="file-field">
+
+                    <form name="changeImageForm" method="post"
+                     onSubmit="validateImage(); return false;">
+                      <div class="md-form file-field">
                         <div class="btn btn-primary btn-sm float-left">
                           <span>Scegli un'immagine</span>
-                          <input type="file">
+                          <input type="file" name="changeImage" id="changeImage" required
+                           onClick="resetField('changeImage', 'control-changeImage')">
                         </div>
                         <div class="file-path-wrapper">
-                          <input class="file-path validate" type="text" placeholder="Upload your file">
+                          <input class="file-path validate" type="text">
+                          <span><h6 class="myFeedback" id="control-changeImage"></h6>
+                          </span>
                         </div>
                       </div>
                       <br>
