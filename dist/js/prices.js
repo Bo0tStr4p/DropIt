@@ -3,19 +3,19 @@ function saleActivated(sale) {
 	$("#divcookie").hide();
 }
 
-function caricaPagamento(price){
+function caricaPagamento(price){ 
 		$("#divcookie").hide();
 		var sale = sessionStorage.getItem("sale");
 		var iva = parseFloat(22.0/100);
 		if(price == parseInt(price))
 					price += ".00"; 
 		iva *= price;
-
+		
 		$( "#navbar_ajax" ).load('structure_files/header_user.php #navbar_ajax');
 		var directory = 'checkout_steps/checkout_pay.htm #main';
 	 	$( "#main" ).load(directory);
 
-	 	$("#main").ready(function(){		
+	 	$("#main").ready(function(){
 			if(sale != null){
 				document.getElementById("costo_pacchetto").innerHTML = ("€ " + price);
 				$("#costo_pacchetto").text("€ " + price);
@@ -31,6 +31,8 @@ function caricaPagamento(price){
 				$("#sconto").text("-€" + "0.00");
 				$("#totale_pacchetto").text("€ " + (parseFloat(price) + iva).toFixed(2));
 			}
+
+			
 		});
 	}
 
