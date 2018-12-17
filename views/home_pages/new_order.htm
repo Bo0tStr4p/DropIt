@@ -68,8 +68,9 @@
                             <!-- Grid column -->
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="nome-attivita" class="form-control">
-                                    <label for="nome-attivita" class="">Nome attività</label>
+                                   <!-- <input type="text" id="nome-attivita" class="form-control"> -->
+                                    <select id="nome-attivita" class="browser-default custom-select">
+                                    </select>
                                     <p id="error-attivita" style="color:red; font-weight: bold;"></p>
                                 </div>
                             </div>
@@ -90,9 +91,10 @@
                             <!-- Grid column -->
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="indirizzo-ordine" class="form-control validate" required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+ [0-9]{3}" title="es. Via Roma 100">
+                                    <input type="text" id="indirizzo-ordine" class="form-control validate">
                                     <label data-error="errore" data-success="corretto" for="indirizzo-ordine">
                                         Indirizzo attività</label>
+                                    <p id="error-ordine" style="color:red;font-weight: bold;"></p>
                                 </div>
                             </div>
                             <!-- Grid column -->
