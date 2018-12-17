@@ -32,10 +32,10 @@ Romeo: esterno
 - home.html : 
 
 ++++++++++++++++++++++++++++++++++++++++++ PER ROMEO ++++++++++++++++++++++++++++++++++++++++++
-Sistemate le form di login e registrazione riguardo il submit :) , resta solo la dimensione in workWithUs che è esagerata.
-Ho lavorato sui prezzi dinamicamente, dimmi che ne pensi. Visto che l'esterno ora è tuo, lascio continuare a te con checkout_2 e 3.
-Continuo con il php, i file che ho caricato sono da implementare quindi momentaneamente non funzionanti
-
+radiowithgap5 e 6 (paypal e bitcoin) dovrebbero essere ok con php (testali perchè di sicuro qualcosa è sbagliato non avendoli potuto provare). 
+La funzione la trovi in prices.js sotto il nome di sottoscriviAbbonamento()
+Manca da effettuare il login prima di procedere con questo pagamento come riportato nella progress bar in alto.
+Fatto questo converto settings.htm in php e poi manca il video ed è finito :)
 
 ============PER IVAN
 $("#centralModalSuccess").modal();
