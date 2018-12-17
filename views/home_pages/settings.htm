@@ -87,13 +87,13 @@
                 <div class="tab-pane fade" id="panel62" role="tabpanel">
                     <h5 class="py-5 h5">Vuoi cambiare password?</h5>
 
-                        <form name="changePasswordForm" method="post" action=""
-                         onSubmit="return validatePassword()">
+                        <form name="changePasswordForm" method="post"
+                         onSubmit="return validatePassword(); return false;">
     
                             <div class="row">
                               <div class="md-form mb-4">
                                     <i class="fa fa-lock prefix grey-text"></i>
-                                    <input type="password" id="orangeForm-passReg" class="form-control validate"
+                                    <input type="password" name="orangeForm-passReg" id="orangeForm-passReg" class="form-control validate"
                                      required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
                                      title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
                                     <label data-error="errore" data-success="corretto"
@@ -104,11 +104,12 @@
                             <div class="row">
                               <div class="md-form mb-4">
                                 <i class="fa fa-lock prefix grey-text"></i>
-                                <input type="password" id="orangeForm-pass2Reg" class="form-control validate"
+                                <input type="password" name="orangeForm-pass2Reg" id="orangeForm-pass2Reg" class="form-control validate"
                                  required pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}"
-                                 title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale">
+                                 title="Deve contenere almeno 8 caratteri di cui almeno uno numerico e uno speciale"
+                                 onClick="return resetField('orangeForm-pass3Reg', 'control-PasswordReg')">
                                 <label data-error="errore" data-success="corretto"
-                                 for="orangeForm-passReg">Nuova password</label>      
+                                 for="orangeForm-passReg">Nuova password</label>
                               </div>
                             </div>
             
@@ -134,7 +135,7 @@
 
                 <!-- Panel 7 -->
                 <div class="tab-pane fade" id="panel72" role="tabpanel">
-                    <h5 class="py-5 h5"></h5>
+                    <h5 class="py-5 h5">Vuoi cambiare immagine?</h5>
                     <form class="md-form">
                       <div class="file-field">
                         <div class="btn btn-primary btn-sm float-left">
@@ -145,7 +146,7 @@
                           <input class="file-path validate" type="text" placeholder="Upload your file">
                         </div>
                       </div>
-
+                      <br>
                       <div class="justify-content-center">
                         <button type="submit" class="btn btn-primary">Carica</button>
                       </div> 
