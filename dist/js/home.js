@@ -5,7 +5,7 @@ function caricaSezione(e){
 
 function caricaSezioneOrdini(){
 	var directory = 'home_pages/orders.htm #main';
-	 $( "#main" ).load(directory);
+	 $( "#main" ).load(directory,function(){
 	$.ajax({
           type:"post",
           url:"../dist/php/getOrderList.php",
@@ -27,7 +27,7 @@ function caricaSezioneOrdini(){
               }
           }
       });
-
+	});
 }
 
 function generatoreOrdine(){
