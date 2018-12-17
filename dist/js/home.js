@@ -31,19 +31,44 @@ function caricaSezioneOrdini(){
 }
 
 function verificaForm(){
+	/* L'attività potremmo metterla con una select che prende i negozi dalla tabella shop + alcune 
+	attività standard statiche (es. sorveglianza, ...) */
 	var attivita = $("#nome-attivita");
-	var data = $("#data-ordine");
 	var indirizzo = $("indirizzo-ordine");
 
 	if(attivita.val() == ""){
 		$("#error-attivita").text("Inserire nome attività");
 	}
 
-	if(data.val() == ""){
-		$("#error-data").text("Inserire una data");
-	}
-
 	if(indirizzo.val() == ""){
 		$("#error-indirizzo").text("Inserire un indirizzo");
 	}
+
+	var date = new Date(); // Inutile far inserire la data al cliente, la prendiamo noi con questa funzione
+	// Gestione php
+}
+
+function validatePassword(){
+	var new_password = document.getElementById("orangeForm-pass2Reg");
+	if(!samePassword(new_password, document.getElementById("orangeForm-pass3Reg"))) {
+        displayErrorOnField("orangeForm-pass3Reg", "control-PasswordReg", "le password non corrispondono");
+        return false;
+	}
+	
+	var old_password = document.getElementById("orangeForm-passReg").value;
+	var data_string = "orangeForm-passReg="+old_password+"&orangeForm-pass2Reg="+new_password.value;
+	$.ajax({
+		type:"post",
+		url:"../dist/php/changePassword.php",
+		data:data_string,
+		cache:false,
+		success: function(result){
+			if(result == "true")
+				$('#modalSuccessChangePassword').modal("show");
+			else if(result == "false")
+				displayErrorOnField("orangeForm-pass3Reg", "control-PasswordReg", "Vecchia password errata");
+			else
+				displayErrorOnField("orangeForm-pass3Reg", "control-PasswordReg", "Errore imprevisto, riprova");
+		}
+	});
 }
