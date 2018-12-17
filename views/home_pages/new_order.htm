@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
 </head>
 
 <body>
@@ -43,7 +43,7 @@
                             <!-- Grid row -->
                             <div class="row">
                                 <!-- Grid column -->
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="md-form mb-0">
                                         <input type="text" id="nome-attivita" class="form-control">
                                         <label for="nome-attivita" class="">Nome attività</label>
@@ -52,13 +52,13 @@
                                 </div>
                                 <!-- Grid column -->
                                 <!-- Grid column -->
-                                <div class="col-md-6">
+                                <!--<div class="col-md-6">
                                     <div class="md-form mb-0">
                                         <input type="text" id="data-ordine" class="form-control">
                                         <label for="data-ordine" class="">Data</label>
                                         <p id="error-data" style="color:red;font-weight: bold;"></p>
                                     </div>
-                                </div>
+                                </div>-->
                                 <!-- Grid column -->
                             </div>
                             <!-- Grid row -->
@@ -67,9 +67,12 @@
                                 <!-- Grid column -->
                                 <div class="col-md-12">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="indirizzo-ordine" class="form-control">
-                                        <label for="indirizzo-ordine" class="">Indirizzo</label>
-                                        <p id="error-indirizzo" style="color:red;font-weight: bold;"></p>
+                                        <input type="text" id="indirizzo-ordine" 
+                                         class="form-control validate" required 
+                                         pattern="[A-Z][a-z]+( [A-Z][a-z']+)+ [0-9]{3}" 
+                                         title="es. Via Roma 100">
+                                        <label data-error="errore" data-success="corretto" for="indirizzo-ordine">
+                                        Indirizzo attività</label>
                                     </div>
                                 </div>
                                 <!-- Grid column -->
