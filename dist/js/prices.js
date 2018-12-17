@@ -13,9 +13,9 @@ function caricaPagamento(price){
 		
 		$( "#navbar_ajax" ).load('structure_files/header_user.php #navbar_ajax');
 		var directory = 'checkout_steps/checkout_pay.htm #main';
-	 	$( "#main" ).load(directory);
+	 	$( "#main" ).load(directory,function(){
 
-	 	$("#main").ready(function(){
+	 	//$("#main").ready(function(){
 			if(sale != null){
 				document.getElementById("costo_pacchetto").innerHTML = ("€ " + price);
 				$("#costo_pacchetto").text("€ " + price);
