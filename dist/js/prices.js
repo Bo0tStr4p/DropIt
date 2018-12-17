@@ -104,20 +104,43 @@ function verificaPagamentoCarta(){
 		debug = 0;	
 	}
 
+	/* Se entro allora i campi sono corretti. Adesso avendo effettuato al punto 2 il
+	login, posso mandare una post al server per memorizzare il tipo di abbonamento
+	acquistato. Con il php prendo user e qui passo il piano scelto */
 	if(debug){
-		//viewModal();
-		/* Per mostrare la modal al caricamento successivo della pagina (causata dalla action della form)
-		, setto un parametro nel sessionStorage che andrò a verificare ad ogni caricamento della pagina */		
-		sessionStorage.setItem("showModalSuccessPayment", true);
-		return true;
+		SottoscriviAbbonamento();
+		//return true;
 	}
-	else
-		return false;
+	//else
+	return false; // Invio con ajax quindi alla form ritorno sempre false
 }
 
-/*function viewModal(){
-	$("#centralModalSuccess").modal();
-}*/
+function getToday(){
+	var date = new Date();
+	return date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
+}
+
+function SottoscriviAbbonamento() {
+	var today = getToday();
+	var data_string = "plan="+sessionStorage.getItem("plan")+"&SubscriptionDate="+today;
+		window.alert(data_string);
+		$.ajax({
+			type:"post",
+			url:"../dist/php/addSubscription.php",
+			data:data_string,
+			cache:false,
+			success: function(result){
+				if(result == "true") {
+					/* Per mostrare la modal al caricamento successivo della pagina (causata dalla action della form)
+					, setto un parametro nel sessionStorage che andrò a verificare ad ogni caricamento della pagina */		
+					sessionStorage.setItem("showModalSuccessPayment", true);
+					window.location.replace("prices.html");
+				}
+				else
+					$("#control-code-card").html("Errore imprevisto, riprova");
+		}
+	});
+}
 
 function controllo_data(stringa){
 	var espressione = /^(0[1-9]|1[012])\/[0-9]{4}$/;
