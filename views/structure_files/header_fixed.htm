@@ -226,7 +226,7 @@
                             <div class="md-form mb-5">
                             <i class="fa fa-user prefix grey-text"></i>
                             <input type="text" id="orangeForm-name" name="orangeForm-name" class="form-control validate"
-                             required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+"
+                             required pattern="[A-Za-z]+( [A-Za-z']+)+"
                              title="es. Mario Rossi">
                             <label data-error="errore" data-success="corretto" for="orangeForm-name">
                              Nome e Cognome</label>
@@ -237,7 +237,7 @@
                             <div class="md-form mb-5">
                                 <i class="fa fa-address-card prefix grey-text"></i>
                                 <input type="text" id="orangeForm-codiceFiscale" name="orangeForm-codiceFiscale"
-                                 class="form-control validate" required 
+                                 class="form-control validate" required title="Inserire CF in maiuscolo"
                                  pattern="[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]">
                                 <label data-error="errore" data-success="corretto"
                                  for="orangeForm-codiceFiscale">Codice Fiscale</label>
@@ -250,7 +250,7 @@
                             <div class="md-form mb-5">
                                 <i class="fa fa-building prefix grey-text"></i>
                                 <input type="text" id="orangeForm-cittaNascita" name="orangeForm-cittaNascita" class="form-control validate"
-                                  required pattern="[A-Z]['a-z]+( [A-Z][a-z']+)*" 
+                                  required pattern="[A-Za-z']+( [A-Za-z']+)*" 
                                   title="Inserire città facendo seguire ad ogni spazio una lettera maiuscola (es. Milano, Citta Del Messico)">
                                 <label data-error="errore" data-success="corretto" 
                                 for="orangeForm-cittaNascita">Città di nascita</label>
@@ -282,7 +282,7 @@
                             <div class="md-form mb-5">
                                 <i class="fa fa-building prefix grey-text"></i>
                                 <input type="text" id="orangeForm-comune" name="orangeForm-comune" class="form-control validate"
-                                 required pattern="[A-Z]{2}" title="In maiuscolo (es. RM)">
+                                 required pattern="[A-Za-z]{2}" title="es. RM">
                                 <label data-error="errore" data-success="corretto" for="orangeForm-comune">
                                     Comune di residenza</label>
                             </div>
@@ -292,7 +292,7 @@
                             <div class="md-form mb-5">
                                 <i class="fa fa-map-marker prefix grey-text"></i>
                                 <input type="text" id="orangeForm-address" name="orangeForm-address" class="form-control validate"
-                                 required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+ [0-9]{1,4}" title="es. Via Roma 100">
+                                 required pattern="[A-Za-z]+( [A-Za-z']+)+ [0-9]{1,4}" title="es. Via Roma 100">
                                 <label data-error="errore" data-success="corretto" for="orangeForm-address">
                                     Indirizzo di residenza</label>
                             </div>

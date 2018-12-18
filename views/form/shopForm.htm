@@ -14,7 +14,8 @@
                         <div class="col-sm-5">
                             <div class="md-form mb-5">
                                 <i class="fa fa-user prefix grey-text"></i>
-                                <input type="text" id="orangeForm-nameProp" class="form-control validate" required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+" title="es. Mario Rossi">
+                                <input type="text" id="orangeForm-nameProp" class="form-control validate"
+                                 required pattern="[A-Za-z]+( [A-Za-z']+)+" title="es. Mario Rossi">
                                 <label data-error="errore" data-success="corretto" for="orangeForm-nameProp">
                                     Nome e Cognome</label>
                             </div>
@@ -22,7 +23,9 @@
                         <div class="col-sm-5">
                             <div class="md-form mb-5">
                                 <i class="fa fa-address-card prefix grey-text"></i>
-                                <input type="text" id="orangeForm-codiceFiscaleProp" class="form-control validate" required pattern="[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]">
+                                <input type="text" id="orangeForm-codiceFiscaleProp" 
+                                 class="form-control validate" required title="Inserire CF in maiuscolo"
+                                 pattern="[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]">
                                 <label data-error="errore" data-success="corretto" for="orangeForm-codiceFiscaleProp">Codice Fiscale</label>
                             </div>
                         </div>
@@ -31,14 +34,16 @@
                         <div class="col-sm-5">
                             <div class="md-form mb-5">
                                 <i class="fa fa-building prefix grey-text"></i>
-                                <input type="text" id="orangeForm-nomeNegozio" class="form-control validate" required>
+                                <input type="text" id="orangeForm-nomeNegozio" class="form-control validate"
+                                 required>
                                 <label data-error="errore" data-success="corretto" for="orangeForm-nomeNegozio">Nome negozio</label>
                             </div>
                         </div>
                         <div class="col-sm-5">
                             <div class="md-form mb-5">
                                 <i class="fa fa-industry prefix grey-text"></i>
-                                <input type="text" id="orangeForm-attivita" class="form-control validate" pattern="[A-Za-z ']+" required>
+                                <input type="text" id="orangeForm-attivita" class="form-control validate" 
+                                 pattern="[A-Za-z ']+" required>
                                 <label data-error="errore" data-success="corretto" for="orangeForm-attivita">Tipo di attività</label>
                             </div>
                         </div>
@@ -47,14 +52,16 @@
                         <div class="col-sm-5">
                             <div class="md-form mb-5">
                                 <i class="fa fa-building prefix grey-text"></i>
-                                <input type="text" id="orangeForm-cittaNegozio" class="form-control validate" required pattern="[A-Z]['a-z]+( [A-Z][a-z']+)*" title="Inserire la città dove risiede l'attività, facendo seguire ad ogni spazio una lettera maiuscola (es. Milano, Citta Del Messico)">
+                                <input type="text" id="orangeForm-cittaNegozio" class="form-control validate"
+                                 required pattern="[A-Za-z']+( [A-Za-z']+)*" title="Inserire la città dove risiede l'attività, facendo seguire ad ogni spazio una lettera maiuscola (es. Milano, Citta Del Messico)">
                                 <label data-error="errore" data-success="corretto" for="orangeForm-cittaNegozio">Città attività</label>
                             </div>
                         </div>
                         <div class="col-sm-5">
                             <div class="md-form mb-5">
                                 <i class="fa fa-building prefix grey-text"></i>
-                                <input type="text" id="orangeForm-comune" class="form-control validate" required pattern="[A-Z]{2}" title="In maiuscolo (es. RM)">
+                                <input type="text" id="orangeForm-comune" class="form-control validate" 
+                                 required pattern="[A-Za-z]{2}" title="es. RM">
                                 <label data-error="errore" data-success="corretto" for="orangeForm-comune">
                                     Comune attività</label>
                             </div>
@@ -64,7 +71,8 @@
                         <div class="col-sm-5">
                             <div class="md-form mb-5">
                                 <i class="fa fa-map-marker prefix grey-text"></i>
-                                <input type="text" id="orangeForm-addressNegozio" class="form-control validate" required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+ [0-9]{1,4}" title="es. Via Roma 100">
+                                <input type="text" id="orangeForm-addressNegozio" class="form-control validate"
+                                 required pattern="[A-Za-z]+( [A-Za-z']+)+ [0-9]{1,4}" title="es. Via Roma 100">
                                 <label data-error="errore" data-success="corretto" for="orangeForm-addressNegozio">
                                     Indirizzo attività</label>
                             </div>

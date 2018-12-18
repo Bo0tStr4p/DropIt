@@ -19,7 +19,7 @@
                 <div class="md-form mb-5">
                     <i class="fa fa-user prefix grey-text"></i>
                     <input type="text" id="orangeForm-name" class="form-control validate"
-                    required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+"
+                    required pattern="[A-Za-z]+( [A-Za-z']+)+"
                     title="es. Mario Rossi">
                     <label data-error="errore" data-success="corretto" for="orangeForm-name">
                       Nome e Cognome</label>
@@ -30,7 +30,7 @@
                 <div class="md-form mb-5">
                     <i class="fa fa-address-card prefix grey-text"></i>
                     <input type="text" id="orangeForm-codiceFiscale"
-                      class="form-control validate" required 
+                      class="form-control validate" required title="Inserire CF in maiuscolo"
                       pattern="[A-Z]{6}[0-9]{2}[A-Z][0-9]{2}[A-Z][0-9]{3}[A-Z]">
                      <label data-error="errore" data-success="corretto"
                       for="orangeForm-codiceFiscale">Codice Fiscale</label>
@@ -40,7 +40,7 @@
               <div class="col-sm">
                 <div class="md-form mb-5">
                     <i class="fa fa-building prefix grey-text"></i>
-                    <input type="text" id="orangeForm-citta" required pattern="[A-Z]['a-z]+( [A-Z][a-z']+)*" 
+                    <input type="text" id="orangeForm-citta" required pattern="[A-Za-z']+( [A-Za-z']+)*" 
                      class="form-control validate" title="Inserisci la città dove vorresti lavorare, facendo seguire ad ogni spazio una lettera maiuscola (es. Milano, Citta Del Messico)">
                     <label data-error="errore" data-success="corretto" 
                      for="orangeForm-luogoNascita">Città</label>
