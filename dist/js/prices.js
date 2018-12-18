@@ -36,6 +36,10 @@ function caricaPagamento(price){
 		});
 	}
 
+function caricaSceltaPiano2(e){
+	var directory = 'checkout_steps/'+e+'.htm #main';
+	 $( "#main" ).load(directory);
+}
 
 function caricaSceltaPiano(e){
 	$( "#navbar_ajax" ).load('structure_files/header_fixed.htm #navbar_ajax');
@@ -123,7 +127,6 @@ function getToday(){
 function SottoscriviAbbonamento() {
 	var today = getToday();
 	var data_string = "plan="+sessionStorage.getItem("plan")+"&SubscriptionDate="+today;
-		window.alert(data_string);
 		$.ajax({
 			type:"post",
 			url:"../dist/php/addSubscription.php",
@@ -141,6 +144,23 @@ function SottoscriviAbbonamento() {
 		}
 	});
 }
+
+
+function isAlreadyLoggedIn(prezzo){
+	$.ajax({
+			type:"post",
+			url:"../dist/php/validateLoggedIn.php",
+			cache:false,
+			success: function(result){
+				if(result == "true") {
+					caricaPagamento(prezzo);
+				}
+				else
+					$('#modalSignInForm').modal("show");
+		}
+	});
+}
+
 
 function controllo_data(stringa){
 	var espressione = /^(0[1-9]|1[012])\/[0-9]{4}$/;
