@@ -22,6 +22,9 @@
                         <li class="nav-item">
                             <a class="nav-link" onclick="caricaSezioneOrdini();" data-offset="90">Riepilogo Ordini</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="caricaSceltaPiano2('plans')" data-offset="90">Cambia Piano</a>
+                        </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item nav-link">
