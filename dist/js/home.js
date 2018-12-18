@@ -151,3 +151,28 @@ function validatePassword(){
 		}
 	});
 }
+
+
+
+function cambiaImmagine(){
+	var changeImage = new FormData($('#changeImageForm')[0]);
+  $.ajax({
+      type:'POST',
+      url:'../dist/php/changeImage.php',
+      processData: false,
+      contentType: false,
+      async: false,
+      cache: false,
+      data : changeImage,
+      success: function(response){
+      	if(response == "Ok")
+      	location.replace("home.html");
+        else 
+        	alert("Usare immagine.png minore di 2 mb");
+      }
+  });
+}
+
+function placeholderChangeImage(){
+	document.getElementById("seniorita").placeholder = "File selezionato correttamente";
+}
