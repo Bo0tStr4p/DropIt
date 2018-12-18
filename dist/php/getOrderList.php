@@ -12,6 +12,6 @@
     	echo json_encode($line);
     }
     else{
-        echo "Error";
+        echo json_encode(array());
     }       
 ?>
