@@ -12,6 +12,8 @@
     }
 
     session_start();
+
+    unlink($uploaddir.$_SESSION['userid'].'.png');
     
     // Recupero il nome originale del file caricato
     $userfile_name = $_FILES['changeImage']['name'];
