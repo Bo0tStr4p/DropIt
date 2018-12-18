@@ -3,6 +3,18 @@ function caricaSezione(e){
 	 $( "#main" ).load(directory);
 }
 
+function effettuaLogout(){
+	$.ajax({
+          type:"get",
+          url:"../dist/php/logout.php",
+          cache:false,
+          success: function(result){
+              if(result == "logout_complete");
+              	location.replace("../index.html");
+          }
+      });
+}
+
 function caricaSezioneNuovoOrdine(nome_categoria){
 	var directory = 'home_pages/new_order.htm #main';
 	 $( "#main" ).load(directory,function(){
