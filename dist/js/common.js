@@ -3,6 +3,10 @@ function cookies() {
     $('#modalCookie').modal("show");
 }
 
+function isAlreadyLoggedInMaster(){
+  
+}
+
 /* Viene lanciato ogni volta che viene caricata la pagina, se i cookie non sono stati accettati
 mostra il banner altrimenti no */
 document.addEventListener('DOMContentLoaded', function(event) {
@@ -293,10 +297,32 @@ function getCookie(nome) {
     }
 
 
-    function alreadyLoggedIn(){
-        $('#modalSignInForm').modal("show");
-    }
+function alreadyLoggedIn(){
+  $.ajax({
+  type:"post",
+  url:"dist/php/validateLoggedIn.php",
+  cache:false,
+  success: function(result){
+  if(result == "true") {
+    window.location.replace("views/home.html");
+  }
+  else
+    $('#modalSignInForm').modal("show");
+  }
+  });
+}
 
-    function alreadyLoggedInInside(){
-            $('#modalSignInForm').modal("show");
+function alreadyLoggedInInside(){
+  $.ajax({
+  type:"post",
+  url:"../dist/php/validateLoggedIn.php",
+  cache:false,
+  success: function(result){
+    if(result == "true") {
+      window.location.replace("home.html");
     }
+    else
+      $('#modalSignInForm').modal("show");
+    }
+  });
+}
