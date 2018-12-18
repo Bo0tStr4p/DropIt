@@ -23,7 +23,7 @@
     $newfilename = $_SESSION['userid'] .".".$extension;
 
     // Copio il file dalla sua posizione temporanea alla mia cartella upload
-    if (move_uploaded_file($userfile_tmp, $uploaddir . $newfilename))
-        header("Location: ../../views/home.html");     //echo "true";
+    if(move_uploaded_file($userfile_tmp, $uploaddir . $newfilename))
+       echo "Ok";// header("Location: ../../views/home.html");     //echo "true";
     else    echo "Error";  
 ?>

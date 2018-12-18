@@ -144,16 +144,15 @@
                 <div class="tab-pane fade" id="panel72" role="tabpanel">
                     <h5 class="py-5 h5">Vuoi cambiare immagine?</h5>
 
-                    <form name="changeImageForm" method="post" enctype="multipart/form-data"
-                     action="../dist/php/changeImage.php">
+                    <form id="changeImageForm" name="changeImageForm" method="post" enctype="multipart/form-data" onsubmit="cambiaImmagine();return false;" >
                       <div class="md-form">
                         <div class="file-field">
                           <div class="btn btn-primary btn-sm float-left">
                             <span>Scegli un'immagine</span>
-                            <input type="file" name="changeImage" id="changeImage" required>
+                            <input type="file" onchange="placeholderChangeImage();" name="changeImage" id="changeImage" required>
                           </div>
                           <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text" placeholder=" Carica immagine (solo .png, max 2 Mb)">
+                            <input id="seniorita" class="file-path validate" type="text" placeholder=" Carica immagine (solo .png, max 2 Mb)">
                           </div>
                         </div>
                       </div>
