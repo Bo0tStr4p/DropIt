@@ -21,3 +21,5 @@ Il funzionamento è semplice: l'utente, dopo essersi registrato, ha a disposizio
 
 #### Browser per testare sul proprio computer
 Consigliamo di testare su Mozilla Firefox, per via della CORS Policy.
+
+© 2018 Bo0tStr4p & 666TheNumberOfTheBeast
