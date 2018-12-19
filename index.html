@@ -69,6 +69,7 @@
 
     <!--Inizio Main-->
     <main>
+            <!-- Script e CSS per le animazioni basate sullo scrolling della pagina -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
             <script> new WOW().init(); </script>
@@ -475,7 +476,7 @@
                         <div class="col-md-6">
                             <div class="md-form mb-0">
                             <input type="text" id="contact-name" class="form-control validate"
-                             required pattern="[A-Z][a-z]+( [A-Z][a-z']+)+"
+                             required pattern="[A-Za-z]+( [A-Za-z']+)+"
                              title="es. Mario Rossi">
                             <label data-error="errore" data-success="corretto" for="contact-name">
                              Nome e Cognome</label>
