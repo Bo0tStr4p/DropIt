@@ -99,7 +99,7 @@
                       </a>
                     </span>
                   </div>
-                    <button onclick="return caricaPagamento(89.00);" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
+                    <button onclick="sessionStorage.setItem('plan', 'standard'); return caricaPagamento(89.00);" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
                 </div>
                 <!-- Card content -->
               </div>
@@ -146,7 +146,7 @@
                       </a>
                     </span>
                   </div>
-                  <button onclick="return caricaPagamento(199.00);" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
+                  <button onclick="sessionStorage.setItem('plan', 'premium'); return caricaPagamento(199.00);" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
                 </div>
                 <!-- Card content -->
               </div>
@@ -193,7 +193,7 @@
                       </a>
                     </span>
                   </div>
-                  <button onclick="return caricaPagamento(1999.00);" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
+                  <button onclick="return caricaPagamentoAux('business', 1999.00);" style="max-width: 100%; margin-top: 10%; margin-right: auto; margin-left: auto;" class="btn btn-primary btn-lg btn-block" >Abbonati</button>
                 </div>
                 <!-- Card content -->
               </div>

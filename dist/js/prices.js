@@ -3,7 +3,13 @@ function saleActivated(sale) {
 	$("#divcookie").hide();
 }
 
-function caricaPagamento(price){ 
+function caricaPagamentoAux(plan, price) { window.alert("in aux");
+	sessionStorage.setItem('plan', plan);
+	window.alert(sessionStorage.getItem('plan'));
+	caricapagamento(price);
+}
+
+function caricaPagamento(price){ //window.alert(sessionStorage.getItem('plan'));
 		$("#divcookie").hide();
 		var sale = sessionStorage.getItem("sale");
 		var iva = parseFloat(22.0/100);
@@ -77,7 +83,7 @@ function verificaPagamentoCarta(){
 		intestatario_error.innerHTML = "* Inserire un intestatario";
 		debug = 0;
 	}
-	var espressione = /^[A-Z][a-z]+(\ [A-Z][a-z']+)+$/;
+	var espressione = /^[A-Za-z]+(\ [A-Za-z']+)+$/;
 
 	if(!espressione.test(intestatario.value)){
 		intestatario_error.innerHTML = "* Inserire un intestatario (es. Mario Rossi))";
