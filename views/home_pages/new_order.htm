@@ -69,7 +69,8 @@
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
                                    <!-- <input type="text" id="nome-attivita" class="form-control"> -->
-                                    <select id="nome-attivita" class="browser-default custom-select">
+                                    <select id="nome-attivita" class="browser-default custom-select"
+                                     onclick="$('#error-attivita').text('');">
                                     </select>
                                     <p id="error-attivita" style="color:red; font-weight: bold;"></p>
                                 </div>
@@ -91,9 +92,11 @@
                             <!-- Grid column -->
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="indirizzo-ordine" class="form-control validate">
+                                    <input type="text" id="indirizzo-ordine" class="form-control validate"
+                                    pattern="[A-Za-z]+( [A-Za-z']+)+ [0-9]{1,4}" title="es. Via Roma 100"
+                                    onclick="$('#error-ordine').text('');">
                                     <label data-error="errore" data-success="corretto" for="indirizzo-ordine">
-                                        Indirizzo attività</label>
+                                        Indirizzo di consegna</label>
                                     <p id="error-ordine" style="color:red;font-weight: bold;"></p>
                                 </div>
                             </div>

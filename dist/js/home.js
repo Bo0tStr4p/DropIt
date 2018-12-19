@@ -108,10 +108,6 @@ function inviaOrdine(){
 }
 
 function verificaFormEInvia(){
-	/* L'attività potremmo metterla con una select che prende i negozi dalla tabella shop + alcune 
-	attività standard statiche (es. sorveglianza, ...) */
-	$("#error-attivita").text("");
-	$("#error-indirizzo").text("");
 	var debug = 0;
 	var attivita = document.getElementById("nome-attivita").value;
 	var indirizzo = document.getElementById("indirizzo-ordine").value;
