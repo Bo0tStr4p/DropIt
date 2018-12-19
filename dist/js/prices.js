@@ -3,13 +3,7 @@ function saleActivated(sale) {
 	$("#divcookie").hide();
 }
 
-function caricaPagamentoAux(plan, price) { window.alert("in aux");
-	sessionStorage.setItem('plan', plan);
-	window.alert(sessionStorage.getItem('plan'));
-	caricapagamento(price);
-}
-
-function caricaPagamento(price){ //window.alert(sessionStorage.getItem('plan'));
+function caricaPagamento(price){
 		$("#divcookie").hide();
 		var sale = sessionStorage.getItem("sale");
 		var iva = parseFloat(22.0/100);
