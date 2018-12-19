@@ -7,7 +7,7 @@
 <body>
     <main id="main">
         <br>
-        <div class="container-fluid">
+        <div style="margin-top: 5%; background-color: rgba(255,255,255,.8); border-radius: 20px 20px 20px 20px;" class="container">
     <!-- Tab panels -->
     <div class="py-5 tab-content">
 
@@ -72,7 +72,7 @@
                 
                 <!-- Panel 3 -->
                 <div class="tab-pane fade in show active" id="panel32" role="tabpanel">
-                    <h5 class="py-5 h5" id="abbonamento">Il tuo piano attivo</h5>
+                    <h5 class="py-5 h5 h5" id="abbonamento">Il tuo piano attivo</h5>
                     <br>
                     <?php
                         $dbconn = pg_connect("host=localhost port=5432 dbname=DropItDatabase user=postgres password=postgres") or die('Could not connect: ' . pg_last_error());
