@@ -39,7 +39,7 @@
                               </a>
                               <div class="dropdown-menu dropdown-menu-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-5">
                                   <a id="items-color" class="dropdown-item waves-effect waves-light" 
-                                   onclick="return caricaSezione('settings');"><i class="fa fa-gear"></i> Impostazioni</a>
+                                   onclick="return caricaSezionePHP('settings');"><i class="fa fa-gear"></i> Impostazioni</a>
                                   <a id="items-color" class="dropdown-item waves-effect waves-light" onclick="effettuaLogout();" ><i class="fa fa-power-off" aria-hidden="true"></i> Log Out</a>
                               </div>
                           </li>
