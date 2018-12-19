@@ -3,6 +3,11 @@ function caricaSezione(e){
 	 $( "#main" ).load(directory);
 }
 
+function caricaSezionePHP(e) {
+	var directory = 'home_pages/'+e+'.php #main';
+	 $( "#main" ).load(directory);
+}
+
 function effettuaLogout(){
 	$.ajax({
           type:"get",
