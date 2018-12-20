@@ -299,7 +299,7 @@ function getCookie(nome) {
 
 function alreadyLoggedIn(){
   $.ajax({
-  type:"post",
+  type:"get",
   url:"dist/php/validateLoggedIn.php",
   cache:false,
   success: function(result){
@@ -314,7 +314,7 @@ function alreadyLoggedIn(){
 
 function alreadyLoggedInInside(){
   $.ajax({
-  type:"post",
+  type:"get",
   url:"../dist/php/validateLoggedIn.php",
   cache:false,
   success: function(result){

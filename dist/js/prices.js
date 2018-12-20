@@ -148,7 +148,7 @@ function SottoscriviAbbonamento() {
 
 function isAlreadyLoggedIn(prezzo){
 	$.ajax({
-			type:"post",
+			type:"get",
 			url:"../dist/php/validateLoggedIn.php",
 			cache:false,
 			success: function(result){
