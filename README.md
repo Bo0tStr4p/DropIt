@@ -19,7 +19,9 @@ Il funzionamento è semplice: l'utente, dopo essersi registrato, ha a disposizio
 * JQuery
 * PHP
 
-#### Browser per testare sul proprio computer
-Consigliamo di testare su Mozilla Firefox, per via della CORS Policy.
+#### Testing
+* Browser (consigliato) : Mozilla Firefox, per via della CORS Policy;
+* Server : qualsiasi server php; 
+* Database : Postgres con un database chiamato "DropItDatabase", porta:5432;
 
-© 2018 Bo0tStr4p & 666TheNumberOfTheBeast
+© 2018 Bo0tStr4p & 666TheNumberOfTheBeast  -  All rights reserved
